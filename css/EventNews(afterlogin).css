@@ -112,7 +112,7 @@ html, body
 		display: inline-block;
 		margin-top: 0px;
 		padding: 1px 2px 1px 2px;
-		margin-left:500px;
+		margin-left:470px;
 	}
 
 
@@ -264,10 +264,11 @@ html, body
 	}
 	
 
-div.love{
-	margin-left:250px;
-}
-	
+	div.love{
+		padding-top: 450px;
+		margin-left:200px;
+	}
+		
 
 
 
