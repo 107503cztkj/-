@@ -1,13 +1,11 @@
 	html, body
 	{
-		height: 100%;
 	}
 	
 	body
 	{
-		margin: 0px;
-		padding: 0px;
-		background:#FFF;
+		margin:0em;
+		padding:0em;
 		font-family: Microsoft JhengHei;
 		font-size: 12pt;
 		font-weight: 400;
@@ -16,19 +14,19 @@
 
 	a
 	{
-		color: #0000FF;
+		color: #666;
+		text-decoration:none;
 	}
 	
 	a:hover
 	{
-		text-decoration: none;
+		text-decoration: underline;
 	}
 	
 
 	.container
 	{
 		margin: 0px auto;
-		width: 1200px;
 	}
 	
 	.gallery-wrapper{
@@ -38,7 +36,6 @@
 	height: 400px;
 	margin: 60px auto 0 auto;
 	padding: 10px;
-	background-color: #fff;
 	}
 	.gallery-wrapper li{
 	display: block;
@@ -59,7 +56,6 @@
 	width: 180px;
 	height: 180px;
 	object-fit: cover;
-	background-color: #eee;
 	transition: .5s;
 	}
 	.gallery-wrapper a:hover img{
@@ -146,8 +142,7 @@
 /* 定義slider                   */
 /*---------------------------*/
 	#slider{
-		margin:1px 1px 1px 1px;
-		width:100%;
+		margin:0.1em 0em 0em 0em;
 	}
 
 
@@ -193,48 +188,6 @@
 	}
 
 /*********************************************************************************/
-/* Social Icon Styles                                                            */
-/*********************************************************************************/
-
-	ul.contact
-	{
-		margin: 0;
-		padding: 2em 0em 0em 0em;
-		list-style: none;
-	}
-	
-	ul.contact li
-	{
-		display: inline-block;
-		padding: 0em 0.30em;
-		font-size: 1.5em;
-	}
-	
-	ul.contact li span
-	{
-		display: none;
-		margin: 0;
-		padding: 0;
-	}
-	
-	ul.contact li a
-	{
-		color: #FFF;
-	}
-	
-	ul.contact li a:before
-	{
-		display: inline-block;
-		width: 80px;
-		height: 80px;
-		line-height: 80px;
-		border-radius: 40px;
-		text-align: center;
-		color: #FFFFFF;
-	}
-	
-
-/*********************************************************************************/
 /* Button Style                                                                  */
 /*********************************************************************************/
 
@@ -274,13 +227,13 @@
 
 	.title
 	{
-		margin-bottom: 3em;
+		margin-bottom:1em;
 	}
 	
 	.title h2
 	{
 		font-size: 2.8em;
-		color:#FFF;
+		color:#000;
 	}
 	
 	.title .byline
@@ -291,53 +244,6 @@
 		font-size: 1.1em;
 		color: #6F6F6F;
 	}
-
-/*********************************************************************************/
-/* Header                                                                        */
-/*********************************************************************************/
-
-	#header-wrapper
-	{
-		overflow: hidden;
-		background:#FFF;
-		padding: 5em 0em;
-	}
-
-/*********************************************************************************/
-/* Logo                                                                          */
-/*********************************************************************************/
-
-	#logo
-	{
-		padding: 5em 0em;
-		text-align: center;
-	}
-	
-	#logo h1
-	{
-		font-size: 3.5em;
-	}
-	
-	#logo a
-	{
-		text-decoration: none;
-		color: #FFF;
-	}
-	
-	#logo span
-	{
-		letter-spacing: 0.10em;
-		text-transform: uppercase;
-		font-size: 0.90em;
-		color: rgba(255,255,255,0.5);
-	}
-
-	#logo span a
-	{
-		color: rgba(255,255,255,0.8);
-	}
-	
-	
 
 /*********************************************************************************/
 /* Menu                                                                          */
@@ -379,35 +285,11 @@
 
 /*********************************************************************************/
 /* Wrapper                                                                       */
-/*********************************************************************************/
-
-	#wrapper1
-	{
-		background: #242424;
-		margin-top: -50px;
-	}
-	
+/*********************************************************************************/	
 	#wrapper1
 	{
 		overflow: hidden;
-		padding: 0em 0em 8em 0em;
-		background: #FFF;
-	}
-	
-
-/*********************************************************************************/
-/* Footer                                                                        */
-/*********************************************************************************/
-
-	#footer
-	{
-		text-align: center;
-	}
-
-	
-	#footer .title span
-	{
-		color: rgba(255,255,255,0.4);
+		padding-top: 400px;
 	}
 
 /*********************************************************************************/
@@ -420,63 +302,90 @@
 		background-color:#FFE7B8;
 		
 	}
-
+	
 
 /*********************************************************************************/
-/* Copyright 頁尾                                                                    */
+/* Three Columns                                                                 */
 /*********************************************************************************/
 
-	#copyright
+	#three-column
 	{
+		padding-top:100px;
 		overflow: hidden;
-		padding: 2em 1em;
-		border-top: 1px solid rgba(255,255,255,0.08);
+		padding-bottom: 4em;
+		text-align: center;
+	}
+
+	#three-column #tbox1,
+	#three-column #tbox2,
+	#three-column #tbox3
+	{
+		float: left;
+		width: 280px;
+		text-align:left;
+		padding: 1vw 2vw 1vw 2vw;
+		border-radius: 20px;
+		margin-right:40px;
+		height: 240px;
+	}
+		
+	#three-column h2
+	{
+		margin: 0.1em 0em;
+		text-transform: uppercase;
+		font-size: 1.5em;
+		font-weight: 700;
+		opacity: 1;
 	}
 	
-	#copyright p
+	#three-column .title
 	{
-		letter-spacing: 0.20em;
+		letter-spacing: 0.10em;
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 36px;
-		color:#333;
 	}
 	
-	#copyright a
+	#three-column .title h2
 	{
-		text-decoration: none;
-		color:#333;
+		font-size: 1.60em;
+		font-weight: 900;
+		font-family: 'Open Sans', sans-serif;
+		color: #261300;
+	}
+	
+	#three-column .title .byline
+	{
+		padding-top: 0.50em;
+		font-size: 0.90em;
+		color: #858585;
+	}
+
+	#three-column .arrow-down
+	{
+		border-top-color: #292929;
+	}
+	
+	#tbox1{
+		margin-left:3.5vw;
+		background-color:rgba(208, 215, 246,0.6);
+	}
+	
+	#tbox2{
+		background-color:rgba(242, 246, 208,0.6);
+	}
+	
+	#tbox3{
+		background-color:rgba(243, 215, 210,0.6);
 	}
 
 /*********************************************************************************/
-/* Newsletter                                                                    */
-/*********************************************************************************/
-
-	#newsletter
-	{
-		overflow: hidden;
-		padding: 8em 0em;
-		background: #EDEDED;
-		text-align: center;
-	}
-	
-	#newsletter .title h2
-	{
-		color: rgba(0,0,0,0.8);
-	}
-	
-	#newsletter .content
-	{
-		width: 600px;
-		margin: 0px auto;
-	}
-	
-/*********************************************************************************/
-/* Portfolio 第二部分白色的還有活動花絮的地方                                                                    */
+/* Portfolio 第二部分白色的還有活動花絮的地方  FAB49E                                   */
 /*********************************************************************************/
 
 	#portfolio
 	{
+		margin-top: 400px;
+		margin-bottom: 50px;		
 	}
 	
 	#portfolio .box
@@ -513,62 +422,24 @@
 		float: left;
 		margin-right: 24px;
 	}
+	
+	.name{
+		color:#fff;
+	}
 
-/*********************************************************************************/
-/* Three Columns                                                                 */
-/*********************************************************************************/
-
-	#three-column
-	{
-		overflow: hidden;
-		padding-bottom: 4em;
-		text-align: center;
+/*---------------------------*/
+/* 互動設計                   */
+/*---------------------------*/
+	#tbox1:hover{
+		background-color:rgba(208, 215, 246,1);
 	}
 	
-	#three-column h2
-	{
-		margin: 1em 0em;
-		text-transform: uppercase;
-		font-size: 1.5em;
-		font-weight: 700;
+	#tbox2:hover{
+		background-color:rgba(242, 246, 208,1);
 	}
 	
+	#tbox3:hover{
+		background-color:rgba(243, 215, 210,1);
+	}
+
 		
-	#three-column #tbox1,
-	#three-column #tbox2,
-	#three-column #tbox3
-	{
-		float: left;
-		width: 320px;
-		text-align:left;
-		padding: 80px 40px 80px 40px;
-	}
-	
-	#three-column .title
-	{
-		letter-spacing: 0.10em;
-		text-align: center;
-		text-transform: uppercase;
-	}
-	
-	#three-column .title h2
-	{
-		font-size: 1.60em;
-		font-weight: 900;
-		font-family: 'Open Sans', sans-serif;
-		color: #261300;
-	}
-	
-	#three-column .title .byline
-	{
-		padding-top: 0.50em;
-		font-size: 0.90em;
-		color: #858585;
-	}
-
-	#three-column .arrow-down
-	{
-		border-top-color: #292929;
-	}
-
-	

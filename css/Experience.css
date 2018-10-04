@@ -7,7 +7,6 @@ html, body
 	{
 		margin: 0px;
 		padding: 0px;
-		background:#BC9B5D;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 12pt;
 		font-weight: 400;
@@ -78,7 +77,24 @@ html, body
 		font-weight: 400;
 		font-size: 1.2em;
 		color: #FFF;
+		border-radius: 30px;
+		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		-moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
 	}
+	/*動畫部分*/	
+	.button {
+	   background-color: #fff284;
+	   color: #666;
+	   border: 2px solid #ce9494;
+}
+    .button:hover {
+ 	   background-color: white; 
+       color: #666; 
+       border: 2px solid #ce9494;
+}
+
+	
 	
 	
 
@@ -89,11 +105,12 @@ html, body
 /*********************************************************************************/
 #page-wrapper {
 	overflow: hidden;
+	padding-top: 400px;
 }
 
 #page {
 	overflow: hidden;
-	width: 1120px;
+	width: 900px;
 	margin: 0px auto;
 	padding: 50px 40px;
 	color: #8F8F8F;

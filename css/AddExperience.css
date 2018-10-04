@@ -1,6 +1,5 @@
 html, body
 	{
-		height: 100%;
 	}
 	
 	body
@@ -28,7 +27,7 @@ html, body
 	.container
 	{
 		margin: 0px auto;
-		width: 1200px;
+	
 	}
 	
 
@@ -167,7 +166,6 @@ html, body
 
 	#wrapper {
 	overflow: hidden;
-	background: #FFFFFF;
 	box-shadow: 
     inset 0px 11px 8px -20px #CCC,
 	inset 0px -11px 8px -10px #CCC;
@@ -175,7 +173,7 @@ html, body
 	}
 
 	.container {
-		width: 1200px;
+		
 		margin: 0px auto;
 	}
 	
@@ -193,7 +191,7 @@ html, body
 
 #page {
 	overflow: hidden;
-	width: 1120px;
+	width: 800px;
 	margin: 0px auto;
 	padding: 50px 40px;
 	color: #8F8F8F;
@@ -206,6 +204,8 @@ html, body
 #wide-content {
 	padding: 50px;
 	border: 10px solid #f1f1f1;
+	color:#000;
+	font-size:18px;
 }
 
 #wide-content h2 {

@@ -1,13 +1,12 @@
 html, body
 	{
-		height: 100%;
 	}
 	
 	body
 	{
 		margin: 0px;
 		padding: 0px;
-		background:#FFF;
+		background:#fffff1;
 		font-family: Microsoft JhengHei;
 		font-size: 12pt;
 		font-weight: 400;
@@ -21,7 +20,7 @@ html, body
 	table{
 		float: left;
 		margin-top: 20px;
-		margin-left: 5%;
+		margin-left: 10%;
 		border-collapse:collapse;
 		border-spacing:2px;
 		text-align:left;
@@ -43,16 +42,18 @@ html, body
 /*********************************************************************************/
 	div.content{ 
 		width: 80%;
-		padding:30px 30px 20px 30px;
+		padding:430px 30px 20px 30px;
 		margin-left: 10%;
-		margin-bottom:500px;
 	}
 
 /*********************************************************************************/
 /* img                                                                       */
 /*********************************************************************************/
 	img{ 
+		margin-left:150px;
 		float:left;
+		margin-top: 50px;
+		padding:5px
 	}
 /*********************************************************************************/
 /* Button Style                                                                  */
@@ -63,7 +64,7 @@ html, body
 		display: inline-block;
 		margin-top: 2em;
 		padding: 1em 2em 1em 2em;
-		margin-left:450px;
+		margin-left:530px;
 		background:#FFB8B8;
 		letter-spacing: 0.20em;
 		line-height: 1.8em;
@@ -86,5 +87,61 @@ html, body
 		-o-transition: all 0.15s ease;
 		-ms-transition: all 0.15s ease;
 		transition: all 0.15s ease;
+		margin-bottom: 50px;
 		
 	}
+	/*動畫部分*/	
+	.button {
+   background-color: #ffec8e;
+   color: #666;
+   border: 2px solid #ffc2ba;
+}
+
+    .button:hover {
+ 
+	background-color: white; 
+    color: #666; 
+    border: 2px solid #ffc2ba;
+}
+
+.button1
+{
+	display: inline-block;
+	padding: 1px 2px 1px 2px;
+	margin-left:750px;
+	background:#85A9FF;
+	line-height: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align:center;
+	font-weight: 1000spx;
+	font-size: 6px;
+	color: #FFF;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	/*把按鈕調成圓弧形*/
+	width:60px;height:60px;
+	border-radius:99em;
+	position: absolute;
+}
+
+.button2
+{
+	display: inline-block;
+	padding: 1px 2px 1px 2px;
+	background:rgb(247, 87, 87);
+	line-height: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align:center;
+	font-weight: 1000spx;
+	font-size: 6px;
+	color: #FFF;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	/*把按鈕調成圓弧形*/
+	width:60px;height:60px;
+	border-radius:99em;
+	margin-left: 660px;
+	position: absolute;
+}

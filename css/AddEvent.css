@@ -183,17 +183,28 @@
 	div.submit {
 		width:1200px;
         height: 50px;
-		background:no-repeat url(../images/submit.jpg);
-		margin-top:70px;
-		margin-left:40%
+		margin-bottom:50px;
       }
+	input.submitbt{
+		position:relative;
+		opacity:0;
+	}
+	
+	label img.submitbt{
+		position:relative;
+		margin-left:-31%;
+		margin-top:50px;
+		
+	}
 /*********************************************************************************/
 /* content                                                                       */
 /*********************************************************************************/
 	div.content{  
-		margin-left:15%;
+		margin-left: 3vw;
 		padding:0px 30px 20px 30px;
 		margin-bottom:100px;
-		color:#000;
+		color:#8c8289;
+		font-size:18px;
 		padding-top: 400px;
+		
 	}

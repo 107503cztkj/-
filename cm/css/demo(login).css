@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* CSS reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+html,body {
+	margin:0;
+	padding:0;
+	font-family: Microsoft JhengHei;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/* General Demo Style */
+body{
+	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	font-weight: 400;
+	font-size: 15px;
+	color: #1d3c41;
+	overflow-y: scroll;
+}
+a{
+	color: #333;
+	text-decoration: none;
+}
+.container{
+	width: 1200px;
+	height: 1600px;
+	position: relative;
+	text-align: center;
+}
+.clr{
+	clear: both;
+}
+.container > header{
+	padding: 20px 30px 10px 30px;
+	margin: 0px 20px 10px 20px;
+	position: relative;
+	display: block;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.container > header h1{
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	font-size: 35px;
+	line-height: 35px;
+	position: relative;
+	font-weight: 400;
+	color: rgba(26,89,120,0.9);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    padding: 0px 0px 5px 0px;
+}
+.container > header h1 span{
+	color: #7cbcd6;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.8);
+}
+.container > header h2{
+	font-size: 16px;
+	font-style: italic;
+	color: #2d6277;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.8);
+}
+/* Header Style */
+.codrops-top{
+	line-height: 24px;
+	font-size: 11px;
+	background: rgba(255, 255, 255, 0.4);
+	text-transform: uppercase;
+	z-index: 9999;
+	position: relative;
+	box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
+}
+.codrops-top a{
+	padding: 0px 10px;
+	letter-spacing: 1px;
+	color: #333;
+	text-shadow: 0px 1px 1px #fff;
+	display: block;
+	float: left;
+}
+.codrops-top a:hover{
+	background: #fff;
+}
+.codrops-top span.right{
+	float: right;
+}
+.codrops-top span.right a{
+	float: left;
+	display: block;
+}
+
+.codrops-demos{
+	text-align:center;
+	display: block;
+	padding: 14px;
+}
+.codrops-demos span{
+	display: inline-block;
+	padding-right: 15px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+.codrops-demos a,
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover{
+    display: inline-block;
+	font-style: italic;
+	font-size: 12px;
+	padding: 3px 5px;
+	margin: 0px 3px;
+	font-weight: 800;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.05) inset;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	background: rgba(104,171,194,0.5);
+}
+.codrops-demos a:hover{
+	background: #4fa2c4;
+}
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover{
+	color: rgba(104,171,194,1);
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+}
+
+section.content{
+	padding-top: 450px;
+}
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+.button1 {
+    display: inline-block;
+	margin-right:105px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 16px;
+    border: 0px solid #43679f;
+    border-radius: 8px;
+    background: #6da8ff;
+     background: -webkit-gradient(linear, left top, left bottom, from(#6da8ff), to(#43679f));
+    background: -moz-linear-gradient(top, #6da8ff, #43679f);
+    background: linear-gradient(to bottom, #6da8ff, #43679f);
+    text-shadow: #2a4164 1px 1px 1px;
+    font: normal normal bold 5px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button1:hover,
+.button1:focus {
+    border: 0px solid ##5481c7;
+    background: #83caff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#83caff), to(#507cbf));
+    background: -moz-linear-gradient(top, #83caff, #507cbf);
+    background: linear-gradient(to bottom, #83caff, #507cbf);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button1:active {
+    background: #43679f;
+    background: -webkit-gradient(linear, left top, left bottom, from(#43679f), to(#43679f));
+    background: -moz-linear-gradient(top, #43679f, #43679f);
+    background: linear-gradient(to bottom, #43679f, #43679f);
+}
+.button1:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACLklEQVRIicWUMWsUQRTHf/9lk+gupxc8sbKxEksbIWARexHsUgiCn0BBu2CRysLCQg0EP4CChaQQ7ARLQSIE0hkIWBjlcjF33uWMz2J3ZmcveznvUHzN/N/M7Mx7vzf7NLfw9I5MSyZLADBAwciADpaP1KYOssVYpiVEAqo+nAENWLA+VEMitBQZJP4cZbuk4kxRpQ1hIzVYEinXsnx0mZgVYYUat0d/pGNTmV2WgbxvAR6npYD1CB2FbMvYi0jKGszM4xqlY+WF8Zyl4JKjL5+/dI6r8+c506gRKSP4cOU17zd2UB57bHlRMrwBL3ezWX6609mGa1cucPfWZQZtSl3azS3S2bPgrzGB5F9Rdo98RmUNcRxx8/pFn62kUub97i7t5haYESuPehxEjXpKYzb1+9fWP/Hg8UsOfhlbn7cxYL/bguaEiOI48oUE+Lixydr6pvvQB9P/sUtcICqqT47FgoycrqUz1NKZYt6MY9NT1OtZRp1Oj/3+T98NNLewHD71kfbqyQ1O1ZOh67fvP+PN2w/ej10DscqWVW0OTZV9+bZTWo+LCivocwEWdygDRQ8QhXr7ayvzHepxEU2zx+kTBzxfvufnXqy+49HKKgCt723CBMdG1CNlHyth6PX6NFt7lfsnQjR9/GQJC1DCki+AROS+Cns+I3Ro4Y9JhZ7oFYWRD/Od/ZVX5P3/gkhGB0j+DSJ1I5MtIjq4lqug/ebjIc3hFu1aeTGvLrD4G7YYGnWo26OCAAAAAElFTkSuQmCC") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.forget{
+	font-size:12px;
+}

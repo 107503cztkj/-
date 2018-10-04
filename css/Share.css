@@ -15,33 +15,33 @@
 /*********************************************************************************/
 /* Image Style 可以設定圖片樣式暫不更改                                                                  */
 /*********************************************************************************/
-.image.fit {
-			display: block;
-			margin: 0 0 2px 0;
+	.image.fit {
+		display: block;
+		margin: 0 0 2px 0;
+		width: 100%;
+	}
+
+		.image.fit img {
+			width: 80%;
+		}
+
+	.image.round {
+		border-radius: 100%;
+	}
+
+		.image.round img {
+			border-radius: 20%;
+		}
+
+	.image.main {
+		display: block;
+		margin: 0 0 3em 0;
+		width: 100%;
+	}
+
+		.image.main img {
 			width: 100%;
 		}
-
-			.image.fit img {
-				width: 80%;
-			}
-
-		.image.round {
-			border-radius: 100%;
-		}
-
-			.image.round img {
-				border-radius: 20%;
-			}
-
-		.image.main {
-			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
-		}
-
-			.image.main img {
-				width: 100%;
-			}
 
 /*********************************************************************************/
 /* Button Style                                                                  */
@@ -124,6 +124,13 @@
 					}
 
 			}
+
+/*********************************************************************************/
+/* main                                                                       */
+/*********************************************************************************/
+	#main{
+		padding-top: 430px;
+	}
 	
 
 

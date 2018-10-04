@@ -1,0 +1,83 @@
+@charset "utf-8";
+html, body
+	{
+		height: 100%;
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background:#FFF;
+		font-family: Microsoft JhengHei;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+	}
+	
+	a
+	{
+		text-decoration: none;
+	}
+	
+	a:hover{
+		text-decoration: underline;
+	}
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+	#wrapper1
+	{
+		background: #242424;
+	}
+	
+	#wrapper1
+	{
+		overflow: hidden;
+		padding: 0em 0em 8em 0em;
+		background: #FFF;
+	}
+	
+/*********************************************************************************/
+/* content                                                                       */
+/*********************************************************************************/
+	div.content{       
+		padding-top: 450px;
+		margin-bottom:50px;
+	}
+
+/*********************************************************************************/
+/* table                                                                     */
+/*********************************************************************************/
+	table{
+		border-collapse:collapse;
+		height:40px;
+		border-spacing:2px;
+		width:80%;
+		border:1px solid #000;
+		text-align:center;
+		margin-bottom:100px;
+		color:#666;
+		
+	}
+	td{
+		height:15px;
+	}
+	tbody:nth-child(even) {
+		background: #FFF;
+	}
+	tbody:nth-child(odd) {
+		background: #fffddc;
+	}
+
+	tr.info{
+		height:40px;
+		margin-bottom:100px;
+		background-color:#fefaa4;
+		color:#666;
+		font-weight:bold;
+	}
+/* CSS Document */
+

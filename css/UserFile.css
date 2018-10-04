@@ -1,6 +1,5 @@
 html, body
 	{
-		height: 100%;
 	}
 	
 	body
@@ -20,8 +19,7 @@ html, body
 /*********************************************************************************/
 	table{
 		float: left;
-		margin-top: 5px;
-		margin-left: 20%;
+		margin-left: 10%;
 		border-collapse:collapse;
 		border-spacing:2px;
 		text-align:left;
@@ -43,9 +41,8 @@ html, body
 /*********************************************************************************/
 	div.content{ 
 		width: 80%;
-		padding:30px 30px 20px 30px;
+		padding:430px 30px 20px 30px;
 		margin-left: 10%;
-		margin-bottom:350px;
 	}
 
 /*********************************************************************************/
@@ -53,7 +50,12 @@ html, body
 /*********************************************************************************/
 	img{ 
 		float:left;
+	}
+	img.photo{
 		margin-top: 50px;
+		border-style:dashed;
+		border-color:#FFAC55;
+		padding:5px
 	}
 /*********************************************************************************/
 /* Button1 Style                                                                  */
@@ -63,7 +65,7 @@ html, body
 	{
 		display: inline-block;
 		padding: 1px 2px 1px 2px;
-		margin-left:950px;
+		margin-left:970px;
 		background:#85A9FF;
 		line-height: 1em;
 		text-decoration: none;
@@ -81,6 +83,7 @@ html, body
 		margin-top: -0px;
 
 	}
+	
 	.button2
 	{
 		display: inline-block;
@@ -98,41 +101,95 @@ html, body
 		/*把按鈕調成圓弧形*/
 		width:60px;height:60px;
 		border-radius:99em;
-		margin-left: 850px;
+		margin-left: 880px;
 		position: absolute;
 		margin-top: -0px;
 
 	}
-	.button3
-	{
-		display: inline-block;
-		margin-top: 2em;
-		padding: 1em 2em 1em 2em;
-		margin-left:250px;
-		background:#FFB8B8;
-		letter-spacing: 0.20em;
-		line-height: 1.8em;
-		text-decoration: none;
-		text-transform: uppercase;
-		font-weight: 400;
-		font-size: 1.2em;
-		color: #FFF;
-		-webkit-border-radius: 30px;
-		-moz-border-radius: 30px;
-		/*把按鈕調成圓弧形*/
-		border-radius: 30px;
-	
-		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
-		-moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
-		box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
-	
-		-webkit-transition: all 0.15s ease;
-		-moz-transition: all 0.15s ease;
-		-o-transition: all 0.15s ease;
-		-ms-transition: all 0.15s ease;
-		transition: all 0.15s ease;
-		
-	}
+.button3{
+    display: inline-block;
+    text-align: center;
+	margin-left:-45%;
+	margin-top:35%;
+    padding: 12px 24px;
+    border: 2px solid #adadad;
+    border-radius: 36px;
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ff7893));
+    background: -moz-linear-gradient(top, #ededed, #ff7893);
+    background: linear-gradient(to bottom, #ededed, #ff7893);
+    text-shadow: #782b2b 0px 2px 4px;
+    font: normal normal bold 18px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button3:hover,
+.button3:focus {
+    border: 2px solid #c7c7c7;
+    background: #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ff90b0));
+    background: -moz-linear-gradient(top, #ffffff, #ff90b0);
+    background: linear-gradient(to bottom, #ffffff, #ff90b0);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button3:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEh0lEQVRIiZ2V229UVRTGf+vMtDOdW6c3poYClZpQLkFJgFYKRsBEgzfkhdbIgxB49KXEhEQSLxgfoP4BEhMV4iVE1KKCL5WbdAooRUAGUlsuU3BaWtvSy3TmzFk+nDNTqi0B98nO3jl7rW+t9e397e3iIdrbdbNYPdPH0fjwA/vIfQGXP4bbM7YIlcUIG1VZAOoGOoADgnzy1sl46n8HeG9lxZsIHwgYiiKOuaraM5EWhRd3noiPTodhTLewa1VFhQjviGMj6uSiICJ2bsoal8j7se0bp8WZciHW2FA6pzSyV1GvAgWhEP6SIhRQURS1R1GAN/4eGf061lhf+kABLjc2VAKtyXTqOQCPz8fTW15n9ZbNRKrmOjRJ7suoGt39d9YDrbHG+sp/403ag9j2+jBKq2lZ1Yd+i5KxLOpee5VZixZOOJgmic4uBnt66Go/T3+8G7/Hy7OPL8WAGMiT1U1fDGTt3ZPCKbtVpPrGnR5MK4MgBEtKnE0VFCVcHqEwEgEBwzDoi8cZHh8j3tfLrJKyaoTdwNb/UBRrrK8GNltWhtitmwjCvJV1FJZH+PlYGz13+hCxCUokejly5BiXT/zi0CBcvd2dpWRzrLGheqo92IqIYWYsTIFlG9Yzb1UdIoJlKaoTZaoqainBslI7kRW1dsU24YaiuQoE4Oy2bfhDQ5dQFiDC8dgFlmxqIGOalM6Zk8tSUYrKSkFtz9GBQZr3fIhlWUSMPBbPnpuF/GN4KLBw2d69dgWB0N2QIJUiAqr48jy0fPQxHW1nnDTEGSR3KgQoCAXx+PwM9fTiycufMBUqA4XDoQmKlACKFyCZTlMWKsRMpbh+rp3r587nQM2ubpIdN7LxaD/8E4k/OwFwiUHGsuzqwAsEcgEULLsrhgiX4tdx5MTpgwe5eeEiCrgenYmnajaqysWWo7R925wTXkfilp2rLT7L6dkA0i/CsCAMjo0wlhrP3TuWmeHXQz/Ql+gjlRxn9O4wXVe6OHPoR+ydF/JdbpLpFOmM6chPh1HtzwVY0PR5CtWzAMX+IEFvAS7DyFHjw01+voueeIJrVzsJhvwE3R77XlIIen2UBQspyPc4FMnZ+U1fpuBeoQkHFH3G5TII+wPMjTzC79c6KVcfVWNBPH4/FcVhikpKGE+lqB4N4NYR/pJRwv4AoQIfioKAIF9lYXMBFPkM1Z3J0WRpiZnPjCE3dZlyrxcXmTGTT/cfZsnS+QSCt2k9eY7nR1IspIgqQphDLms8NZ6ywiaGx92D6P5JOsi206tWvKRp6xskK0CbY0XZF/bSm+cGlLJ0hk0DSSYOrSMMxZI845XlJ041ZzEn3aaatpqBPaqOWtV+XFAozjjnypnjrE2ygz0OBlMGqIlGQa0dIO+KiCU44hKhOGPZJyQ7d/7bpIsFsssSdtREo/dCTv9kttXWrlFoEuEJgCv5LvP7Qq8blBcGx815KdPtuLejNNZEoy1T4dz3TW6rrXWDPoXwcsLtWrQvXFAJsGlg7NoM07oo8B3C8ZpTUfN+OA/cNqxby4Z1ax/K5x83XvRyWPxi9gAAAABJRU5ErkJggg==") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+/****************/
+
+.button4 {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+	margin-left:8%;
+    padding: 12px 24px;
+    border: 2px solid #a6a3a6;
+    border-radius: 36px;
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ff738f));
+    background: -moz-linear-gradient(top, #ededed, #ff738f);
+    background: linear-gradient(to bottom, #ededed, #ff738f);
+    text-shadow: #782b2b 0px 2px 4px;
+    font: normal normal bold 18px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button4:hover,
+.button4:focus {
+    border: 2px solid #bfbbbf;
+    background: #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ff8aac));
+    background: -moz-linear-gradient(top, #ffffff, #ff8aac);
+    background: linear-gradient(to bottom, #ffffff, #ff8aac);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.button4:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEKklEQVRIiYWWS2hcZRTHf+ebO888psmkaTJJVBqbSYKFUMViQEOsdCEuNBVFcFeQIrpLitC1izY+FupCcCMIlkIerd21EZNSrNaClFosPkJe7WQedtqQTDKv4+LOvZlJJ/oNl3vuZe7/fOd3zj3nCrusk1cn0IL0Aq8Dw0A/0AwYIAHcAi4B56Qki2eGX6upI7Vujs1O9gCnEV4BrO2/6o4zoJoDzgqcOjM0svyfDk7+MIkK7wCfikhIFcTVqbQVKV84tqr+AxwfHxqZrtQ0O8Q/FORLEUKgZfdKte04qrZFpFmEibHZyRM1IxibnXoX+MJvDP31DVhGyhoCoq4toqhCPLfFUjZLZDXNntR95vv2ox6DqhaAY+NDIxdcB2Ozk08BP4lIaKAhzGBTZFcUzsqXSpz/8RqHL13DKhRZ3t/BL8PPOk5SwMHxoZG4Z3RuCoGvRaQPoCsYoiMQLIe/LVhpA5jE30TnZihliqBKY2aNhswa955oB2NCAo0vjR67aER1ADiqaodun5XlpRX3SCZS7n1VRZPzcPMiLX1+Ioea3exH51c4NHsDtdPz9kbaarOAN0XEVBQeIkJnV0dtRMl59NcLWEEv4Z4umiyDiJC6kQZVWhfuIQKqhIBXLYQX2SEOEI8n2LnqNlZp+GsGK+gnHOvCY9lFuO+5FjaTGTIrypWne10dVT1iofTbhWbH4GCIRJqq1ZPzeP6cwRPyE451Yjz2NvP5Ig/vLBJ4DK4+3seDA92I2opAvwXU29uXqihWKyIIZRM0LczhCfoIx7owHkFEyOeLZO4skd/MMVXfRyrajbGsMlIAWi0Hju3VQaRuDiyU0ux3mJCfcE+ni6WYL5L5fZFcNsd0XR+J6JMYy1NVdaqKAd0AUFFU7LdWVVheWmFl+S4FDdD51ke0HB7GeOyHiuWd2+K9JKLdiGXKoLWMWwESFnAbeAYVO/vYVedEsHdvG8YXQoyFiLjiheyWK+5iQV3QthNuG+B7t4rUyYS6EYh4AfB2HCEQO05uq51CNkeq8/kyFmsbS0XvLNszBvhW0dJORPvaWqlvDHN57rr9DngbwN9MvjlGMjpI04GBmljcn+qGCtOWCDdVuQxytBJROn2f1eQDrvz8B3vqFCHP+voagtLeGcPrtRDkESwV9jcPQ8l4ZbO7LkhgoKGRweYIIORzebLZLP6AH5/P51YYCLlika9WFqi1VDWFcHD8hZF4RbuefA/4zGxu0eMN4DOeclKctu3YNoy7G+uk6wPufHPyqFBAt9u1myGBzxU6SgH/B7/lclBQdptoACbowzyKqITyviPuFo+zRufOI1o8AXwsIqHK0Vtl18ZSc2TuNvR7BU4r8jKiO4Y+VVhQcsBZ4NT4/w39aicTgOkFfQP7s6UXaCk/FUe5BcwA54rI4idDtT9b/gXpZQn3b27ObwAAAABJRU5ErkJggg==") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
 
 /*********************************************************************************/
 /* Page                                                                        */

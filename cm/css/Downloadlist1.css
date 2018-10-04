@@ -1,0 +1,99 @@
+html, body
+	{
+	
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background:#FFF;
+		font-family: Microsoft JhengHei;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+	}
+
+	.container
+	{
+	margin: 0px auto;
+	width: 1200px;
+	}
+
+/*********************************************************************************/
+/* list                                                                        */
+/*********************************************************************************/
+	table{
+		border-collapse:collapse;
+		border-spacing:2px;
+		width:70vw;
+		border:1px solid #000;
+		text-align:center;
+		margin-bottom:10px;
+		color:#666;
+	}
+	tbody:nth-child(even) {
+		background: #f9e3e6;
+	}
+	tbody:nth-child(odd) {
+		background: #FFF;
+	}
+
+/*********************************************************************************/
+/* content                                                                       */
+/*********************************************************************************/
+	div.content{   
+		width:1200px;
+		margin-left:auto;
+		margin-right:auto;	
+		text-align:center;
+		margin-bottom: 300px;
+		padding-top: 450px;
+	}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header-wrapper
+	{
+		overflow: hidden;
+		background:#FFF;
+		padding: 5em 0em;
+	}
+	
+	
+.button {
+	float:right;
+	margin-top:-60px;
+	margin-right:-180px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 15px;
+    border: 1px solid #ffffff;
+    border-radius: 45px;
+    background: #ff7878;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff7878), to(#ff5779));
+    background: -moz-linear-gradient(top, #ff7878, #ff5779);
+    background: linear-gradient(to bottom, #ff7878, #ff5779);
+    text-shadow: #591717 1px 1px 1px;
+    font: normal normal bold 18px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:hover,
+.button:focus {
+    background: #ff9090;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff9090), to(#ff6891));
+    background: -moz-linear-gradient(top, #ff9090, #ff6891);
+    background: linear-gradient(to bottom, #ff9090, #ff6891);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #994848;
+    background: -webkit-gradient(linear, left top, left bottom, from(#994848), to(#ff5779));
+    background: -moz-linear-gradient(top, #994848, #ff5779);
+    background: linear-gradient(to bottom, #994848, #ff5779);
+}

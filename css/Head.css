@@ -14,13 +14,18 @@
 /* Header                                                                        */
 /*********************************************************************************/
 
-	#header-wrapper
-	{
+	#header-wrapper{
 		overflow: hidden;
-		background:#FFF;
+		background:#fffff3;
 		padding: 0em 0em;
+		background-image:url(../images/bg.jpg);
+		background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:center;
+        background-size: cover;
 	}
 
+/********
 /*********************************************************************************/
 /* container                                                                        */
 /*********************************************************************************/
@@ -44,4 +49,3 @@
 		text-align: center;
 		position: relative;
 	}
-

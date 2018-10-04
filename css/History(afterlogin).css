@@ -1,17 +1,17 @@
 html, body
 	{
-		height: 100%;
 	}
 	
 	body
 	{
 		margin: 0px;
 		padding: 0px;
-		background:#FFE7B8;
 		font-family: Microsoft JhengHei;
 		font-size: 12pt;
 		font-weight: 400;
 		color: #000000;
+		background-image:url(../images/bg.jpg);
+		background-repeat:repeat;
 	}
 	
 	
@@ -32,14 +32,19 @@ html, body
 		width: 1200px;
 	}
 	
-
+/*********************************************************************************/
+/* content Style                                                                   */
+/*********************************************************************************/
+	div.content{
+		padding-top:420px;
+		
+	}
 
 /*********************************************************************************/
 /* Image Style                                                                   */
 /*********************************************************************************/
-.image.fit {
+		.image.fit {
 			display: block;
-			margin: 0 0 2em 0;
 			width: 100%;
 		}
 
@@ -57,7 +62,6 @@ html, body
 
 		.image.main {
 			display: block;
-			margin: 0 0 3em 0;
 			width: 100%;
 		}
 
@@ -82,20 +86,27 @@ html, body
 		font-weight: 400;
 		font-size: 1.2em;
 		color: #FFF;
+		border-radius: 30px;
+		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		-moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
 	}
+	/*動畫部分*/	
+	.button {
+	   background-color: #fff284;
+	   color: #666;
+	   border: 2px solid #ce9494;
+}
+    .button:hover {
+ 	   background-color: white; 
+       color: #666; 
+       border: 2px solid #ce9494;
+}
+
+
 	
 
-/*********************************************************************************/
-/* Button1 Style                                                                  */
-/*********************************************************************************/
 
-	.button1
-	{
-		display: inline-block;
-		margin-top: 50px;
-		padding: 1px 2px 1px 2px;
-		margin-left:1100px;
-	}
 /*********************************************************************************/
 /* Flex                                                                       */
 /*********************************************************************************/
@@ -160,21 +171,31 @@ html, body
 
 
 /*********************************************************************************/
-/* Content                                                                        */
+/* wide-content                                                                  */
 /*********************************************************************************/
 
-#wide-content {
-	padding: 50px;
-	border: 10px solid #f1f1f1;
-}
+	#wide-content {
+		padding: 50px;
+		border: 10px solid #f1f1f1;
+	}
 
-#wide-content h2 {
-	padding: 0px 0px 20px 0px;
-	letter-spacing: -1px;
-	font-size: 36px;
-	color: #222222;
-}
+	#wide-content h2 {
+		padding: 0px 0px 20px 0px;
+		letter-spacing: -1px;
+		font-size: 36px;
+		color: #222222;
+	}
 
+/*********************************************************************************/
+/* main                                                                  */
+/*********************************************************************************/
 
-
+	div.main{
+		margin-top: 50px;
+	}
 	
+	
+	div.number{
+		padding-top:10%;
+		float:left;
+}

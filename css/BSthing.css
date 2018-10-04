@@ -14,6 +14,15 @@ html, body
 		font-weight: 400;
 		color: #000000;
 	}
+	
+	a
+	{
+		text-decoration: none;
+	}
+	
+	a:hover{
+		text-decoration: underline;
+	}
 
 /*********************************************************************************/
 /* Wrapper                                                                       */
@@ -35,37 +44,39 @@ html, body
 /* content                                                                       */
 /*********************************************************************************/
 	div.content{       
-		padding: 450px 0% 20px 25%;
+		padding-top: 450px;
 		margin-bottom:50px;
 	}
 
 /*********************************************************************************/
-/* list                                                                        */
+/* table                                                                     */
 /*********************************************************************************/
 	table{
 		border-collapse:collapse;
 		height:40px;
 		border-spacing:2px;
-		width:110%;
+		width:80%;
 		border:1px solid #000;
 		text-align:center;
-		margin-bottom:10px;
-		margin-left: -22%;
-		margin-right: 10%;
+		margin-bottom:100px;
+		color:#666;
 		
 	}
-	tr:nth-child(even) {
-		background: #f9e3e6;
+	td{
+		height:15px;
 	}
-	tr:nth-child(odd) {
-		background: #FFF
+	tbody:nth-child(even) {
+		background: #FFF;
+	}
+	tbody:nth-child(odd) {
+		background: #fffddc;
 	}
 
 	tr.info{
 		height:40px;
 		margin-bottom:100px;
-		background-color:#f99898;
-		color:#fff;
+		background-color:#fefaa4;
+		color:#666;
 		font-weight:bold;
 	}
 /* CSS Document */

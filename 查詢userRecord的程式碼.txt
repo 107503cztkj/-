@@ -1,0 +1,9 @@
+<?php 
+					if($_SESSION['email'] != null)
+					{
+						$sql="SELECT event.eventID, event.eventName, customer.cusID, customer.cusName FROM `event`, `customer`, `applicationform`  
+							  WHERE  (customer.cusID=applicationform.cusID='1' && event.eventID=applicationform.eventID)";
+						$data = mysql_query($sql) or die(mysql_error());
+						for($i=1;$i<=mysql_num_rows($data);$i++){
+						$row=mysql_fetch_array($data);
+					?>

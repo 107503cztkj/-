@@ -16,7 +16,6 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 html,body {
 	margin:0;
 	padding:0;
-	height: 100%;
 	font-family: Microsoft JhengHei;
 }
 table {
@@ -161,4 +160,60 @@ a{
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
 }
 
+section.content{
+	padding-top: 450px;
+}
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
 
+.button1 {
+    display: inline-block;
+	margin-right:105px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 16px;
+    border: 0px solid #43679f;
+    border-radius: 8px;
+    background: #6da8ff;
+     background: -webkit-gradient(linear, left top, left bottom, from(#6da8ff), to(#43679f));
+    background: -moz-linear-gradient(top, #6da8ff, #43679f);
+    background: linear-gradient(to bottom, #6da8ff, #43679f);
+    text-shadow: #2a4164 1px 1px 1px;
+    font: normal normal bold 5px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button1:hover,
+.button1:focus {
+    border: 0px solid ##5481c7;
+    background: #83caff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#83caff), to(#507cbf));
+    background: -moz-linear-gradient(top, #83caff, #507cbf);
+    background: linear-gradient(to bottom, #83caff, #507cbf);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button1:active {
+    background: #43679f;
+    background: -webkit-gradient(linear, left top, left bottom, from(#43679f), to(#43679f));
+    background: -moz-linear-gradient(top, #43679f, #43679f);
+    background: linear-gradient(to bottom, #43679f, #43679f);
+}
+.button1:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACLklEQVRIicWUMWsUQRTHf/9lk+gupxc8sbKxEksbIWARexHsUgiCn0BBu2CRysLCQg0EP4CChaQQ7ARLQSIE0hkIWBjlcjF33uWMz2J3ZmcveznvUHzN/N/M7Mx7vzf7NLfw9I5MSyZLADBAwciADpaP1KYOssVYpiVEAqo+nAENWLA+VEMitBQZJP4cZbuk4kxRpQ1hIzVYEinXsnx0mZgVYYUat0d/pGNTmV2WgbxvAR6npYD1CB2FbMvYi0jKGszM4xqlY+WF8Zyl4JKjL5+/dI6r8+c506gRKSP4cOU17zd2UB57bHlRMrwBL3ezWX6609mGa1cucPfWZQZtSl3azS3S2bPgrzGB5F9Rdo98RmUNcRxx8/pFn62kUub97i7t5haYESuPehxEjXpKYzb1+9fWP/Hg8UsOfhlbn7cxYL/bguaEiOI48oUE+Lixydr6pvvQB9P/sUtcICqqT47FgoycrqUz1NKZYt6MY9NT1OtZRp1Oj/3+T98NNLewHD71kfbqyQ1O1ZOh67fvP+PN2w/ej10DscqWVW0OTZV9+bZTWo+LCivocwEWdygDRQ8QhXr7ayvzHepxEU2zx+kTBzxfvufnXqy+49HKKgCt723CBMdG1CNlHyth6PX6NFt7lfsnQjR9/GQJC1DCki+AROS+Cns+I3Ro4Y9JhZ7oFYWRD/Od/ZVX5P3/gkhGB0j+DSJ1I5MtIjq4lqug/ebjIc3hFu1aeTGvLrD4G7YYGnWo26OCAAAAAElFTkSuQmCC") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.forget{
+	font-size:12px;
+}

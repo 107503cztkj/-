@@ -1,103 +1,92 @@
 html, body
 	{
-		height: 100%;
 	}
 	
 	body
 	{
 		margin: 0px;
 		padding: 0px;
-		background:#FFF;
+		background:#fffff1;
 		font-family: Microsoft JhengHei;
 		font-size: 12pt;
 		font-weight: 400;
 		color: #000000;
 	}
-
-/*********************************************************************************/
-/* right                                                                       */
-/*********************************************************************************/
-div.right{
-	float:right;
-	width:650px;
+	
+	a
+	{
+		color:#00000;
+		text-decoration: none;
+	}
+	
+	h1{
+		margin-left:11vw;
+	}
+	
+	.top{
+	text-align:center;
+	color:#6d6767;
+	margin-top:10px;
+	margin-bottom:50px;
 }
 
 /*********************************************************************************/
-/* menu                                                                       */
-/*********************************************************************************/
-#menu{
-	height:49px;
-}
-
-#menu ul{
-    list-style: none;
-	padding: 0px;
-}
-
-#menu ul li{
-	display: inline;
-}
-
-#menu ul li a{
-	font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    color: #000;
-    font-weight: 800;
-    text-decoration: none;
-    display: block;
-    float: left;
-	width: 132px;
-    height: 49px;
-	text-align: center;
-	line-height: 49px;
-	margin: 0px 10px 0px 0px;
-}
-
-#menu ul li a:hover{
-	color:#09F;
-}
-
-#menu ul li .select{
-	margin-left:200px;
-	color: #63C;
-}
-
-/*********************************************************************************/
-/* table                                                                       */
+/* table                                                                        */
 /*********************************************************************************/
 	table{
-		float: left;
-		margin-top: 20px;
-		margin-left: 5%;
+		margin-left:6vw;
 		border-collapse:collapse;
-		border-spacing:50px;
-		text-align:left;
-		margin-bottom:10px;
+		height:40px;
+		border-spacing:2px;
+		width:100%;
+		border:1px solid #000;
+		text-align:center;
+		margin-bottom:50px;
 		
+	}
+	tbody:nth-child(even) {
+		background: #f9e3e6;
+	}
+	tbody:nth-child(odd) {
+		background: #FFF
+	}
+
+	tr.info{
+		height:10px;
+		margin-bottom:100px;
+		background-color:#ffd177;
+		color:#514e4b;
+		font-weight:bold;
 	}
 
 /*********************************************************************************/
 /* Introduce                                                                       */
 /*********************************************************************************/
 	td.Introduce{
-		max-width: 450px;
+		max-width: 650px;
 	}
 /*********************************************************************************/
 /* content                                                                       */
 /*********************************************************************************/
 	div.content{ 
 		width: 80%;
-		padding:30px 30px 20px 30px;
-		margin-left: 10%;
-		margin-bottom:100px;
+		padding:430px 30px 20px 30px;
+		margin-bottom:50px;
 	}
+	
 
 /*********************************************************************************/
 /* img                                                                       */
 /*********************************************************************************/
-	img{ 
+	img.avatar{ 
 		float:left;
+		margin-top: 50px;
+		margin-left:-80px;
+		border-style:dashed;
+		border-color:#FFAC55;
+		padding:5px;
 	}
+
 /*********************************************************************************/
 /* Button Style                                                                  */
 /*********************************************************************************/
@@ -107,10 +96,10 @@ div.right{
 		display: inline-block;
 		margin-top: 2em;
 		padding: 1em 2em 1em 2em;
-		margin-left:250px;
+		margin-left:230px;
 		background:#FFB8B8;
-		letter-spacing: 0.20em;
-		line-height: 1.8em;
+		letter-spacing: 0.1em;
+		line-height: 0.5em;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 400;
@@ -132,4 +121,68 @@ div.right{
 		transition: all 0.15s ease;
 		
 	}
+	.button1 {
+	   background-color: #ffec8e;
+	   color: #666;
+	   border: 2px solid #ffc2ba;
+	}
 
+    .button1:hover {
+		background-color: white; 
+		color: #666; 
+		border: 2px solid #ffc2ba;
+	}
+	
+	/*********************************************************************************/
+/* Button3 Style                                                                  */
+/*********************************************************************************/
+.btn2{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 8px 10px 8px 10px;
+		letter-spacing: 0.20em;
+		line-height: 1.2em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 800;
+		font-size: 1em;
+		color: #FFF;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		/*把按鈕調成圓弧形*/
+		border-radius: 10px;
+		float:right;
+		margin-right:-7%;
+		margin-top:-6%;
+		margin-bottom:1%;
+	
+		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		-moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+	
+		-webkit-transition: all 0.15s ease;
+		-moz-transition: all 0.15s ease;
+		-o-transition: all 0.15s ease;
+		-ms-transition: all 0.15s ease;
+		transition: all 0.15s ease;
+		
+	}
+	/*動畫部分*/	
+	.btn2{
+   background-color: #ffd177;
+   color: #666;
+   border: 2px solid #FFF;
+}
+
+    .btn2:hover {
+ 
+	background-color:#f4e8b0; 
+    color: #666; 
+    border: 2px solid #FFF;
+}
+
+.text{
+	font-size:16px;
+	color:#636;
+	font-weight:600;
+}

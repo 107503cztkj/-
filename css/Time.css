@@ -1,18 +1,28 @@
 html, body
 	{
-		height: 100%;
+		
 	}
 	
 	body
 	{
 		margin: 0px;
 		padding: 0px;
-		background:#FFF;
+		background:#fffff1;
 		font-family: Microsoft JhengHei;
 		font-size: 12pt;
 		font-weight: 400;
 		color: #000000;
 	}
+	.top{
+	
+	text-align:center;
+	color:#6d6767;
+	text-align:center;
+	margin-right:300px;
+	margin-bottom:20px;
+
+}
+
 
 /*********************************************************************************/
 /* Wrapper                                                                       */
@@ -41,7 +51,7 @@ html, body
 /* content                                                                       */
 /*********************************************************************************/
 	div.content{       
-		padding: 0px 0% 20px 25%;
+		padding: 430px 0px 20px 25%;
 		margin-bottom: 200px;
 	}
 
@@ -83,7 +93,7 @@ html, body
 		margin-left:550px;
 		background:#FFB8B8;
 		letter-spacing: 0.20em;
-		line-height: 1.8em;
+		line-height: 0.5em;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 400;
@@ -106,3 +116,23 @@ html, body
 		
 	}
 	
+/*動畫部分*/	
+	.button1 {
+   background-color: #ffec8e;
+   color: #666;
+   border: 2px solid #ffc2ba;
+}
+
+    .button1:hover {
+ 
+	background-color: white; 
+    color: #666; 
+     border: 2px solid #ffc2ba;
+}
+
+	
+.text{
+	font-size:16px;
+	color:#636;
+	font-weight:600;
+}

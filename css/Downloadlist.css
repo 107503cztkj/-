@@ -14,20 +14,10 @@ html, body
 		color: #000000;
 	}
 
-/*********************************************************************************/
-/* Wrapper                                                                       */
-/*********************************************************************************/
-
-	#wrapper1
+	.container
 	{
-		background: #242424;
-	}
-	
-	#wrapper1
-	{
-		overflow: hidden;
-		padding: 0em 0em 8em 0em;
-		background: #FFF;
+	margin: 0px auto;
+	width: 1200px;
 	}
 
 /*********************************************************************************/
@@ -36,28 +26,41 @@ html, body
 	table{
 		border-collapse:collapse;
 		border-spacing:2px;
-		width:110%;
+		width:70vw;
 		border:1px solid #000;
 		text-align:center;
 		margin-bottom:10px;
-		margin-left: -22%;
-		margin-right: 10%;
+		color:#666;
 	}
-
-	tr.info{
-		background-color:#9c0e0e;
-		color:#fff;
-		font-weight:bold;
+	tbody:nth-child(even) {
+		background: #f9e3e6;
+	}
+	tbody:nth-child(odd) {
+		background: #FFF
 	}
 
 /*********************************************************************************/
 /* content                                                                       */
 /*********************************************************************************/
 	div.content{   
-		padding: 450px 0px 20px 25%;
-		width:1200;
+		width:1200px;
 		margin-left:auto;
 		margin-right:auto;	
 		text-align:center;
-		margin-bottom: 50px;
+		margin-bottom: 300px;
+		padding-top: 450px;
 	}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header-wrapper
+	{
+		overflow: hidden;
+		background:#FFF;
+		padding: 5em 0em;
+	}
+div.number{
+		padding-top:-50%;
+}

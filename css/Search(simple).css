@@ -3,6 +3,7 @@
 }
 form.example{
 	float:right;
+	
 }
 /* Style the search field */
 form.example input[type=text] {
@@ -11,19 +12,21 @@ form.example input[type=text] {
   border: 1px solid grey;
   float: left;
   width: 80%;
-  background: #f1f1f1;
+  border-radius: 20px 0px 0px 20px;
+  background: #f7f3d4;
 }
 
 /* Style the submit button */
 form.example button {
   float: left;
   width: 20%;
-  padding: 10px;
+  padding: 10.5px;
   background: #ffaba5;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
   border-left: none; /* Prevent double borders */
+  border-radius: 0px 20px 20px 0px;
   cursor: pointer;
 }
 

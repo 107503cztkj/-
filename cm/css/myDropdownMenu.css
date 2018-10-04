@@ -1,0 +1,73 @@
+/*---------------------------*/
+/* 定義導覽列                 */
+/*---------------------------*/
+div.navbar{	   
+    height:40px;
+    line-height:40px;
+    box-sizing:border-box;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    top:0px;  
+	background-color:#B8D491;
+    margin-bottom:50px;
+}
+
+div.navbar ul{
+	font-weight:1000; 
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+
+
+div.navbar ul li{
+	width:16vw;
+    text-align:center;	
+    float:left; 
+}
+
+div.navbar a{
+    cursor:pointer;
+    color:#4A4A4A;
+    text-decoration:none;
+    outline:none;
+}
+
+div.navbar a:hover{
+    color:#FCFFE5;	
+}
+
+
+div.navbar li:nth-child(6n+6){
+	margin-right:3vw;
+}
+
+div.navbar li:nth-child(6n+1){
+	margin-left:3vw;
+}
+
+div.navbar .dropdown-menu li{
+    left: 40px;
+    width:150px;
+    position:relative;
+    opacity: 1;
+    background-color: #fff;
+}
+
+div.navbar li:hover .dropdown-menu li{
+    color:rgb(127, 188, 113);
+    opacity: 1;
+}
+
+div.navbar .dropdown-menu li:hover{
+    background-color:#BDDDB6;
+}
+
+div.navbar .dropdown-menu{	
+	position:relative;
+    left:40px;
+    margin-top:-5px;
+}
+
+		

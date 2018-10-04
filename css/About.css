@@ -32,46 +32,13 @@ html, body
 	}
 	
 
-
 /*********************************************************************************/
-/* Image Style                                                                   */
+/* img                                                                       */
 /*********************************************************************************/
-
-	.image
-	{
-		display: inline-block;
-		border: 1px solid rgba(0,0,0,.1);
-	}
-	
-	.image img
-	{
-		display: block;
-		width: 100%;
-	}
-	
-	.image-full
-	{
-		display: block;
-		width: 100%;
-		margin: 0 0 3em 0;
-	}
-	
-	.image-left
-	{
-		float: left;
-		margin: 0 2em 2em 0;
-	}
-	
-	.image-centered
-	{
-		display: block;
-		margin: 0 0 2em 0;
-	}
-	
-	.image-centered img
-	{
-		margin: 0 auto;
-		width: auto;
+	img{ 	
+		margin-bottom:15px;
+		border-color:#FFD138;
+		padding:5px
 	}
 
 
@@ -83,8 +50,9 @@ html, body
 	{
 		display: inline-block;
 		margin-top: 2em;
-		padding: 0.5px 1px 0.5px 1px;
-		background:#FC0;
+		padding: 4px 10px 4px 10px;
+		margin-left:5px;
+		background:#FFB8B8;
 		letter-spacing: 0.20em;
 		line-height: 1.8em;
 		text-decoration: none;
@@ -92,7 +60,35 @@ html, body
 		font-weight: 400;
 		font-size: 1.2em;
 		color: #FFF;
+		-webkit-border-radius: 30px;
+		-moz-border-radius: 30px;
+		/*把按鈕調成圓弧形*/
+		border-radius: 30px;
+	
+		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		-moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+	
+		-webkit-transition: all 0.15s ease;
+		-moz-transition: all 0.15s ease;
+		-o-transition: all 0.15s ease;
+		-ms-transition: all 0.15s ease;
+		transition: all 0.15s ease;
+		
 	}
+	/*動畫部分*/	
+	.button {
+   background-color: #FFB8B8;
+   color: #666;
+   border: 2px solid #FFF;
+}
+
+    .button:hover {
+ 
+	background-color: white; 
+    color: #666; 
+     border: 2px solid #FFB8B8;
+}
 	
 	
 /*********************************************************************************/
@@ -186,7 +182,7 @@ html, body
 
 #page {
 	overflow: hidden;
-	width: 1120px;
+	width: 800px;
 	margin: 0px auto;
 	padding: 50px 40px;
 	color: #8F8F8F;
@@ -199,7 +195,7 @@ html, body
 
 #wide-content {
 	padding: 50px;
-	border: 10px solid #f1f1f1;
+	border: 10px solid #FFE3B3;
 	font-size:20px;
 	color:#000;
 }
@@ -210,3 +206,4 @@ html, body
 	font-size: 36px;
 	color: #222222;
 }
+

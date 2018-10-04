@@ -3,7 +3,7 @@
 /*---------------------------*/
 div.footer{
     font-family: Microsoft JhengHei;
-    height:80px;
+    height:60px;
     background-color:#ffe7b8;
     font-size:13px;
     text-align:center;
@@ -12,4 +12,8 @@ div.footer{
     position:relative;
     color:#333;	
     margin-left: -70px;
+	top:50%;
+}
+div.footer h3{
+	margin-left:6.5vw;
 }

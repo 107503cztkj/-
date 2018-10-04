@@ -1,6 +1,6 @@
 html, body
 	{
-		height: 100%;
+	
 	}
 	
 	body
@@ -111,33 +111,34 @@ html, body
 /*********************************************************************************/
 /* Page                                                                        */
 /*********************************************************************************/
-#page-wrapper {
-	overflow: hidden;
-}
+	#page-wrapper {
+		overflow: hidden;
+		padding-top: 400px;
+	}
 
-#page {
-	overflow: hidden;
-	width: 1120px;
-	margin: 0px auto;
-	padding: 50px 40px;
-	color: #000;
-}
+	#page {
+		overflow: hidden;
+		width: 800px;
+		margin: 0px auto;
+		padding: 50px 40px;
+		color: #000;
+	}
 
 /*********************************************************************************/
 /* Content                                                                        */
 /*********************************************************************************/
 
-#wide-content {
-	padding: 50px;
-	border: 10px solid #f1f1f1;
-	margin-bottom: 200PX;
-}
+	#wide-content {
+		padding: 50px;
+		border: 10px solid #f1f1f1;
+		margin-bottom: 200PX;
+	}
 
-#wide-content h2 {
-	text-align:center;
-	font-size: 46px;
-	color: #000;
-}
+	#wide-content h2 {
+		text-align:center;
+		font-size: 46px;
+		color: #000;
+	}
 
 
 
