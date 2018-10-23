@@ -1,0 +1,200 @@
+@charset "utf-8";
+html, body
+	{
+		height: 100%;
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background:#FFF;
+		font-family: Microsoft JhengHei;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+	}
+
+.top{
+	
+	text-align:center;
+	color:#c4e1ff;
+	padding-top: 420px;
+}
+
+
+/*********************************************************************************/
+/* Page                                                                          */
+/*********************************************************************************/
+
+	#page-wrapper
+	{
+		overflow: hidden;
+		background: #F5FAFF;
+		padding: 4em 0em;
+	}
+
+	#page
+	{
+	}
+
+	#page .title h2
+	{
+		font-size: 1.60em;
+		color:#999;
+	}
+
+
+
+/*********************************************************************************/
+/* Content                                                                       */
+/*********************************************************************************/
+
+	#content
+	{
+		width: 700px;
+		height:500px;
+		margin-top:-50px;
+		padding-left: 50px;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+		color:#999;
+		margin-bottom: 100px;
+		text-align:left;
+	}
+	
+/*********************************************************************************/
+/* Sidebar                                                                       */
+/*********************************************************************************/
+
+	#sidebar
+	{
+		text-align:left;
+		width: 1200px;
+		margin-top:-50px;
+		color:#999;
+	}
+	
+
+
+
+/*********************************************************************************/
+/* Three Columns                                                                 */
+/*********************************************************************************/
+
+	#three-column
+	{
+		overflow: hidden;
+		text-align: center;
+		color: #FFF;
+	}
+	
+	#three-column h2
+	{
+		margin: 1em 0em;
+		font-size: 1.5em;
+		font-weight: 700;
+	}
+	
+	#three-column .icon
+	{
+		position: relative;
+		display: block;
+		margin: 0px auto 0em auto;
+		background: none;
+		line-height: 150px;
+		font-size: 4em;
+		width: 150px;
+		height: 150px;
+		border-radius: 100px;
+		border: 6px solid #67128F;
+		text-align: center;
+		color: #FFF;
+		
+	}
+	
+
+		ul.default
+		{
+			list-style: none;
+			margin-left:800px;
+		}
+		
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+	.btn{
+		margin-top:-50px;
+	}
+
+	.button
+	{
+		display: inline-block;
+		padding: 0.2em 1em;
+		background: rgb(31, 184, 255);
+		line-height: 1.8em;
+		letter-spacing: 1px;
+		text-decoration: none;
+		font-size: 1em;
+		color: #FFF;
+		border-radius: 30px;
+		
+		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		-moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		
+		margin-left:250px;
+	}
+				
+
+.fileandpic{
+
+}
+.download {
+    display: inline-block;
+    text-align: center;	
+	float:right;
+    margin-top:-50px;
+	margin-right:250px;
+	vertical-align: middle;
+    padding: 2px 8px;
+    border: 1px solid #445d92;
+    border-radius: 91px;
+    background: #6f97ed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6f97ed), to(#445d92));
+    background: -moz-linear-gradient(top, #6f97ed, #445d92);
+    background: linear-gradient(to bottom, #6f97ed, #445d92);
+    text-shadow: #2b3a5b 1px 1px 1px;
+    font: normal normal bold 14px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.download:hover,
+.download:focus {
+    border: 1px solid ##5574b6;
+    background: #85b5ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#85b5ff), to(#5270af));
+    background: -moz-linear-gradient(top, #85b5ff, #5270af);
+    background: linear-gradient(to bottom, #85b5ff, #5270af);
+    color: #ffffff;
+    text-decoration: none;
+}
+.download:active {
+    background: #445d92;
+    background: -webkit-gradient(linear, left top, left bottom, from(#445d92), to(#445d92));
+    background: -moz-linear-gradient(top, #445d92, #445d92);
+    background: linear-gradient(to bottom, #445d92, #445d92);
+}
+.download:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABO0lEQVQ4jaWTO07EMBCG/8nD4REBZdiahoYgcQIqmuQI0HKQ1DkALRwhaai4QJAQDQ01LFS7aIFNDDsUjp0Nm0grxZLlmdE/n2fkMTEzhixrUDYARxtEZIJBRp1ljWM2Il250yUEgJtTxuxX2b4NnN9Rp64X8P4DTCtl74o+1RIgyCgDEGn/TQKTGjAno9Gt5QBiACDdy35u8cVJu/XpV13BVvvW63vCa7SgFoCIEGTEZ0cNZPapTn+7Sb59JIxjbvKWAbrM40MVm3+o2MaO8h+eyLxEL0BDRgeMxUTFrD3GyzN1PmMnQEM2fWV/z9ozsBZAQ4DV5Bag9qP/gnUWM+d6DkZFUVy5rgvP8yCEgBACnueBmSGlXNlhGF6aCtI0ZSklyrJEVVXmrCo1SY7jwLZts7WfJAnR0O/8B5A4oGETVUfbAAAAAElFTkSuQmCC") no-repeat left center transparent;
+    background-size: 100% 100%;
+}

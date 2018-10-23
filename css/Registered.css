@@ -1,0 +1,396 @@
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background:#BC9B5D;
+		font-family: Microsoft JhengHei;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+	}
+	
+	
+	a:hover
+	{
+		text-decoration: none;
+	}
+	
+
+	.container/*可以控制menu的寬度*/
+	{
+		margin: 0px auto;
+		width: 1200px;
+	}
+	
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+	.button
+	{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 1em 2em 1em 2em;
+		background:#FC0;
+		letter-spacing: 0.20em;
+		line-height: 1.8em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1.2em;
+		color: #FFF;
+	}
+	
+	
+
+
+/*********************************************************************************/
+/* Form  填寫內容的地方                                                                       */
+/*********************************************************************************/
+
+	form {
+		margin: 0 0 1px 0;
+	}
+
+	.grid-form {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+		.grid-form .form-control {
+			width: 100%;
+			margin-bottom: 2em;
+		}
+
+			.grid-form .form-control.narrow {
+				width: 47%;
+			}
+
+		.grid-form .actions {
+			margin-bottom: 0;
+			width: 100%;
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.grid-form .form-control.narrow {
+				margin-bottom: 1em;
+				width: 100%;
+			}
+
+		}
+
+	label {
+		display: block;
+		font-size: 0.9em;
+		margin: 0 0 0.2em 0;
+		text-transform: uppercase;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		border-radius: 0;
+		border: none;
+		border: solid 1px;
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none;
+		width: 100%;
+	}
+
+		input[type="text"]:invalid,
+		input[type="password"]:invalid,
+		input[type="email"]:invalid,
+		select:invalid,
+		textarea:invalid {
+			box-shadow: none;
+		}
+
+	.select-wrapper {
+		text-decoration: none;
+		display: block;
+		position: relative;
+	}
+
+		.select-wrapper:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		.select-wrapper:before {
+			content: '\f078';
+			display: block;
+			height: 2.75em;
+			line-height: 2.75em;
+			pointer-events: none;
+			position: absolute;
+			right: 0;
+			text-align: center;
+			top: 0;
+			width: 2.75em;
+		}
+
+		.select-wrapper select::-ms-expand {
+			display: none;
+		}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select {
+		height: 2.75em;
+	}
+
+	textarea {
+		padding: 0.75em 1em;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		display: block;
+		float: left;
+		margin-right: -2em;
+		opacity: 0;
+		width: 1em;
+		z-index: -1;
+	}
+
+		input[type="checkbox"] + label,
+		input[type="radio"] + label {
+			text-decoration: none;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 1em;
+			font-weight: 300;
+			padding-left: 2.4em;
+			padding-right: 0.75em;
+			position: relative;
+		}
+
+			input[type="checkbox"] + label:before,
+			input[type="radio"] + label:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-transform: none !important;
+			}
+
+			input[type="checkbox"] + label:before,
+			input[type="radio"] + label:before {
+				border-radius: 0;
+				border: solid 1px;
+				content: '';
+				display: inline-block;
+				height: 1.65em;
+				left: 0;
+				line-height: 1.58125em;
+				position: absolute;
+				text-align: center;
+				top: 0;
+				width: 1.65em;
+			}
+
+		input[type="checkbox"]:checked + label:before,
+		input[type="radio"]:checked + label:before {
+			content: '\f00c';
+		}
+
+	input[type="checkbox"] + label:before {
+		border-radius: 0;
+	}
+
+	input[type="radio"] + label:before {
+		border-radius: 100%;
+	}
+
+	::-webkit-input-placeholder {
+		opacity: 1.0;
+	}
+
+	:-moz-placeholder {
+		opacity: 1.0;
+	}
+
+	::-moz-placeholder {
+		opacity: 1.0;
+	}
+
+	:-ms-input-placeholder {
+		opacity: 1.0;
+	}
+
+	.formerize-placeholder {
+		opacity: 1.0;
+	}
+
+	label {
+		color: #555;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		background: rgba(144, 144, 144, 0.075);
+		border-color: #e3e3e3;
+	}
+
+		input[type="text"]:focus,
+		input[type="password"]:focus,
+		input[type="email"]:focus,
+		select:focus,
+		textarea:focus {
+			border-color: #00cdcf;
+			box-shadow: 0 0 0 1px #00cdcf;
+		}
+
+	.select-wrapper:before {
+		color: #e3e3e3;
+	}
+
+	input[type="checkbox"] + label,
+	input[type="radio"] + label {
+		color: #444;
+	}
+
+		input[type="checkbox"] + label:before,
+		input[type="radio"] + label:before {
+			background: rgba(144, 144, 144, 0.075);
+			border-color: #e3e3e3;
+		}
+
+	input[type="checkbox"]:checked + label:before,
+	input[type="radio"]:checked + label:before {
+		background-color: #00cdcf;
+		border-color: #00cdcf;
+		color: #ffffff;
+	}
+
+	input[type="checkbox"]:focus + label:before,
+	input[type="radio"]:focus + label:before {
+		border-color: #00cdcf;
+		box-shadow: 0 0 0 1px #00cdcf;
+	}
+
+	::-webkit-input-placeholder {
+		color: #bbb !important;
+	}
+
+	:-moz-placeholder {
+		color: #bbb !important;
+	}
+
+	::-moz-placeholder {
+		color: #bbb !important;
+	}
+
+	:-ms-input-placeholder {
+		color: #bbb !important;
+	}
+
+	.formerize-placeholder {
+		color: #bbb !important;
+	}
+	
+	.wrapper {
+		padding: 6em 0 4em 0;
+		position: relative;
+	}
+
+	.wrapper > .inner {
+		margin: 0 auto;
+		width: 65em;
+	}
+
+  .wrapper > .inner.narrow {
+	  width: 35em;
+  }
+
+	.wrapper.style1 {
+	  background-color: #00cdcf;
+	  color: #ffffff;
+	}
+
+  .wrapper.style1 input, .wrapper.style1 select, .wrapper.style1 textarea {
+	  color: #ffffff;
+  }
+
+  .wrapper.style1 a {
+	  color: #00cdcf;
+  }
+
+  .wrapper.style1 strong, .wrapper.style1 b {
+	  color: #ffffff;
+  }
+
+  .wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6 {
+	  color: #ffffff;
+  }
+
+  .wrapper.style1 blockquote {
+	  border-left-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .wrapper.style1 code {
+	  background: rgba(255, 255, 255, 0.075);
+	  border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .wrapper.style1 hr {
+	  border-bottom-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .wrapper.style1 .box {
+	  border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .wrapper.style1 input[type="submit"],
+  .wrapper.style1 input[type="reset"],
+  .wrapper.style1 input[type="button"],
+  .wrapper.style1 button,
+  .wrapper.style1 .button {
+	  background-color: #f7f7f7;
+	  color: #555 !important;
+  }
+
+	  .wrapper.style1 input[type="submit"]:hover,
+	  .wrapper.style1 input[type="reset"]:hover,
+	  .wrapper.style1 input[type="button"]:hover,
+	  .wrapper.style1 button:hover,
+	  .wrapper.style1 .button:hover {
+		  background-color: white;
+	  }
+
+
+

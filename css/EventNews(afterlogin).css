@@ -1,0 +1,298 @@
+html, body
+	{
+		
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		font-family:Microsoft JhengHei;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+	}
+
+	a
+	{
+		color:#f29bda;
+		text-decoration: none;
+	}
+	
+	a:hover{
+		text-decoration: underline;
+	}
+	
+
+/**********************************************************************************/
+/* Social Icon Styles                                                            */
+/*********************************************************************************/
+
+	ul.contact
+	{
+		margin: 0;
+		padding: 2em 0em 0em 0em;
+		list-style: none;
+	}
+	
+	ul.contact li
+	{
+		display: inline-block;
+		padding: 0em 0.30em;
+		font-size: 1.5em;
+	}
+	
+	ul.contact li span
+	{
+		display: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	ul.contact li a
+	{
+		color: #FFF;
+	}
+	
+	ul.contact li a:before
+	{
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		border-radius: 40px;
+		text-align: center;
+		color: #FFFFFF;
+	}
+	
+	
+/*********************************************************************************/
+/* Heading Titles                                                                */
+/*********************************************************************************/
+
+	.title
+	{
+		margin-bottom: 3em;
+	}
+	
+	.title h2
+	{
+		font-size: 2.8em;
+		color:#FFF;
+	}
+	
+	.title .byline
+	{
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1.1em;
+		color: #6F6F6F;
+	}
+
+
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+	#wrapper1
+	{
+		background: #242424;
+	}
+	
+	#wrapper1
+	{
+		overflow: hidden;
+		padding: 0em 0em 8em 0em;
+		background: #FFF;
+	}
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+	.button1
+	{
+		display: inline-block;
+		margin-top: 0px;
+		padding: 1px 2px 1px 2px;
+		margin-left:500px;
+	}
+
+
+/*********************************************************************************/
+/* act-select                                                                       */
+/*********************************************************************************/
+		.act-select {
+		  position: relative;
+		  font-family: Arial;
+		  float:left;
+		  margin-right:200px;
+		  
+		  
+		}
+		.act-select select {
+		  display: none; /*hide original SELECT element:*/
+		}
+		.select-selected {
+		  background-color: #ffaad5;
+		  border-radius:99em;
+		}
+		/*style the arrow inside the select element:*/
+		.select-selected:after {
+		  position: absolute;
+		  content: "";
+		  top: 14px;
+		  right: 10px;
+		  width: 0;
+		  height: 0;
+		  border: 6px solid transparent;
+		  border-color: #333 transparent transparent transparent;
+		}
+		/*point the arrow upwards when the select box is open (active):*/
+		.select-selected.select-arrow-active:after {
+		  border-color: transparent transparent #333 transparent;
+		  top: 7px;
+		}
+		/*style the items (options), including the selected item:*/
+		.select-items div,.select-selected {
+		  color: #333;
+		  padding: 8px 16px;
+		  border: 1px solid transparent;
+		  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+		  cursor: pointer;
+		}
+		/*style items (options):*/
+		.select-items {
+		  position: absolute;
+		  background-color: white;
+		  top: 100%;
+		  left: 0;
+		  right: 0;
+		  z-index: 99;
+		  
+		  
+		}
+		/*hide the items when the select box is closed:*/
+		.select-hide {
+		  display: none;
+		}
+		.select-items div:hover, .same-as-selected {
+		  background-color: rgba(0, 0, 0, 0.1);
+		}
+		
+		div.act-select{
+			width:108px;
+			text-align:left;
+			margin-right:10px;
+			margin-left:30px;
+		}
+/*********************************************************************************/
+/* table                                                                       */
+/*********************************************************************************/
+	table{
+		margin-top: 20px;
+		margin-left: 2%;
+		border-collapse:collapse;
+		border-spacing:2px;
+		text-align:center;
+		margin-bottom:10px;
+	}
+	
+	td{
+		padding-bottom: 10px;
+	}
+	
+
+/*********************************************************************************/
+/* event                                                                        */
+/*********************************************************************************/
+	table.event{
+		width:70%;
+	}
+
+/*********************************************************************************/
+/* walfare                                                                        */
+/*********************************************************************************/
+	table.walfare{
+		width:20%;
+	}
+
+/*********************************************************************************/
+/* detail                                                                        */
+/*********************************************************************************/
+	table.detail{
+		width:54%;
+	}
+
+/*********************************************************************************/
+/* content                                                                       */
+/*********************************************************************************/
+	div.content{     
+		margin-top:90px;  
+		padding:0px 30px 20px 30px;
+		margin-bottom:500px;
+	}
+	div.button-wrap{
+		width:80px;height:80px;
+		border-radius:99em;
+	}
+
+/*********************************************************************************/
+/* item                                                                       */
+/*********************************************************************************/
+	div.item{       
+		width:300px;
+		height:650px;
+		background-repeat:no-repeat;
+		box-sizing:border-box;      
+		float:left; 
+		overflow:hidden;    
+		border:1px solid #deedee;
+		padding:0px 0px 15px 12px;   
+		box-shadow:0px 0px 2px 0px #deedee;
+		text-align:justify;
+		margin-top:25px;
+		margin-right:30px;
+		margin-bottom: 50px;
+		border-radius: 20px;
+	}
+
+
+	/* 每3個中的第3個元素 */
+	div.item:nth-child(3n+3){
+		margin-right:2px;
+	}
+
+	div.item:nth-child(3n+1){
+		margin-left:1px;
+	}
+	
+
+	div.love{
+		padding-top: 450px;
+		margin-left:15%;
+	}
+	
+/*********************************************************************************/
+/* photo                                                                       */
+/*********************************************************************************/
+	div.photo{
+		margin-left: -12px;
+		margin-top: 1px;
+		width: 300px;
+		height: 300px;
+	}
+
+	img.photo{
+		width: 100%;
+		height: 100%;
+	}
+
+
+div.number{
+	padding-top:60%;
+	float:right;
+}
+
+	

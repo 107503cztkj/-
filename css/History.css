@@ -1,0 +1,201 @@
+html, body
+	{
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		font-family: Microsoft JhengHei;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+		background-image:url(../images/bg.jpg);
+		background-repeat:repeat;
+	}
+	
+	
+	a
+	{
+		color: #0000FF;
+	}
+	
+	a:hover
+	{
+		text-decoration: none;
+	}
+	
+
+	.container
+	{
+		margin: 0px auto;
+		width: 1200px;
+	}
+	
+/*********************************************************************************/
+/* content Style                                                                   */
+/*********************************************************************************/
+	div.content{
+		padding-top:420px;
+		
+	}
+
+/*********************************************************************************/
+/* Image Style                                                                   */
+/*********************************************************************************/
+		.image.fit {
+			display: block;
+			width: 100%;
+		}
+
+			.image.fit img {
+				width: 80%;
+			}
+
+		.image.round {
+			border-radius: 100%;
+		}
+
+			.image.round img {
+				border-radius: 20%;
+			}
+
+		.image.main {
+			display: block;
+			width: 100%;
+		}
+
+			.image.main img {
+				width: 100%;
+			}
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+	.button
+	{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 0em 1em 0em 1em;
+		background:#FC0;
+		letter-spacing: 0.20em;
+		line-height: 1.8em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1.2em;
+		color: #FFF;
+		border-radius: 30px;
+		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		-moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+		box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+	}
+	/*動畫部分*/	
+	.button {
+	   background-color: #fff284;
+	   color: #666;
+	   border: 2px solid #ce9494;
+}
+    .button:hover {
+ 	   background-color: white; 
+       color: #666; 
+       border: 2px solid #ce9494;
+}
+
+
+	
+
+
+/*********************************************************************************/
+/* Flex                                                                       */
+/*********************************************************************************/
+
+	.flex {
+		display: -ms-flexbox;
+		-ms-flex-pack: justify;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+	}
+
+		.flex.flex-2, .flex.flex-3 {
+			-moz-align-items: stretch;
+			-webkit-align-items: stretch;
+			-ms-align-items: stretch;
+			align-items: stretch;
+		}
+
+			.flex.flex-2.center, .flex.flex-3.center {
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+			}
+
+		.flex.flex-2 .col {
+			width: 48%;
+		}
+
+			.flex.flex-2 .col.col1 {
+				width: 30%;
+			}
+
+			.flex.flex-2 .col.col2 {
+				width: 66%;
+			}
+
+			@media screen and (max-width: 736px) {
+
+				.flex.flex-2 .col.col1, .flex.flex-2 .col.col2 {
+					width: 100%;
+					margin-bottom: 2em;
+				}
+
+					.flex.flex-2 .col.col1 .image, .flex.flex-2 .col.col2 .image {
+						max-width: 60%;
+						margin: 0 auto 2em auto;
+					}
+
+			}
+	
+
+
+/*********************************************************************************/
+/* wide-content                                                                  */
+/*********************************************************************************/
+
+	#wide-content {
+		padding: 50px;
+		border: 10px solid #f1f1f1;
+	}
+
+	#wide-content h2 {
+		padding: 0px 0px 20px 0px;
+		letter-spacing: -1px;
+		font-size: 36px;
+		color: #222222;
+	}
+
+/*********************************************************************************/
+/* main                                                                  */
+/*********************************************************************************/
+
+	div.main{
+		margin-top: 50px;
+	}
+	
+	
+	div.number{
+		padding-top:-50%;
+		float:right;
+}

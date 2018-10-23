@@ -1,0 +1,104 @@
+html, body
+	{
+		
+	}
+	
+	body
+	{
+		margin:0;
+		padding: 0px;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 12pt;
+		font-weight: 400;
+		color: #000000;
+	}
+	
+	a
+	{
+		color: #f0cae5;
+		text-decoration: none;
+	}
+	
+	a:hover{
+		text-decoration: underline;
+	}
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/	
+	#wrapper1
+	{
+		overflow: hidden;
+		padding: 0em 0em 8em 0em;
+	}
+
+	div.search{
+		margin-top:-10px;	
+		height:20px;
+	}
+/*********************************************************************************/
+/* item                                                                       */
+/*********************************************************************************/
+	div.content{       
+		padding:150px 0px 0px 0px;
+	}
+
+/*********************************************************************************/
+/* item                                                                       */
+/*********************************************************************************/
+	div.item{       
+		width:300px;
+		height:350px;
+		background-repeat:no-repeat;
+		box-sizing:border-box;      
+		float:left; 
+		overflow:hidden;    
+		border:1px solid #deedee;
+		padding:0px 0px 15px 12px;   
+		box-shadow:0px 0px 2px 0px #deedee;
+		text-align:justify;
+		margin-top:25px;
+		margin-right:25px;
+		margin-bottom: 50px;
+		border-radius: 20px;
+	}
+
+
+	/* 每3個中的第3個元素 */
+	div.item:nth-child(3n+3){
+		margin-right:2px;
+	}
+
+	div.item:nth-child(3n+1){
+		margin-left:1px;
+	}
+	
+	div.love{
+		padding-top: 450px;
+		margin-left:250px;
+	}
+/*********************************************************************************/
+/* search                                                                       */
+/*********************************************************************************/
+
+/*********************************************************************************/
+/* photo                                                                       */
+/*********************************************************************************/
+	div.photo{
+		margin-left: -12px;
+		margin-top: 1px;
+		width: 300px;
+		height: 300px;
+	}
+
+	img.photo{
+		width: 100%;
+		height: 100%;
+		border-left:solid 0.5px #000; 
+	}
+	div.number{
+		margin-top:100%;
+		float:right;
+	}
+
+
