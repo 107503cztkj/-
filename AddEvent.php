@@ -1,3 +1,15 @@
+<?php
+session_start();
+include("db-contact.php"); 
+include("timeout.php"); 
+error_reporting(0);
+?>
+<?php 
+if($_SESSION['email'] == null)
+{
+	echo "<script>alert('您無權限觀看此頁面!請先登入!'); location.href = 'login.php';</script>";
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +34,9 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 	<link href="css/themify-icons.css" rel="stylesheet">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/jquery.twzipcode.min.js"></script>
 </head>
 
 <header class="header_area">
@@ -59,27 +74,25 @@
 						<div class="mainmenu">
 							<nav>
 								<ul id="nav">
-									<li><a href="index.html">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i>
-</a>
-										<ul class="sub-menu">
-											<li><a href="#">下載專區</a></li>
-											<li><a href="#">桃園大小事</a></li>
-                                            <li><a href="#">最新消息</a></li>
-										</ul>
-									</li>
-									<li  class="current_page_item"><a href="EventNews.html">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
-                                    <li><a href="Organization.html">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
-									<li><a href="History.html">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-									<li><a href="About.html">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i>
-</a>
-												<ul class="sub-menu">
-													<li><a href="Q&A.html">益尋愛Q&A </a></li>
-												</ul>
-											</li>
-									<li><a href="#">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
-									</li>
-											
-								</ul>
+								<li><a href="index.php">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="downloadList.php">下載專區</a></li>
+										<li><a href="bsThing.php">桃園大小事</a></li>
+										<li><a href="newNews.php">最新消息</a></li>
+									</ul>
+								</li>
+								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Q&A.php">益尋愛Q&A </a></li>
+									</ul>
+								</li>
+								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								</li>
+										
+							</ul>
 							</nav>
 						</div>
 						<!-- mainmenu end -->
@@ -102,7 +115,7 @@
 		            <!--      Wizard container        -->
 		            <div class="wizard-container">
 		                <div class="card wizard-card" data-color="green" id="wizard">
-		                <form action="" method="">
+		                <form method="POST" action="writeToEvent.php" enctype="multipart/form-data" > 
 		                <!--        You can switch " data-color="green" "  with one of the next bright colors: "blue", "azure", "orange", "red"       -->
 
 		                    	<div class="wizard-header">
@@ -148,6 +161,7 @@
 										</li>
 			                        </ul>
 								</div>
+								<form method="POST" action="writeToEvent.php" enctype="multipart/form-data" > 
 		                        <div class="tab-content">
 		                            <div class="tab-pane" id="location">
                                      <h5 class="info-text">首先，為您的活動訂下名稱及相關日期</h5>
@@ -155,7 +169,7 @@
 		                                  	<div class="col-sm-5 col-sm-offset-1">
 		                                    	<div class="form-group">
 		                                        	<label>活動名稱</label>
-		                                        	<input type="text" class="form-control" id="Name" placeholder="">
+		                                        	<input type="text" name="eventName" class="form-control" id="Name">
 		                                    	</div>
 		                                	</div>
 		                                	<div class="col-sm-5">
@@ -170,16 +184,16 @@
 		                                    	<div class="form-group">
 		                                        	<label><b>活動結束日期:</b></label>
                                                     <div class="input-append date form-group" id="dp1" data-date-format="yyyy/mm/dd">
-                                                        <input type="date" class="form-control" name="startDate"/>
+                                                        <input type="date" class="form-control" name="endDate"/>
                                                     </div> 
 		                                    	</div>
 		                                	</div>
                                             
 		                                	<div class="col-sm-5">
 		                                    	<div class="form-group">
-		                                        	<label><b>活動截止日期:</b></label>
+		                                        	<label><b>報名截止日期:</b></label>
                                                     <div class="input-append date form-group" id="dp1" data-date-format="yyyy/mm/dd">
-                                                        <input type="date" class="form-control" name="startDate"/>
+                                                        <input type="date" class="form-control" name="DeadlineDate"/>
                                                     </div> 
 		                                    	</div>
 		                                	</div>
@@ -192,33 +206,34 @@
 		                                    <div class="col-sm-5 col-sm-offset-1">
 		                                    	<div class="form-group">
 		                                        	<label>活動宣傳圖片</label>
-		                                        	<Input Type="File" Name="YouFile">
+		                                        	<input type='file' class="upl" name="file" accept="image/jpeg,image/gif,image/png">
+													
 		                                    	</div>
 		                                    </div>
 		                                    <div class="col-sm-5">
 		                                    	<div class="form-group">
 		                                        	<label>選擇活動類型</label>
-		                                        	<select class="form-control">
-			                                            <option disabled="" selected="">選擇活動類型</option>
-			                                            <option>社區服務</option>
-			                                            <option>環境人文 </option>
-                                                        <option>文化面向 </option>
-                                                        <option>科技面相 </option>
-                                                        <option>健康促進 </option>
-                                                        <option>教育助學 </option>
-		                                        	</select>
+		                                        	<select class="form-control" name="eventType" required="required" >
+															<option value="0">--活動類型--</option>
+															<option value="社區服務">社區服務</option>
+															<option value="環境人文">環境人文</option>
+															<option value="文化面相">文化面向</option>
+															<option value="科技面向">科技面向</option>
+															<option value="健康促進">健康促進</option>
+															<option value="教育助學">教育助學</option>
+													</select>
 		                                    	</div>
 		                                    </div>
 		                                    <div class="col-sm-5 col-sm-offset-1">
 		                                    	<div class="form-group">
 		                                        	<label>志工需求人數</label>
-		                                        	<input type="text" class="form-control" id="ｐｅｏｐｌｅ" placeholder="">
+		                                        	<input type="text" name="need" class="form-control" id="ｐｅｏｐｌｅ" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
 		                                    	</div>
 		                                    </div>
 		                                    <div class="col-sm-5">
 		                                    	<div class="form-group">
-		                                        	<label>提供時數（小時）</label>
-		                                        	<input type="text" class="form-control" id="Ｔｉｍｅ" placeholder="">
+		                                        	<label>給予時數（小時）</label>
+		                                        	<input type="text" name="hour" class="form-control" id="Ｔｉｍｅ" >
 		                                    	</div>
 		                                    </div>
 		                                </div>
@@ -229,7 +244,7 @@
 		                                     <div class="col-sm-8 col-sm-offset-2">
 		                                        <div class="col-sm-4 col-sm-offset-2">
 													<div class="choice" data-toggle="wizard-checkbox">
-		                                                <input type="checkbox" name="jobb" value="Design">
+		                                                <input type="checkbox" name="offer[]" value="便當">
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <i class="ti-briefcase"></i>
 															<p>便當</p>
@@ -239,7 +254,7 @@
                                                 
 		                                        <div class="col-sm-4">
 													<div class="choice" data-toggle="wizard-checkbox">
-		                                                <input type="checkbox" name="jobb" value="Design">
+		                                                <input type="checkbox" name="offer[]" value="礦泉水">
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <i class="ti-spray"></i>
 															<p>礦泉水</p>
@@ -249,7 +264,7 @@
                                                 
                                                 <div class="col-sm-4">
 													<div class="choice" data-toggle="wizard-checkbox">
-		                                                <input type="checkbox" name="jobb" value="Design">
+		                                                <input type="checkbox" name="offer[]" value="保險">
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <i class="ti-home"></i>
 															<p>保險</p>
@@ -259,7 +274,7 @@
                                                 
                                                 <div class="col-sm-4">
 													<div class="choice" data-toggle="wizard-checkbox">
-		                                                <input type="checkbox" name="jobb" value="Design">
+		                                                <input type="checkbox" name="offer[]" value="紀念品">
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <i class="ti-gift"></i>
 															<p>紀念品</p>
@@ -268,10 +283,9 @@
 		                                        </div>
                                                <div class="col-sm-4">
 													<div class="choice" data-toggle="wizard-checkbox">
-		                                                <input type="checkbox" name="jobb" value="Design">
 		                                                <div class="card card-checkboxes card-hover-effect">
 		                                                    <label>其他： <i class="ti-more"></i></label>
-		                                        	<input type="text" class="form-control" id="Ｔｉｍｅ" placeholder="">
+		                                        	<input type="text"  name="other" class="form-control" id="Ｔｉｍｅ" placeholder="">
 		                                                </div>
                                                         
 		                                            </div>
@@ -284,34 +298,23 @@
 		                                <div class="row">
 		                                    <h5 class="info-text">最後介紹一下您的活動吧！</h5>
                                           <center> 請輸入活動地址：</center></br>
-		                                    <div class="col-sm-6 col-sm-offset-1">
+										  							
+											<input type="text" class="form-control" name="address" style="width:300px" maxlength="25" required="required"/></br></br>
+											
+		                                    <center><div class="col-sm-6 col-sm-offset-1">
 		                                        <div class="form-group">
 		                                            <label>跟益寶們說說您的活動內容吧！</label>
-		                                            <textarea class="form-control" placeholder="" rows="9"></textarea>
+		                                            <textarea class="form-control" name="description" rows="9"></textarea>
 		                                        </div>
-		                                    </div>
-		                                    <div class="col-sm-4">
-		                                        <div class="form-group">
-		                                            <label>例如</label>
-		                                            <p class="description">"
-                                                青年節系列服務活動之「大家一起來‧祖孫樂開懷」</br>
-                                                
-                                                內容：</br>
-                                                有遊戲關卡、異國美食、公益攤位…等等好玩又好吃的內容～</br>
-                                                更有太鼓、阿卡貝拉、舞蹈、越南歌曲演唱、吉他…等精彩演出～</br>
-                                                現場備有午餐饗宴～
-                                                這次號召了上百名的青年志工在現場服務，</br>
-                                                邀請您一起帶家裡長輩來闖關唷！！
-                                                欲知詳情，歡迎電洽青年志工中心03-339-5898
-		                                        </div>
-		                                    </div>
+		                                    </div></center>
+		                                    
 		                                </div>
 		                            </div>
 		                        </div>
 		                        <div class="wizard-footer">
 	                            	<div class="pull-right">
 	                                    <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='下一步' />
-	                                    <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' />
+	                                    <input type="submit" class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='新增活動 !' />
 									</div>
 
 	                                <div class="pull-left">
@@ -320,11 +323,13 @@
 	                                <div class="clearfix"></div>
 		                        </div>
 		                    </form>
+
 		                </div>
 		            </div> <!-- wizard container -->
 		        </div>
 	        </div> <!-- row -->
 	    </div> <!--  big container -->
+
 
 	   
 	</div>

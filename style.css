@@ -3662,7 +3662,7 @@
     
     .price_plan_area .single_price_plan {
         text-align: center;
-        background-color: #f6f6f6;
+        background-color:#d1e9e9;
         border-radius: 4px;
         -webkit-transition-duration: 500ms;
         -o-transition-duration: 500ms;
@@ -3725,6 +3725,144 @@
     }
     
     .price_plan_area .single_price_plan:hover {
+        box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.2);
+    }
+	  /* Price Plan Area CSS 第一個 */
+    
+    .price_plan_area .single_price_plan1 {
+        text-align: center;
+        background-color:#f2e6e6;
+        border-radius: 4px;
+        -webkit-transition-duration: 500ms;
+        -o-transition-duration: 500ms;
+        transition-duration: 500ms;
+    }
+    
+    .price_plan_area .single_price_plan1 .title {
+        padding: 30px 0;
+    }
+    
+    .price_plan_area .single_price_plan1 .title h3 {
+        letter-spacing: 1px;
+        font-family: "Roboto Slab", serif;
+        color: #2c3e50;
+        margin: 0;
+    }
+    
+    .price_plan_area .single_price_plan1 .price {
+        background-color: #e67e22;
+        padding: 15px 0;
+    }
+    
+    .price_plan_area .single_price_plan1 .price h4 {
+        color: #fff;
+        padding: 15px 0;
+        font-family: "Roboto Slab", serif;
+        margin: 0;
+    }
+    
+    .price_plan_area .single_price_plan1 .description {
+        padding: 15px 0;
+    }
+    
+    .price_plan_area .single_price_plan1 .description > p {
+        color: #666;
+        border-bottom: 1px dashed #fff;
+        margin: 0;
+        padding: 10px 0;
+    }
+    
+    .price_plan_area .single_price_plan1 .button {
+        padding: 20px 0 40px 0;
+    }
+    
+    .price_plan_area .single_price_plan1 .button > a {
+        padding: 10px 30px;
+        border-radius: 4px;
+        color: #2c3e50;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-family: "Roboto Slab", serif;
+        font-weight: 700;
+        border: 2px solid #2c3e50;
+    }
+    
+    .price_plan_area .single_price_plan1 .button > a:hover {
+        background-color: #2c3e50;
+        color: #fff;
+        border: 2px solid transparent;
+    }
+    
+    .price_plan_area .single_price_plan1:hover {
+        box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.2);
+    }
+	 /* Price Plan Area CSS 第三個 */
+    
+    .price_plan_area .single_price_plan3 {
+        text-align: center;
+        background-color:#f3f3fa;
+        border-radius: 4px;
+        -webkit-transition-duration: 500ms;
+        -o-transition-duration: 500ms;
+        transition-duration: 500ms;
+    }
+    
+    .price_plan_area .single_price_plan3 .title {
+        padding: 30px 0;
+    }
+    
+    .price_plan_area .single_price_plan3 .title h3 {
+        letter-spacing: 1px;
+        font-family: "Roboto Slab", serif;
+        color: #2c3e50;
+        margin: 0;
+    }
+    
+    .price_plan_area .single_price_plan3 .price {
+        background-color: #e67e22;
+        padding: 15px 0;
+    }
+    
+    .price_plan_area .single_price_plan3 .price h4 {
+        color: #fff;
+        padding: 15px 0;
+        font-family: "Roboto Slab", serif;
+        margin: 0;
+    }
+    
+    .price_plan_area .single_price_plan3 .description {
+        padding: 15px 0;
+    }
+    
+    .price_plan_area .single_price_plan3 .description > p {
+        color: #666;
+        border-bottom: 1px dashed #fff;
+        margin: 0;
+        padding: 10px 0;
+    }
+    
+    .price_plan_area .single_price_plan3 .button {
+        padding: 20px 0 40px 0;
+    }
+    
+    .price_plan_area .single_price_plan3 .button > a {
+        padding: 10px 30px;
+        border-radius: 4px;
+        color: #2c3e50;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-family: "Roboto Slab", serif;
+        font-weight: 700;
+        border: 2px solid #2c3e50;
+    }
+    
+    .price_plan_area .single_price_plan3 .button > a:hover {
+        background-color: #2c3e50;
+        color: #fff;
+        border: 2px solid transparent;
+    }
+    
+    .price_plan_area .single_price_plan3:hover {
         box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.2);
     }
     /* Event Grid Area CSS */

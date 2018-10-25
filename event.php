@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </br>
 			<div class="container">
 					<?php
-						if(preg_match("/供餐/i", $row["offer"])){
+						if(preg_match("/便當/i", $row["offer"])){
 						 $color[0] = "color:red";
 						}else{
 							$color[0] = "";

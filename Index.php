@@ -160,7 +160,7 @@ error_reporting(0);
 			<!-- Single Price Plan Area Start -->
 			<div class="col-sm-4">
 			
-				<div class="single_price_plan">
+				<div class="single_price_plan1">
 					<div class="title">
 						<h3>最新消息</h3>
 					</div>
@@ -210,7 +210,7 @@ error_reporting(0);
 
 			<!-- Single Price Plan Area Start -->
 			<div class="col-sm-4">
-				<div class="single_price_plan">
+				<div class="single_price_plan3">
 					<div class="title">
 						<h3>下載專區</h3>
 					</div>
