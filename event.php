@@ -6,8 +6,9 @@ error_reporting(0);
 <html>
 <head>
 <title>|益尋愛|</title>
-<link href="css/bootstrap2.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style2.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bootstrap2.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/Event.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="My Skills Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -17,14 +18,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---- start-smoth-scrolling---->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
- <script type="text/javascript">
+<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
 			});
 		});
-	</script>
+</script>
 <!---End-smoth-scrolling---->
  
 </head>
@@ -74,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						</div>
 						<div class="col-md-6 study-grid">
-						<p style="font-size:30px">舉辦組織:  <a href="OrganizationFile.php?e=<?php echo $row3['comID'] ?>"><?php echo $row3['comName'] ?></a></p>
+						<p style="font-size:30px">舉辦組織:</br>  <a href="OrganizationFile.php?e=<?php echo $row3['comID'] ?>"><?php echo $row3['comName'] ?></a></p>
 						<div class="study2">
 						<img src="cus-comImg/<?php echo $row3['comPic']?>" width="200" height="200">
 						</div>
@@ -127,9 +128,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-3 face">
 						<p style="<?php echo $color[3]?>"><img src="images/heart-box.png">紀念品</p>
 						</div>
-						<div class="col-md-3 face">
-						<p><img src="images/heart-box.png">其他</p><?php echo $row['otherOffer'] ?>
-						</div>
 		
 						<div class="clearfix"> </div>
 							</div>
@@ -147,12 +145,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </center>	 
 		</div>
 	</div>
+
+	<!---google map--->
+	<body onload="initialize()" onunload="GUnload()">
+		<form action="" onsubmit="showAddress(this.address.value); return false">
+			<center><input type="text" size="60" name="address" value="<?php echo $row['address']?>" />
+			<input id="btn" onclick="myFunction()" type="submit" value="Go!" /></center>
+			<div id="map_canvas" style="width: 100%; height: 550px"></div>     
+		</form>
+  	</body>	
+
 	<!--end-contact-section-->
-				<!--start-map-section-->
-				<div class="google-map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114829.39166857985!2d-80.19154352520549!3d25.92148032545394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b2eec0a4b145%3A0x6fb7ea318103f481!2sCollins+Ave%2C+Sunny+Isles+Beach%2C+FL+33160%2C+USA!5e0!3m2!1sen!2sin!4v1436081255308"></iframe>
-			</div>
-			<!--end-map-section-->
+			
 			<!--start-footer-section-->
 			<div class="footer-section">
 						<div class="container">
@@ -181,6 +185,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 	<!--end-footer-section-->
 
+	<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=AIzaSyDuyM09lyMesD69uuBCES3oUEoQC0QyHXM" type="text/javascript"></script>
+    <script src="js/googlemap.js"></script>
 
 </body>
 </html> 

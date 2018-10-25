@@ -64,7 +64,7 @@ function check_all(obj,cName)
 						<li class="dropdown">
 							<a class="dropdown-toggle" href="hold.php">關於益尋愛</a>
 							<ul class="dropdown-menu">
-								<a href="hold.php"><li>益尋愛Q&A </li></a>
+								<a href="Q_ACM.php"><li>益尋愛Q&A </li></a>
 							</ul>
 						</li>
 						<li class="dropdown">

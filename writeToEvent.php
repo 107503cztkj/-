@@ -76,9 +76,9 @@ if(strtotime($startDate)>strtotime($endDate)){
 	}else if($eventType=="教育助學"){
 		$new_name="eventPic-06.jpg";
 	}
-	$sqlStr="insert into event (comID,eventName,type,startDate,endDate,DeadlineDate,need,address,offer,otherOffer,description,eventPic)
+	$sqlStr="insert into event (comID,eventName,type,startDate,endDate,DeadlineDate,need,hour,address,offer,otherOffer,description,eventPic)
 
-		values('$comID','$eventName','$eventType','$startDate','$endDate','$DeadlineDate','$need','$allAddress','$allOffer','$other','$description','$new_name')";
+		values('$comID','$eventName','$eventType','$startDate','$endDate','$DeadlineDate','$need', '$hour','$allAddress','$allOffer','$other','$description','$new_name')";
 	//echo $sqlStr."<br>";
 	mysql_query($sqlStr) or die("活動新增失敗,請返回上一頁重新新增...");
 

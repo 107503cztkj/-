@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("db-contact.php");
-//include("timeout.php");
+include("timeout.php");
 error_reporting(0);
 ?>
 <?php 
@@ -15,7 +15,7 @@ if($_SESSION['ID'] !== "yiren"){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>|益尋愛|</title>
-
+<link href="css/n.css" rel="stylesheet" type="text/css" />
 <link href="css/Q_A.css" rel="stylesheet" type="text/css" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/Head.css" rel="stylesheet" type="text/css" />
@@ -23,7 +23,30 @@ if($_SESSION['ID'] !== "yiren"){
 <link href="css/footer.css" rel="stylesheet" type="text/css" />
 <link href="css/totop.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script>
+	//初始参数个数
+	var varCount = 2;
 
+	$(function () {
+	  //新增按钮点击
+		$('#addVar').on('click', function(){
+			varCount++;
+			$node = '<p><label for="var'+varCount+'">問與答 '+varCount+': </label>'
+			  + '<input type="text" name="var'+varCount+'" id="var'+varCount+'" style="width:300px;height:20px;">'
+			  + '<textarea cols="50" rows="5"></textarea>'
+			  + '<span class="removeVar">刪除</span></p><br>';
+			 
+		//新表单项添加到“新增”按钮前面
+			$("#showBlock").before($node);
+		});
+
+	  //删除按钮点击
+	  $('form').on('click', '.removeVar', function(){
+		$(this).parent().remove();
+		//varCount--;
+	  });
+	});
+</script>
 </head>
  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="header-wrapper">
@@ -71,7 +94,8 @@ if($_SESSION['ID'] !== "yiren"){
                     <div id="wide-content">
 	
                        <h2><b><font color="#ff7070" >益尋愛 Q&A </font></b></h2>
-   				       	 <a class="button" id="btn">新增問答</a>
+   				       	 <form id="myForm" method="post">
+						 <a class="button" id="addVar">新增問答</a>
                          <?php
 							$sql="select * from q_a";
 							$data=mysql_query($sql) or die(mysql_error());
@@ -90,16 +114,18 @@ if($_SESSION['ID'] !== "yiren"){
 								for($i=1;$i<=mysql_num_rows($data);$i++){
 								$row=mysql_fetch_array($data);
 							?>
-                            <br />
+                            <br/>
                             <strong><font size="+1" color="#FF9999" class="edit"><?php echo $i.".".$row['title'] ?></strong></font>
                             <a class="button1" href="#">修改</a>
                             <br/>
-                            <h4 class="editgrow"><?php echo $row['content'] ?></h4>
+                            <font class="edit1"><?php echo $row['content'] ?></font>
                             <?php
 							}
 							?>
                          <!-- add new item Dynamically in the show block -->
 						  <div id="showBlock"></div> 
+						  <input type="submit" value="提交" style="float:right"/>
+						  </form>
                     </div>
                 </div>
             </div>
@@ -158,8 +184,7 @@ if($_SESSION['ID'] !== "yiren"){
 	</script>
 	<script>
 	$(function(){ 
-	   $('.editgrow').editable('UpdateDownload.php', { 
-	     type: "autogrow",
+	   $('.edit1').editable('UpdateDownload.php', { 
 		 width   :600, 
 		 height  :100, 
 		 tooltip  : '點擊已進行編輯...' 

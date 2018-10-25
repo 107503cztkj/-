@@ -45,23 +45,23 @@ if($_SESSION['ID'] !== "yiren"){
 								<a href="NewNewsCM.php"><li>最新消息</li></a>
 						  </ul>
 						</li>
-						<li><a href="hold.php">活動列表</a></li>
-						<li><a href="hold.php">心得列表</a></li>
+						<li><a href="EventCM.php">活動列表</a></li>
+						<li><a href="ExperienceCM.php">心得列表</a></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" href="hold.php">關於益尋愛</a>
 							<ul class="dropdown-menu">
-								<a href="hold.php"><li>益尋愛Q&A </li></a>
+								<a href="Q_ACM.php"><li>益尋愛Q&A </li></a>
 							</ul>
 						</li>
 						<li class="dropdown">
-                            <a class="dropdown-toggle" href="YibaoList.php">益寶管理</a>
+							<a class="dropdown-toggle" >益寶管理</a>
 							<ul class="dropdown-menu" >
                                 <a href="YibaoList.php"><li>益寶列表 </li></a>
                                 <a href="OList.php"><li>機構列表 </li></a>
                                 <a href="logout.php"><li>登出</li></a>
-							</ul>	
+							</ul>
 						</li>
-					</ul>          
+					</ul>              
                 </div>  
             </div>
             <!--~~~~~~~~~~~~--> 

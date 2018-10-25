@@ -1,153 +1,187 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿<!DOCTYPE html>
+<html lang="en">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<!-- Title  -->
 <title>|益尋愛|</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-<meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-<meta name="author" content="Codrops" />
-<link rel="shortcut icon" href="../favicon.ico"> 
-<link rel="stylesheet" type="text/css" href="css/demo(login).css" />
-<link rel="stylesheet" type="text/css" href="css/style(login).css" />
-<link rel="stylesheet" type="text/css" href="css/animate-custom(login).css" />
-<link href="css/Head.css" rel="stylesheet" type="text/css" />
-<link href="css/myDropdownMenu.css" rel="stylesheet" type="text/css" />
-<link href="css/footer.css" rel="stylesheet" type="text/css" />
-<link href="css/totop.css" rel="stylesheet" type="text/css" />
+
+<!-- ===================== All CSS Files ===================== -->
+
+<!-- Style css -->
+<link rel="stylesheet" href="Login.css">
+<link rel="stylesheet" href="stylelogin.css">
+
+
+<!-- Responsive css -->
+<link rel="stylesheet" href="css/responsive.css">
+
+<!--[if IE]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 </head>
+
 <body>
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '177194299649195',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v3.0'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.0&appId=177194299649195&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <div id="header-wrapper">
-        <div class="container">
-            <div id="header">
-                <div id="logo"></div>
-          <!--~~~~~~~~~~~~~~~~~~-->         
-  
-          
-                <!--~~~導覽列~~~-->  
-                <div class="navbar" >
-                    <ul>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="Index.php">訊息專欄</a>
-                            <ul class="dropdown-menu" >
-                                <a href="Downloadlist.php"><li>下載專區</li></a>                                 
-								<a href="BSthing.php"><li>桃園大小事</li></a>                                 
-								<a href="NewNews.php"><li>最新消息</li></a>
-                            </ul>
-                        </li>
-                        <li><a href="EventNews.php">活動快訊</a></li>
-                        <li><a href="Organization.php">公益組織</a></li>
-                        <li><a href="History.php">愛心回顧</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="About.php">關於益尋愛</a>
-                            <ul class="dropdown-menu">
-                                <a href="Q_A.php"><li>益尋愛Q&A </li></a>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="Login.php">益寶登入</a>
-                        
-                            
-                        </li>
-                    </ul>            
-                </div>   
-            </div> 
-            <!--~~~~~~~~~~~~--> 
-            <!------------------------------------------------>
-            <!--定義列表--------------------------------------->
-            <!------------------------------------------------>
-            <section class="content">							
-                <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                 	
-                    <div id="wrapper">
-                        <div id="findpw" class="animate form">
-                            <form action="smtp.class.php" method="POST">
-								<form  action="mysuperscript.php" autocomplete="on"> 
-									<h1>找回密碼</h1> 
-									  
-									<p> 
-										<label for="username" class="uname" data-icon="u" >請輸入您的信箱 </label>
-										<input id="email" name="email" required type="text" placeholder="123myemail@mail.com"/>
-									</p>
-									<p class="login button"> 
-										<input type="submit" value="送出"> 
-									</p>
-									
-							</form>
-						</form>	
-                        </div>
-					
+<header class="header_area">
+	<!-- Top Header Area Start -->
+	<div class="top_header_area hidden-xs">
+		<div class="container">
+						
+						
 					</div>
-                </div> 
-				
-            </section>
-	</div>
-    </div>
-    </div>  
-    
-	<!------------------------------------------------>
-	<!------------------------------------------------>
-   <div class="totop">
-        <a href="#">
-            <img src="images/totop.png" id="btn">
-        </a>
-    </div>
-	<!------------------------------------------------>
-	<!------------------------------------------------>
-    
-    <div class="footer">
-        <h1><font size="+1"><font color="#666">Copyright © 2018 益尋愛  怡仁愛心基金會</font></font></h1>
-    </div> 
-
-    <!--==========================================-->  
-    
-    <!--*********-->
-    <!-- 載入js  -->
-    <!--*********-->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+				</div>
+			</div>
 	
-    
-    <script src="js/totop.js"></script>
+	<!-- Top Header Area  End -->
 
-	<script src="js/navbar.js"></script> 
-    <script src="js/myDropdownMenu.js"></script> 
-           
-           
+	<!-- Main Header Area Start -->
+	<div class="main_header_area home2">
+		<div class="">
+			<div class="row">
+			
+
+				<div class="col-sm-9 col-xs-12">
+					<!-- Menu Area -->
+					<div class="main_menu_area">
+						<div class="mainmenu">
+							<nav>
+								<ul id="nav">
+								<li><a href="index.php">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="downloadList.php">下載專區</a></li>
+										<li><a href="bsThing.php">桃園大小事</a></li>
+										<li><a href="newNews.php">最新消息</a></li>
+									</ul>
+								</li>
+								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Q&A.php">益尋愛Q&A </a></li>
+									</ul>
+								</li>
+								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								</li>
+										
+							</ul>
+							</nav>
+						</div>
+						<!-- mainmenu end -->
+						<!-- Search Button Area -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Main Header Area End -->
+
+	
+</header>
+<div class="space"></div>
+
+ <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="img/logo.png" alt="sing up image"></figure>
+						<a href="Login.php" class="signup-image-link">點我登入!</a>
+                    </div>
+					
+                    <div class="signin-form">
+                        <h2 class="form-title">找回密碼</h2>
+                        <form action="smtp.class.php" method="POST" class="register-form" id="login-form">
+							請輸入您註冊的Email帳號
+                            <div class="form-group">
+                                <label for="Email"><i class="fa fa-envelope-open-o"></i></label>
+                                <input type="text" name="email" id="Email" placeholder="Email" required />
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="送出"/>
+                           </div>
+                            
+                            
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+<!-- ===================== Awesome Feature 
+
+	<!-- Bottom Footer Area Start -->
+	<div class="footer_bottom_area">
+		<div class="">
+			<div class="row">
+				
+					<div class="footer_bottom wow fadeInDown">
+						<p><font color="#FFFFFF">Copyright © 2018 益尋愛 怡仁愛心基金會</font></p>
+					</div>
+					<!-- Bottom Footer Copywrite Text Area End -->
+				
+			</div>
+			<!-- end./ row -->
+		</div>
+		<!-- end./ container -->
+	</div>
+	<!-- Bottom Footer Area End -->
+</footer>
+<!-- ===================== Footer Area End ===================== -->
+
+<!-- ===================== All jQuery Plugins ===================== -->
+
+<!-- jQuery (necessary for all JavaScript plugins) -->
+<script src="js/jquery-1.12.3.min.js"></script>
+
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Nivoslider js -->
+<script src="js/jquery.nivoslider.js"></script>
+<script src="js/nivoslider-active.js"></script>
+
+<!-- owl-carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+
+<!-- Ajax Contact js -->
+<script src="js/ajax-contact.js"></script>
+
+<!-- Coundown js -->
+<script src="js/coundown-timer.js"></script>
+
+<!-- Meanmenu js -->
+<script src="js/meanmenu.js"></script>
+
+<!-- Magnific Popup js -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<!-- counterup and waypoint js -->
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/counterup.min.js"></script>
+
+<!-- back to top js -->
+<script src="js/jquery.scrollUp.js"></script>
+
+<!-- wow js -->
+<script src="js/wow.min.js"></script>
+
+<!-- script js -->
+<script src="js/custom.js"></script>
+
 </body>
 </html>

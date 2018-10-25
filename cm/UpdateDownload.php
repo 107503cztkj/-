@@ -85,7 +85,7 @@ if($_GET['e'] !==null){
 	if($sizemb < 3){
 	  $file=explode(".",$name);
 	  $new_name="download"."-".date(ymd)."-".rand(0,10).".".$file[1];
-	  move_uploaded_file($tmp_name,"downloadFile/".$new_name);
+	  move_uploaded_file($tmp_name,"../downloadFile/".$new_name);
 	  $sqlStr="update download set url='$new_name',fdate='$time' where ID='$ID' ";
 		if(mysql_query($sqlStr)){
 			unlink($dir);

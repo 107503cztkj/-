@@ -1,113 +1,211 @@
-<?php
+﻿<?php
 session_start();
 include("db-contact.php"); 
-include("timeout.php"); 
+include("timeout.php");
 error_reporting(0);
 ?>
-
 <?php 
 if($_SESSION['email'] == null)
 {
 	echo "<script>alert('您無權限觀看此頁面!請先登入!'); location.href = 'login.php';</script>";
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en" class="ace ace-card-on ace-tab-nav-on ace-main-nav-on ace-sidebar-on" data-theme-color="#c0e3e7">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>|益尋愛|</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="css/OFeedback.css" rel="stylesheet" type="text/css" />
-<link href="css/Head.css" rel="stylesheet" type="text/css" />
-<link href="css/myDropdownMenu.css" rel="stylesheet" type="text/css" />
-<link href="css/footer.css" rel="stylesheet" type="text/css" />
-<link href="css/totop.css" rel="stylesheet" type="text/css" />
+    <title>|益尋愛|</title>
+    <meta name="description" content="">
 
-</head>
-<body>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
 
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <div id="header-wrapper">
-        <div class="container">
-            <div id="header">
-                <div id="logo"></div>
-                <!--~~~~~~~~~~~~~~~~~~-->                
-                <!--~~~導覽列~~~-->  
-                <div class="navbar" >
-                    <ul>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="Index(a).php">訊息專欄</a>
-                            <ul class="dropdown-menu" >
-                                <a href="Downloadlist.php"><li>下載專區</li></a>
-                                <a href="BSthing.php"><li>桃園大小事</li></a>
-                                <a href="NewNews.php"><li>最新消息</li></a>
-                            </ul>
-                        </li>
-                        <li><a href="EventNews(a).php">活動快訊</a></li>
-                        <li><a href="Organization.php">公益組織</a></li>
-                        <li><a href="History(a).php">愛心回顧</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="About.php">關於益尋愛</a>
-                            <ul class="dropdown-menu">
-                                <a href="Q_A.php"><li>益尋愛Q&A </li></a>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-							  <a class="dropdown-toggle" href="UserFile.php">益寶小檔案</a>
-							  <ul class="dropdown-menu" >
-									<a href="logout.php"><li>登出</li></a>
-							  </ul>	
-						</li>
-                    </ul>            
-                </div>  
-            </div>  
-          <!--~~~~~~~~~~~~--> 
-        <!------------------------------------------------>
-        <!--定義列表--------------------------------------->
-        <!------------------------------------------------>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <!-- Icon Fonts -->
+    <link href="fonts/icomoon/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Styles -->
+    <link href="js/plugins/highlight/solarized-light.css" rel="stylesheet">
+    <link href="OFeedback.css" rel="stylesheet">
+
+    <!-- Modernizer -->
+    <script type="text/javascript" src="js/vendor/modernizr-3.3.1.min.js"></script>
+  </head>
+  <body>
+     <div class="ace-wrapper">
+         <header id="ace-header" class="ace-container-shift ace-logo-in ace-head-boxed ace-nav-right">
+             <div class="ace-head-inner">
+                 <div class="ace-head-container ace-container">
+                         
+                         <div id="ace-head-col2" class="ace-head-col text-right">
+                             <div class="ace-nav-container ace-container hidden-sm hidden-xs">
+                                 <nav id="ace-main-nav">
+                                    <ul class="clear-list">
+										<li><a href="index(a).php">訊息專欄</a></li>
+										<li><a href="EventNews(a).php">活動快訊</a>
+										<li><a href="Organization.php">公益組織</a></li>
+										<li><a href="History(a).php">愛心回顧</a></li>
+										<li><a href="About.php">關於益尋愛</a></li>
+										<li><a href="UserFile.php">益寶小檔案</a></li>
+									</ul>
+                                 </nav>
+                             </div>
+                         </div>
+                         <!-------------右邊的圓圈按鈕---->
+                         <div id="ace-head-col3" class="ace-head-col text-right">
+                             <button id="ace-sidebar-btn" class="btn btn-icon btn-light btn-shade">
+                                 <span class="ace-icon ace-icon-side-bar-icon"></span>
+                             </button>
+                         </div>
+                     </div>
+                 </div><!-- .ace-container -->
+             </div><!-- .ace-head-inner -->
+        </header><!-- #ace-header -->
+
+        
+        <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
+            <ul class="clear-list">
+				<li>
+					<a href="index.html" data-tooltip="Home"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
+				</li>
+				<li>
+					<a href="experience.html" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>
+				</li>
+				<li>
+					<a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
+				</li>
+				<li>
+					<a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
+				</li>
+				<li>
+					<a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
+				</li>
+				<li>
+					<a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
+				</li>
+			</ul>
+        </nav><!-- #ace-tab-nav-sm -->
+		<?php 
+					$email=$_SESSION['email'];
+					$sql = "SELECT * FROM customer where email= '$email' ";
+					$data = mysql_query($sql) or die(mysql_error());
+					$row = mysql_fetch_array($data);
+					$cusID = $row['cusID'];	
+					
+		?>	
+		<?php 
+			$sql2 = "SELECT * FROM company where cusID= '$cusID'";
+			$data2 = mysql_query($sql2) or die(mysql_error());
+			$row2 = mysql_fetch_array($data2);
+		?>
+        <article id="ace-card" class="ace-card bg-primary">
+			<div class="ace-card-inner text-center">
+				<img class="avatar avatar-195" src="cus-comImg/<?php echo $row2['comPic'] ?>" width="195" height="195" alt="">
+				<h1>機構名稱</h1>
+			<!-----名字的地方--->	<p class="text-muted"><?php echo $row2['comName'] ?></p>
+			</div>
+
+		</article><!-- #ace-card -->
+
+        <div id="ace-content" class="ace-container-shift">
+            <div class="ace-container">
+
                 
-        <div class="content">
+                    <div id="ace-nav-wrap" class="hidden-sm hidden-xs">
+                        <div class="ace-nav-cont">
+                            <div id="ace-nav-scroll">
+                                <nav id="ace-nav" class="ace-nav">
+                                    <ul class="clear-list">
+										<li>
+											<a href="UserFile.php" data-tooltip="切換益寶"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
+										</li>									
+										<li>
+											<a href="ORecord.php?f=<?php echo $row2['comID']?>" data-tooltip="舉辦紀錄"><span class="ace-icon ace-icon-experience"></span></a>
+										</li>
+							   			<li>
+											<a href="Logout.php" data-tooltip="登出"><i class="fa fa-sign-out" style="font-size:24px"></i></a>
+										</li>
+									</ul>
+                                </nav>
+                            </div>
+
+
+                            
+                        </div>
+                        <div class="ace-nav-btm"></div>
+                    </div><!-- .ace-nav-wrap -->
+
+                <div class="ace-paper-stock">
+                    <main class="ace-paper clearfix">
+                        <div class="ace-paper-cont clear-mrg">
+						
+					<!-- START: PAGE CONTENT -->
+
+    <div class="padd-box">
+
+        <section class="section clear-mrg">
 		<?php 
 			$sql = "SELECT * from event where eventID=".$_GET['e'];
 			$data = mysql_query($sql) or die(mysql_error());
 			for($i=1;$i<=mysql_num_rows($data);$i++){
 			$row=mysql_fetch_array($data);
-		?>	
-		<center><h1 class="title"><font color="#000"><?php echo $row['eventName'] ?></font></h1>
-        <center><h2 class="title"><font color="#000">活動回饋表</font></h2>
-        <div class= "detail">
-        活動日期: <?php echo $row['startDate']."~".$row['endDate'] ?></br>
-		<?php 
-		}
 		?>
-        </div>
-                    
-            <table style="border:3px #cccccc solid;" cellpadding="10" border='1'>
-            <thead>
-                <tr class="info" style="color:#666">
-                    <th width="40">編號</th>
-                    <th width="100">姓名</th>
-					<th width="80">是否出席</th>
-                    <th width="150">評分</th>
-                    <th width="150">評語
-                    <th width="100">其他評語</th>
+            <h2 class="title-lg text-upper">活動回饋表</h2>
+             <div class="AddEvent"> <a href="AddEvent.html" title="新增活動"><img src="../img/AddEvent.png" alt="" border="5"></a></div>
+
+            <div class="padd-box-sm clear-mrg">
+            <!---------------------------內文開始(小心其他框架)----------------->
+                <!-- Table goes in the document BODY -->
+                   <center>
+                <div class="space"></div>
+                 
+                    </div>
+                    <div class="title"><h2><?php echo $row['eventName'] ?></h2>
+                    <p>活動日期: <?php echo $row['startDate']."~".$row['endDate'] ?></p>
+                    </div>
+					<?php 
+					}
+					?>
+                    <!-- Table goes in the document BODY -->
+                    <table class="gridtable" width="100%">
+                   <thead>
+					<tr class="info" style="color:#666">
+						<th width="40">#</th>
+						<th width="70">姓名</th>
+						<th width="100">出席</th>
+						<th width="120">評分</th>
+						<th width="150">評語</th>
+						<th width="100">其他評語</th>                    
                     </tr>
-            </thead>
-		<?php 
+				</thead>
+            </center>
+			<?php 
 			$sql = "SELECT * from applicationform,event where event.eventID=applicationform.eventID && event.eventID=".$_GET['e'];
 			$data = mysql_query($sql) or die(mysql_error());
-		
-		?>	
-			
-		<?php
+			?>
+			<?php
 			for($i=1;$i<=mysql_num_rows($data);$i++){
 			$row=mysql_fetch_array($data);
-		?>
-			<tbody>
-                <tr>                
+			$cusID=$row['cusID'];
+			
+			$sql2="select * from customer where cusID=$cusID";
+			$data2 = mysql_query($sql2) or die(mysql_error());
+			$row2=mysql_fetch_array($data2)
+			
+			
+			?>	
+            <tbody>
+                <tr>
+                
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row['cusName'] ?></td>
+                    <td><?php echo $row2['cusName'] ?></td>
 					<td>
                     <div class="text2">
                         <select>
@@ -116,84 +214,133 @@ if($_SESSION['email'] == null)
                         </select></div>
 					</td>
                     <td> 
+                    <center>
                     <div class="text2">
                         <select>
-							<option grade="1" value="5">5</option>
-							<option grade="2" value="4">4</option>
-							<option value="3">3</option>   
-							<option value="2">2</option>   
-							<option value="1">1</option>             
-                        </select>&nbsp&nbsp★
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★</option>
+                        <option value="3">★★★</option>   
+                        <option value="2">★★</option>   
+                        <option value="1">★</option>             
+                        </select>
                     </div>
+                    </center>
                     </td>
                     <td>
+                    <center>
                     <div class="text">
-                        <select id="comment" onchange="gradeChange()">
-							<option value="prefect">活動過程表現完美，很期待下次再與你合作喔！</option>
-							<option value="Nice">謝謝您今天的參與，讓活動順利落幕！</option>
-							<option value="bad">過程表現有待加強，希望您繼續加油！</option>
-							<option value="other" >其他評語</option>
-                        </select></div>
+                        <select>
+                        <option value="prefect">活動過程表現完美，很期待下次再與你合作喔！</option>
+                        <option value="Nice">謝謝您今天的參與，讓活動順利落幕！</option>
+                        <option value="bad">過程表現有待加強，希望您繼續加油！</option>
+                        <option value="other" >其他評語</option>
+                        </select>
+                        </div>
+                        </center>
                     </td>
                     <td>
-					<textarea rows="3" id="other" name="other" cols="20" disabled></textarea>
-                    
+                    <form>
+                    <input type="other" name="other">
+                    </form>
                     </td>
+                    
                 </tr>
-            </tbody>
 				<?php
 				}
 				?>
-            
+            </tbody>
+                        
             </table>
-            </center>
-            
-            <a class="button" href="#">送出回饋表</a>
-			
-					   <a href="ORecord.php" class="button1">返回</a>
-            
-        </div>
-    </div>
-	<!------------------------------------------------>
-	<!------------------------------------------------>
-    <div class="totop">
-        <img src="images/totop.png" id="btn">
-    </div>
-	<!------------------------------------------------>
-	<!------------------------------------------------>
-    
-    <div class="footer">
-        <h3>Copyright © 2018 益尋愛  怡仁愛心基金會</h3> 
-    </div> 		
+       		</center>
+                    <center> <input type="submit" name="SB" value="確定送出"> </center>
+                <!----------------框架結束-------------------->
+            </div><!-- .padd-box-sm -->
+        </section><!-- .section -->
 
-    <!--==========================================-->  
-    
-    <!--*********-->
-    <!-- 載入js  -->
-    <!--*********-->
-    <script src="js/OFeedback.js"></script>   
-    <script src="../freecss_greentextile/styles.css"></script>
-    <script src="../freecss_greentextile/nivo-slider.css"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
-    
-    <script src="js/totop.js"></script>
 
-	<script src="js/navbar.js"></script> 
-    <script src="js/myDropdownMenu.js"></script> 
-	<script type="text/JavaScript">
-       function gradeChange(){
-        var options=$("#comment option:selected");  //獲取選中的項
-		if(options.val()=="other")//拿到選中項的值
-		{ 
-			$("#other").attr("disabled", false); 
-		}else{
-			$("#other").attr("disabled", true);
-		}
+        
+    </div><!-- .padd-box -->
+<!-- END: PAGE CONTENT -->
+						
+                </div><!-- .ace-paper-cont -->
+                <!-----------------頁碼--------->
+                <div class="pagination">
+							<a class="next page-numbers" href=""><i class="ace-icon ace-icon-chevron-left"></i></a>
+							<span class="page-numbers current">1</span>
+							<a class="page-numbers" href="">2</a>
+							<a class="page-numbers" href="">3</a>
+							<a class="page-numbers" href="">4</a>
+							<a class="page-numbers" href="">5</a>
+							<a class="next page-numbers" href=""><i class="ace-icon ace-icon-chevron-right"></i></a>
+						</div>
+                        <!-- .頁碼結束 -->
+            </main><!-- .ace-paper -->
+        </div><!-- .ace-paper-stock -->
 
-       }
-	</script>
-           
-           
+        </div><!-- .ace-container -->
+    </div><!-- #ace-content -->
+
+    <div id="ace-sidebar">
+		<button id="ace-sidebar-close" class="btn btn-icon btn-light btn-shade">
+			<span class="ace-icon ace-icon-close"></span>
+		</button>
+<!----------右手邊小框框----------->
+		<div class="space"></div>
+		<div id="ace-sidebar-inner">
+			<nav id="ace-main-nav-sm" class="visible-xs visible-sm text-center">
+				<ul class="clear-list">
+					<li class="has-sub-menu"><a href="#">訊息專欄</a>
+						<ul class="sub-menu">
+							<li><a href="typography.html">最新消息</a></li>
+							<li><a href="components.html">桃園大小事</a></li>
+							<li><a href="search.html">下載專區</a></li>
+						</ul>
+					</li>
+					<li><a href="portfolio.html">活動快訊</a>
+					<li><a href="testimonials.html">公益組織</a></li>
+					<li><a href="#">愛心回顧</a></li>
+					<li class="has-sub-menu"><a href="category.html">關於益尋愛</a>
+						<ul class="sub-menu">
+							<li><a href="single.html">益尋愛Q&A </a></li>
+						</ul>
+					</li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</nav><!-- #ace-main-nav-sm -->
+<!-------------原本這裡是用來放右邊的東西的------------------->
+		</div><!-- #ace-sidebar-inner -->
+	</div><!-- #ace-sidebar -->
+
+    <footer id="ace-footer" class="ace-container-shift">
+        <div class="ace-container">
+			<div class="ace-footer-cont clear-mrg">
+				<p class="text-center">Copyright © 2018 益尋愛 怡仁愛心基金會</p>				
+			</div>
+        </div><!-- .ace-container -->
+    </footer><!-- #ace-footer -->
+
+    <!-- Triangle Shapes -->
+    <svg id="ace-bg-shape-1" class="hidden-sm hidden-xs" height="519" width="758">
+        <polygon points="0,455,693,352,173,0,92,0,0,71" style="fill:#d2d2d2;stroke:purple;stroke-width:0; opacity: 0.5">
+    </svg>
+
+    <svg id="ace-bg-shape-2" class="hidden-sm hidden-xs" height="536" width="633">
+        <polygon points="0,0,633,0,633,536" style="fill:#c0e3e7;stroke:purple;stroke-width:0" />
+    </svg>
+</div><!-- .ace-wrapper -->
+
+<!-- Scripts -->
+<script type="text/javascript" src="js/vendor/jquery-1.12.4.min.js"></script>
+
+
+<!---<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyDiwY_5J2Bkv2UgSeJa4NOKl6WUezSS9XA"></script>--->
+<script type="text/javascript" src="js/plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/plugins/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="js/plugins/progressbar.min.js"></script>
+<script type="text/javascript" src="js/plugins/slick.min.js"></script>
+
+<script type="text/javascript" src="js/options.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

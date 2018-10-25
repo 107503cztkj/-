@@ -16,7 +16,7 @@ if($row==0){//该邮箱尚未注册！
 	$getpasstime = time();
 	$uid = $row['cusID'];
 	$token = md5($uid.$row['cusName'].$row['password']);//组合验证码
-	$url = "http://140.131.114.142/develop/pwReset.php?email=".$email."&token=".$token;//构造URL
+	$url = "http://140.131.114.142/yixunai/pwReset.php?email=".$email."&token=".$token;//构造URL
 	$time = date('Y-m-d H:i');
 	$to =$row['email']; //收件者
 	$subject = "《益尋愛》密碼重設通知信"; //信件標題

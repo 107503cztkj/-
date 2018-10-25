@@ -1,137 +1,163 @@
-<?php
+﻿<?php
 include("db-contact.php");
 include("function.php");
 error_reporting(0);
-
-
-
-if (isset($_POST['search2'])) {
-	$searchq =$_POST['search2'];
-	
-	
-	
-}
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+<html lang="en">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>|益尋愛|</title>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link href="css/myDropdownMenu.css" rel="stylesheet" type="text/css" />
-<link href="css/EventNews.css" rel="stylesheet" type="text/css" />
-<link href="css/Head.css" rel="stylesheet" type="text/css" />
-<link href="css/Search(simple2).css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="css/footer.css" rel="stylesheet" type="text/css" />
-<link href="css/totop.css" rel="stylesheet" type="text/css" />
- 
+<!-- Title  -->
+<title>|益尋愛|</title>
+<!-- ===================== All CSS Files ===================== -->
+<!-- Font Icon -->
+
+    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/Eventsearch.css">
+
+<!-- Style css -->
+<link rel="stylesheet" href="EventNews.css">
+
+<!-- Responsive css -->
+<link rel="stylesheet" href="css/responsive.css">
+
+<!--[if IE]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 </head>
+
 <body>
 
-	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-	<div id="header-wrapper">
+
+<header class="header_area">
+	<!-- Top Header Area Start -->
+	<div class="top_header_area hidden-xs">
 		<div class="container">
-			<div id="header"> 
-			<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125556682-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+						<!--  Login Register Area -->
+						<div class="login_register">
+							<div class="login">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+								<a href="Login.php">登入</a>
+							</div>
+							<div class="reg">
+								<i class="fa fa-user" aria-hidden="true"></i>
+								<a href="Toregister.php">註冊</a>
+							</div>
+						</div>
 
-  gtag('config', 'UA-125556682-1');
-</script>
-
-				<div id="logo"></div>
-				<!--~~~~~~~~~~~~~~~~~~-->         
-				<!--~~~導覽列~~~-->  
-				<div class="navbar" >
-					<ul>
-						<li class="dropdown">
-							<a class="dropdown-toggle" href="Index.php">訊息專欄</a>
-							<ul class="dropdown-menu" >
-								<a href="Downloadlist.php"><li>下載專區</li></a>
-								<a href="BSthing.php"><li>桃園大小事</li></a>
-								<a href="NewNews.php"><li>最新消息</li></a>
-							</ul>
-						</li>
-						<li><a href="EventNews.php">活動快訊</a></li>
-						<li><a href="Organization.php">公益組織</a></li>
-						<li><a href="History.php">愛心回顧</a></li>
-						<li class="dropdown">
-							<a class="dropdown-toggle" href="About.php">關於益尋愛</a>
-							<ul class="dropdown-menu">
-								<a href="Q_A.php"><li>益尋愛Q&A </li></a>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a class="dropdown-toggle" href="Login.php">益寶登入</a> 
-						</li>
-					</ul>            
-				</div>   
+						
+					</div>
+				</div>
 			</div>
-			<!--~~~~~~~~~~~~--> 
+	
+	<!-- Top Header Area  End -->
 
-			<!------------------------------------------------>
-			<!--定義列表--------------------------------------->
-			<!------------------------------------------------>
-			<div class="love">
+	<!-- Main Header Area Start -->
+	<div class="main_header_area home2">
+		<div class="container">
+			<div class="row">
+			
 
-				<div class="act-select">
-					<select>
-						<option value="0">活動地區</option>
-						<option value="1">北部</option>
-						<option value="2">中部</option>
-						<option value="3">南部</option>
-
-					</select>
+				<div class="col-sm-9 col-xs-12">
+					<!-- Menu Area -->
+					<div class="main_menu_area">
+						<div class="mainmenu">
+							<nav>
+								<ul id="nav">
+								<li><a href="index.php">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="downloadList.php">下載專區</a></li>
+										<li><a href="bsThing.php">桃園大小事</a></li>
+										<li><a href="newNews.php">最新消息</a></li>
+									</ul>
+								</li>
+								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Q&A.php">益尋愛Q&A </a></li>
+									</ul>
+								</li>
+								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								</li>
+										
+							</ul>
+							</nav>
+						</div>
+						<!-- mainmenu end -->
+						<!-- Search Button Area -->
+				    </div>
 				</div>
-				<div class="act-select">
-					<select>
-						<option value="0">活動類型</option>
-						<option value="1">社區服務</option>
-						<option value="2">公益義賣</option>
-						<option value="3">社會援助</option>
-						<option value="4">教育助學</option>
-					</select>
-				</div>
-				<div class="act-select">
-					<select>
-						<option value="0">開始日期</option>	
-						
-					</select>
-				</div></center>
-				<div class="act-select" >
-					<select>
-						<option value="0">結束日期</option>	
-						
-					</select>
-				</div>
-			<!-- The form -->
-
-				<form class="example" action="search.php" method="POST" style="margin:auto;max-width:400px">
-					<input type="text" placeholder="搜尋活動" name="search1">
-						
-					<button type="submit" name="search2"><i class="fa fa-search"></i></button>
-				</form>
-			</div>  
+			</div>
+		</div>
+	</div>
+	<!-- Main Header Area End -->
 
 
-	<!------------------------------------------------>
-	<!--定義列表--------------------------------------->
-	<!------------------------------------------------>
-	<div class="content">   	
-		<!-- events -->
-	<div class="events" id="events">
-			<h3 class="agileinfo_header w3layouts_header">Our Latest <span>Events</span></h3>
-			<p class="w3_services_para"><span>動動手報名 一起做公益</span></p>
-			<div class="w3_agile_services_grids">
+</header>
+<div class="space"></div>
+
+    <section class="blog_area section_padding_100">
+        <div class="container">
+          <div class="row">
+              <div class="col-xs-12">
+                  <div class="section_heading wow fadeInUp">
+                      <img src="img/EventNews.png" alt="">
+                      <h4 class="wow fadeInUp">活動快訊</h4>
+                  </div>
+              </div>
+          </div>
+     <!------------------------------------------------------>
+      <div class="eventsearch">
+            <form id="booking-form" class="booking-form" method="POST">
+                <div class="form-group">
+                    <div class="form-destination">
+                      <label>選擇活動類型</label>
+		                                        	<select class="form-control">
+			                                            <option disabled="" selected="">選擇活動類型</option>
+			                                            <option>社區服務</option>
+			                                            <option>環境人文 </option>
+                                                        <option>文化面向 </option>
+                                                        <option>科技面相 </option>
+                                                        <option>健康促進 </option>
+                                                        <option>教育助學 </option>
+		                                        	</select>
+                    </div>
+                    <div class="form-date-from form-icon">
+                        <label for="date_from">活動開始日期</label>
+                        <input type="text" id="date_from" class="date_from" placeholder="點擊選擇日期" />
+                        <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                    </div>
+                    <div class="form-date-to form-icon">
+                        <label for="date_to">活動結束日期</label>
+                        <input type="text" id="date_to" class="date_to" placeholder="點擊選擇日期" />
+                        <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                    </div>
+                    <div class="form-quantity">
+                        <label for="quantity">查詢活動名稱</label>
+                      
+                        <input type="number" name="quantity" id="quantity"  placeholder="ｅｘ：爺爺奶奶爬山趣" class="nput-text qty text">
+                      
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" id="submit" class="submit" value="搜尋！" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+		<div class="row">
 			<?php
 			$sql="select * from event order by add_time desc";
 			$result=mysql_query($sql) or die(mysql_error());
@@ -161,99 +187,128 @@ if (isset($_POST['search2'])) {
 			}
 			
 			if($count>=$row['need']){
-				$statusPic="fullbutton.png";
+				$status="已額滿";
+				$statusPic="full";
 			}else if($row['DeadlineDate']< date("Y-m-d")){
-				$statusPic="overbutton.png";
+				$status="報名截止";
+				$statusPic="over";
 			}else if($row['DeadlineDate'] >= date("Y-m-d")){
-				$statusPic="joinbutton.png";
+				$status="我要報名";
+				$statusPic="join";
 			}
 			
 			?>
-				<div class="col-md-4 w3_agileits_events_grid">
-					<div class="wthree_events_grid">
-						<div class="wthree_events_grid1">
-							<img src="upload/<?php echo $row['eventPic'] ?>" class="img-responsive" />
-							<div class="agileits_event_grid_date">
-								<p><span><?php echo $date[2] ?></span><?php echo $row['startDate']?></p>
-							</div>
+			<!-- single latest news area start -->
+			<div class="col-md-4 col-xs-12">
+				<div class="single_latest_news_area">
+					<!-- single latest news thumb -->
+					<div class="single_latest_news_img_area">
+						<img src="upload/<?php echo $row['eventPic'] ?>" alt="">
+						<!-- single latest news published date -->
+						<div class="published_date">
+							<p class="date">01</p>
+							<p class="month">Aug</p>
 						</div>
-						<div class="agileinfo_events_grid1">
-							<h5><a href="Event.php?f=<?php echo $row['eventID']?>"><?php echo cut_content($row['eventName'],10)?></a></h5>
-							<p><?php  cut_content($row['description'],15);?>
-							<p>活動開始日期:  <?php echo $row['startDate']?></br>
-							活動結束日期:   <?php echo $row['endDate']?></p>
-							需求人數: <?php echo $row['need']?>人		已報名人數: <?php echo $count ?> 人
+					</div>
+					<div class="single_latest_news_text_area">
+						<!-- single latest news title -->
+						<div class="news_title">
+							<a href="Event.php?f=<?php echo $row['eventID']?>"" data-toggle="modal" data-target="#myModal"><h4><?php echo cut_content($row['eventName'],10)?></h4></a>
 						</div>
-						<div class="btn"><a  href="Event.php?f=<?php echo $row['eventID']?>"><img src="images/<?php echo $statusPic ?>"></a></div>
-
+						<!-- single latest news excerp -->
+						<div class="news_content">
+							<p><?php  cut_content($row['description'],20);?></p>
+                                
+                                活動開始日期: <?php echo $row['startDate']?>
+                                </p>
+                                活動結束日期: <?php echo $row['endDate']?>
+                                </br>
+                                </br>
+                                需求人數: <?php echo $row['need']?>人	已報名人數: <?php echo $count ?> 人
+                           
+						</div>
+						</br><center><a href="Event.php?f=<?php echo $row['eventID']?>" class="<?php echo $statusPic ?>"><?php echo $status ?></a></center>
 					</div>
 				</div>
-				
-				<?php
-				}
-				?>
-				
-				<div class="clearfix"> </div>
 			</div>
-		
-	</div>
-<!-- //events -->	       
-		
-	
-		
-		
-		
-	
+			<?php
+			}
+			?>
 
-		<div class="number">
-	<?php
-			//分頁頁碼
-			echo "<br /><a href=?page=1>首頁</a> ";
-			for( $i=1 ; $i<=$pages ; $i++ ) {
-				if ( $page-3 < $i && $i < $page+3 ) {
-					echo "[<a href=?page=".$i.">".$i."</a>] ";
-				}
-			} 
-			echo " <a href=?page=".$pages.">末頁</a><br /><br />";
-		?>
+			<!------------end----------->
+			
+			
+
 		</div>
-    </div> 
+		<!-- end. row -->
 	</div>
+	<!-- end. container -->
+</section>
+<!-- ===================== Price and Plans Area End ===================== -->
+
+<
+	<!-- Bottom Footer Area Start -->
+	<div class="footer_bottom_area">
+		<div class="container">
+			<div class="row">
+				
+					<div class="footer_bottom wow fadeInDown">
+						<p>Copyright © 2018 益尋愛 怡仁愛心基金會</p>
+					</div>
+					<!-- Bottom Footer Copywrite Text Area End -->
+				
+			</div>
+			<!-- end./ row -->
+		</div>
+		<!-- end./ container -->
 	</div>
-	
-	
+	<!-- Bottom Footer Area End -->
+</footer>
+<!-- ===================== Footer Area End ===================== -->
 
-  	<div class="totop">
-        <a href="#">
-            <img src="images/totop.png" title="回頂端" id="btn">
-        </a>
-    </div>
-	<!--~~~~~~~~~~~~~~~~~~~~~~--> 
-	<!------------------------------------------------>
-	<!------------------------------------------------>
-    
- 	<div class="footer">
-        <h3>Copyright © 2018 益尋愛  怡仁愛心基金會</h3> 
-    </div> 		
-    
+<!-- ===================== All jQuery Plugins ===================== -->
+<!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/Eventsearch.js"></script>
 
-    <!--==========================================-->  
-    
-    <!--*********-->
-    <!-- 載入js  -->
-    <!--*********-->
-    <!--*********-->
-    <!-- 載入js  -->
-    <!--*********-->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
-    
-	<script src="js/totop.js"></script>
+<!-- jQuery (necessary for all JavaScript plugins) -->
+<script src="js/jquery-1.12.3.min.js"></script>
 
-	<script src="js/navbar.js"></script>
-    <script src="js/select.js"></script>  
-    <script src="js/myDropdownMenu.js"></script> 
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
 
-           
+<!-- Nivoslider js -->
+<script src="js/jquery.nivoslider.js"></script>
+<script src="js/nivoslider-active.js"></script>
+
+<!-- owl-carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+
+<!-- Ajax Contact js -->
+<script src="js/ajax-contact.js"></script>
+
+<!-- Coundown js -->
+<script src="js/coundown-timer.js"></script>
+
+<!-- Meanmenu js -->
+<script src="js/meanmenu.js"></script>
+
+<!-- Magnific Popup js -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<!-- counterup and waypoint js -->
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/counterup.min.js"></script>
+
+<!-- back to top js -->
+<script src="js/jquery.scrollUp.js"></script>
+
+<!-- wow js -->
+<script src="js/wow.min.js"></script>
+
+<!-- script js -->
+<script src="js/custom.js"></script>
+
 </body>
 </html>

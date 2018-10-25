@@ -1,4 +1,10 @@
+function myFunction() {
+	document.getElementById(btn).click();
+}
+
+
 // JavaScript Documentvar map = null;
+
 var geocoder = null;
 function initialize() {
   if (GBrowserIsCompatible()) {
@@ -27,7 +33,7 @@ function showAddress(address) {
 		  if (!point) {
 			  alert(address + " not found");
 		  } else {
-		  map.setCenter(point, 13);
+		  map.setCenter(point, 19);
 		  // 依搜尋地址找到地圖位置與放大比例
 			  var marker = new GMarker(point);
 			  map.addOverlay(marker);

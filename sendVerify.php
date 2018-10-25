@@ -7,7 +7,7 @@ error_reporting(0);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php
-$url = 'http://140.131.114.142/develop/Login.php';
+$url = 'http://140.131.114.142/yixunai/Login.php';
 $cusName = $_COOKIE['cusName'];
 $token = $_COOKIE['token'];
 $email = $_COOKIE['email'];
