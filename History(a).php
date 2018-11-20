@@ -20,7 +20,7 @@ error_reporting(0);
 <!-- ===================== All CSS Files ===================== -->
 
 <!-- Style css -->
-<link rel="stylesheet" href="History.css">
+<link rel="stylesheet" href="css/History.css">
 
 <!-- Responsive css -->
 <link rel="stylesheet" href="css/responsive.css">
@@ -83,8 +83,8 @@ error_reporting(0);
 								</li>
 								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
-								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li class="current_page_item"><a href="Organization.php><a href="History.php">愛心回顧<i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>

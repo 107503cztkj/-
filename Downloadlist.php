@@ -1,5 +1,7 @@
-﻿<?php 
-include("db-contact.php");
+﻿<?php
+session_start();
+include("db-contact.php"); 
+include("timeout.php"); 
 error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -22,7 +24,7 @@ error_reporting(0);
 <link rel="stylesheet" href="Download.css">
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="responsive.css">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -40,14 +42,28 @@ error_reporting(0);
 		<div class="container">
 						<!--  Login Register Area -->
 						<div class="login_register">
+						<?php
+							if($_SESSION['login'] == "0"){
+						?>	
+
 							<div class="login">
 								<i class="fa fa-sign-in" aria-hidden="true"></i>
-								<a href="">登入</a>
+								<a href="Login.php">登入</a>
 							</div>
 							<div class="reg">
 								<i class="fa fa-user" aria-hidden="true"></i>
-								<a href="">註冊</a>
+								<a href="Toregister.php">註冊</a>
 							</div>
+						<?php
+							}else{
+						?>
+							<div class="login">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+								<a href="Logout.php">登出</a>
+							</div>
+						<?php
+							}
+						?>	
 						</div>
 
 						
@@ -69,9 +85,9 @@ error_reporting(0);
 						<div class="mainmenu">
 							<nav>
 								<ul id="nav">
-								<li><a href="index.php">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<li class="current_page_item"><a href="index.php">訊息專欄<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
-										<li><a href="downloadList.php">下載專區</a></li>
+										<li class="current_page_item"><a href="downloadList.php">下載專區</a></li>
 										<li><a href="bsThing.php">桃園大小事</a></li>
 										<li><a href="newNews.php">最新消息</a></li>
 									</ul>
@@ -79,13 +95,27 @@ error_reporting(0);
 								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>
 								</li>
+								<?
+									if($_SESSION['login'] == "0"){
+								?>
 								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 								</li>
+								<?
+									}else{
+								?>
+								<li><a href="UserFile.php">益寶小檔案<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Logout.php">登出 </a></li>
+									</ul>
+								</li>
+								<?
+									}
+								?>	
 										
 							</ul>
 							</nav>
@@ -98,6 +128,7 @@ error_reporting(0);
 		</div>
 	</div>
 	<!-- Main Header Area End -->
+	
 </header>
            	 <center>
                 <div class="space"></div>
@@ -109,31 +140,75 @@ error_reporting(0);
                         
                     </div>
                     <!-- Table goes in the document BODY -->
-                    <table class="gridtable" width="80%">
+                    <table class="gridtable" width="60%">
                         <tr>
-                            <th>#</th>
+                            <th align="center">#</th>
                             <th>檔案名稱</th>
-                            <th>下載</th>
-                            <th>更新日期</th>
+                            <th></th>
+                            <th align="center">更新日期</th>
                         </tr>
 						<?php
 						$sql="select * from download where (title like '%$key%') Order by fdate desc";
 						$data=mysql_query($sql) or die(mysql_error());
+						?>
+						<?php 
+						$data_nums = mysql_num_rows($data); //統計總比數
+						$per = 10; //每頁顯示項目數量
+						$pages = ceil($data_nums/$per); //取得不小於值的下一個整數
+						if (!isset($_GET["page"])){ //假如$_GET["page"]未設置
+							$page=1; //則在此設定起始頁數
+						} else {
+							$page = intval($_GET["page"]); //確認頁數只能夠是數值資料
+						}
+						$start = ($page-1)*$per; //每一頁開始的資料序號
+						$data = mysql_query($sql.' LIMIT '.$start.', '.$per) or die("Error");
+						?>
+						<?php
+						if(mysql_num_rows($data)<1){
+						?>	
+						</br><center>查無相關檔案資訊!</center>
+						<?php
+						}else{
 						for($i=1;$i<=mysql_num_rows($data);$i++){
-						$row=mysql_fetch_array($data)
+						$row=mysql_fetch_array($data);
+						
 						?>
                         <tr>
-                            <td><?php echo $i ?></td>
+                            <td width="3%" align='center' valign="middle"><?php echo $i ?></td>
                             <td><?php echo $row['title']?></td>
-                            <td width="15%"><a href="downloadFile/download.php?f=<?php echo $row['url']?>"><img src="img/downloadBTN.png"></a></td>
-                            <td><?php echo date('Y-m-d',strtotime($row['fdate']))?></td>
+                            <td width="5%" align='center' valign="middle"><a href="downloadFile/download.php?f=<?php echo $row['url']?>"><img src="img/downloadBTN.png"></a></td>
+                            <td width="15%" align='center' valign="middle"><?php echo date('Y-m-d',strtotime($row['fdate']))?></td>
                         </tr>
-                         <?php
-						}
+                        <?php
+						}}
 						?>
                         
                     </table>
+					
        		</center>
+			<center>
+			  <?php
+				if(mysql_num_rows($data)>0){
+			  ?>
+			   <!-----------------頁碼--------->
+			  <ul class="pagination pagination-sm">
+				<li><a href="?page=1" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+				<?php
+				for( $i=1 ; $i<=$pages ; $i++ ) {
+					if ( $page-3 < $i && $i < $page+3 ) {
+				?>
+				<li><a href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+				<?php
+					}
+				}
+				?>
+				<li><a href="?page=<?php echo $pages ?>" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+			  </ul>
+			   <!-----------------頁碼結束--------->
+			   <?php
+				}	
+				?>
+			</center>	
 <!-- ===================== Price and Plans Area End ===================== -->
 
 

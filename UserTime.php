@@ -33,6 +33,7 @@ if($_SESSION['email'] == null)
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Styles -->
     <link href="js/plugins/highlight/solarized-light.css" rel="stylesheet">
     <link href="UserTime.css" rel="stylesheet">
@@ -50,10 +51,10 @@ if($_SESSION['email'] == null)
                              <div class="ace-nav-container ace-container hidden-sm hidden-xs">
                                  <nav id="ace-main-nav">
                                     <ul class="clear-list">
-										<li><a href="index(a).php">訊息專欄</a></li>
-										<li><a href="EventNews(a).php">活動快訊</a>
+										<li><a href="index.php">訊息專欄</a></li>
+										<li><a href="EventNews.php">活動快訊</a>
 										<li><a href="Organization.php">公益組織</a></li>
-										<li><a href="History(a).php">愛心回顧</a></li>
+										<li><a href="History.php">愛心回顧</a></li>
 										<li><a href="About.php">關於益尋愛</a></li>
 										<li><a href="UserFile.php">益寶小檔案</a></li>
 									</ul>
@@ -75,23 +76,23 @@ if($_SESSION['email'] == null)
         <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
             <ul class="clear-list">
 				<li>
-					<a href="Organization-uibao.php" data-tooltip="Home"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
-				</li>
-				<li>
-					<a href="experience.php" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>
-				</li>
-				<li>
-					<a href="portfolio.php" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
-				</li>
-				<li>
-					<a href="testimonials.php" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
-				</li>
-				<li>
-					<a href="contact.php" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
-				</li>
-				<li>
-					<a href="category.php" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
-				</li>
+											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src=src="img/3.jpg" alt=""></a>
+										</li>									
+										<li>
+											<a href="UserRecord.php" data-tooltip="活動經歷"><span class="ace-icon ace-icon-experience"></span></a>
+										</li>
+										<li>
+											<a href="USerJoin.php" data-tooltip="已報名活動"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
+										</li>
+										<li>
+											<a href="USerTime.php" data-tooltip="服務時數表"><i class="fa fa-file-text-o" style="font-size:30px;"></i></a>
+										</li>
+										<li>
+											<a href="UserHistory.php" data-tooltip="愛心回顧紀錄"><span class="ace-icon ace-icon-blog"></span></a>
+										</li>
+										<li>
+											<a href="logout.php" data-tooltip="登出"><i class="fa fa-sign-out" style="font-size:24px"></i></a>
+										</li>
 			</ul>
         </nav><!-- #ace-tab-nav-sm -->
 		<?php 
@@ -122,10 +123,13 @@ if($_SESSION['email'] == null)
                                 <nav id="ace-nav" class="ace-nav">
                                    <ul class="clear-list">
 										<li>
-											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
+											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src="img/3.jpg" alt=""></a>
 										</li>									
 										<li>
 											<a href="UserRecord.php" data-tooltip="活動經歷"><span class="ace-icon ace-icon-experience"></span></a>
+										</li>
+										<li>
+											<a href="USerJoin.php" data-tooltip="已報名活動"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
 										</li>
 										<li>
 											<a href="USerTime.php" data-tooltip="服務時數表"><i class="fa fa-file-text-o" style="font-size:30px;"></i></a>
@@ -172,19 +176,19 @@ if($_SESSION['email'] == null)
 							 <div class="det">
 								<a><div class="date">
 									<i class="material-icons">assignment</i>
-										<a  onclick="printScreen(print_parts);"><span>列印</span></a>
-                                    </a>
-									</div>
+									<a  onclick="printScreen(print_parts);"><span>列印</span></a>
+								</a>
+								</div>
 								<div id="print_parts">       
-									<center><table style="border:3px #eae2d5 solid;" cellpadding="10" border='1'>
+									<center><table style="border:3px #eae2d5 solid; width:700px;" cellpadding="10" border='1'>
 									<thead>
 										<tr class="info">
-											<th width="80">#</th>
-											<th width="150">活動日期</th>
-											<th width="650">活動名稱</th>
-											<th width="300">舉辦機構</th>
-											<th width="120">服務時數</th>
-											<th width="130">時數表</th>
+											<th width="90">#</th>
+											<th width="160">活動日期</th>
+											<th width="660">活動名稱</th>
+											<th width="310">舉辦機構</th>
+											<th width="130">服務時數</th>
+											<th width="140">時數表</th>
 										 </tr>	
 									</thead>
 									<?php
@@ -222,7 +226,7 @@ if($_SESSION['email'] == null)
 										 <tr>
 											<td><?php echo $i; ?></td>
 											<td><?php echo $row3['startDate'] ?></td>
-											<td><a href="http://140.131.114.142/develop/Event(a).php?f=<?php echo $row3['eventID']?>" style="text-decoration: none;" color="black"><?php echo $row3['eventName'] ?></a></td>
+											<td><a href="http://140.131.114.142/develop/Event.php?f=<?php echo $row3['eventID']?>" style="text-decoration: none;" color="black"><?php echo $row3['eventName'] ?></a></td>
 											<td><?php echo $row4['comName'] ?></td>
 											<td><?php echo $row3['hour'] ?></td>
 											<td><a href="Time.php" style="text-decoration:none;">列印</a></td>

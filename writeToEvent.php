@@ -57,7 +57,7 @@ if(strtotime($startDate)>strtotime($endDate)){
 		//echo $sqlStr."<br>";
 		mysql_query($sqlStr) or die("活動新增失敗,請返回上一頁重新新增...");
 		echo "活動新增成功!頁面跳轉中...";
-		echo '<meta http-equiv=REFRESH CONTENT=2;url=EventNews(a).php>';
+		echo '<meta http-equiv=REFRESH CONTENT=2;url=EventNews.php>';
 	}else{
 		 echo "照片檔案太大，請重新選擇";
 		 echo '<br><br><input type ="button" onclick="history.back()" value="返回上一頁"></input>';	
@@ -83,7 +83,7 @@ if(strtotime($startDate)>strtotime($endDate)){
 	mysql_query($sqlStr) or die("活動新增失敗,請返回上一頁重新新增...");
 
 	echo "活動新增成功!頁面跳轉中...";
-	echo '<meta http-equiv=REFRESH CONTENT=2;url=EventNews(a).php>';
+	echo '<meta http-equiv=REFRESH CONTENT=2;url=EventNews.php>';
 		
 }
 

@@ -1,5 +1,7 @@
 ﻿<?php
+session_start();
 include("db-contact.php"); 
+include("timeout.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +23,7 @@ include("db-contact.php");
 <link rel="stylesheet" href="NewNews2.css">
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="responsive.css">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -39,14 +41,28 @@ include("db-contact.php");
 		<div class="container">
 						<!--  Login Register Area -->
 						<div class="login_register">
+						<?php
+							if($_SESSION['login'] == "0"){
+						?>	
+
 							<div class="login">
 								<i class="fa fa-sign-in" aria-hidden="true"></i>
-								<a href="">登入</a>
+								<a href="Login.php">登入</a>
 							</div>
 							<div class="reg">
 								<i class="fa fa-user" aria-hidden="true"></i>
-								<a href="">註冊</a>
+								<a href="Toregister.php">註冊</a>
 							</div>
+						<?php
+							}else{
+						?>
+							<div class="login">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+								<a href="Logout.php">登出</a>
+							</div>
+						<?php
+							}
+						?>		
 						</div>
 
 						
@@ -83,8 +99,22 @@ include("db-contact.php");
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>
 								</li>
+								<?
+									if($_SESSION['login'] == "0"){
+								?>
 								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 								</li>
+								<?
+									}else{
+								?>
+								<li><a href="UserFile.php">益寶小檔案<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Logout.php">登出 </a></li>
+									</ul>
+								</li>
+								<?
+									}
+								?>	
 										
 							</ul>
 							</nav>

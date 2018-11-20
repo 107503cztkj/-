@@ -6546,11 +6546,10 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .det {
-
     margin-left: 32px;
     padding: 20px;
     position: relative;
-    width: 560px;
+    width: 960px;
 }
 
 .det h3{
@@ -6578,7 +6577,6 @@ h1, h2, h3, h4, h5, h6 {
 .det .date i {
     background:#f7c38c;
     color: #ffffff;
-    float: left;
    	font-size: 14px;
     padding: 8px 10px;
 	position:relative;
@@ -6602,5 +6600,4 @@ h1, h2, h3, h4, h5, h6 {
 	-ms-transform:rotate(90deg);
     width: 0;
 }
-
 

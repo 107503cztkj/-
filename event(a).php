@@ -91,6 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!--start-social-section-->
 				<div class="social-icons">
 				<center><p style="font-size:36px;">提供福利</p></center>
+				<center><p>(紅字表示有提供)</p></center>
                 </br>
 			<div class="container">
 					<?php
@@ -138,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<center><div class="container">
 					<p style="font-size:46px;">-活動內容-</p>
                     </br></br><?php echo $row['description']?>
-					</br>
+					</br></br></br>
 					<center><div id="btn"><a href="signUp.php?e=<?php echo $row['eventID']?>" class="button" onclick=alert("嗨!確定報名此活動嗎?")><img src="images/joinbutton.png"></a></div></center>
 				
 			</div>	
@@ -147,13 +148,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 
 	<!---google map--->
-	<body onload="initialize()" onunload="GUnload()">
-		<form action="" onsubmit="showAddress(this.address.value); return false">
-			<center><input type="text" size="60" name="address" value="<?php echo $row['address']?>" />
-			<input id="btn" onclick="myFunction()" type="submit" value="Go!" /></center>
-			<div id="map_canvas" style="width: 100%; height: 550px"></div>     
-		</form>
-  	</body>	
+	   <iframe width='100%' height='550' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' 
+		   
+		   src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&z=16&output=embed&t=&q=<?php echo $row['address']?>"></iframe>
 
 	<!--end-contact-section-->
 			

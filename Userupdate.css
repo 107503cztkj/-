@@ -6584,7 +6584,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*********************/
 .button1 {
-	float:right;
+    width:76.4px;
+    margin-bottom: -25px;
+    margin-top: 10px;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -6614,4 +6616,8 @@ h1, h2, h3, h4, h5, h6 {
     background: -webkit-gradient(linear, left top, left bottom, from(#5a5957), to(#bdb7ac));
     background: -moz-linear-gradient(top, #5a5957, #bdb7ac);
     background: linear-gradient(to bottom, #5a5957, #bdb7ac);
+}
+
+input.photobtn{
+    width: 0px;
 }

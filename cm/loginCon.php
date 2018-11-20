@@ -5,7 +5,6 @@ error_reporting(0);
 header("Content-Type:text/html; charset=utf-8");
 
 @session_start(); // 開始 session 
-session_register('login'); //註冊一個變數到 session 
 $_SESSION['login'] = 0; // 把剛剛註冊的變數歸零（也就是代表尚未登入） 
 
 $error_flag = FALSE;

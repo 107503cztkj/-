@@ -27,7 +27,7 @@ if($_SESSION['email'] == null)
 	<link href="css/paper-bootstrap-wizard.css" rel="stylesheet" />
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link href="css/demo.css" rel="stylesheet" />
+	<link href="demo.css" rel="stylesheet" />
 
 
 	<!-- Fonts and Icons -->
@@ -47,11 +47,7 @@ if($_SESSION['email'] == null)
 						<div class="login_register">
 							<div class="login">
 								<i class="fa fa-sign-in" aria-hidden="true"></i>
-								<a href="">登入</a>
-							</div>
-							<div class="reg">
-								<i class="fa fa-user" aria-hidden="true"></i>
-								<a href="">註冊</a>
+								<a href="Logout.php">登出</a>
 							</div>
 						</div>
 
@@ -84,12 +80,15 @@ if($_SESSION['email'] == null)
 								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>
 								</li>
-								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<li><a href="UserFile.php">益寶小檔案<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Logout.php">登出 </a></li>
+									</ul>
 								</li>
 										
 							</ul>
@@ -227,13 +226,13 @@ if($_SESSION['email'] == null)
 		                                    <div class="col-sm-5 col-sm-offset-1">
 		                                    	<div class="form-group">
 		                                        	<label>志工需求人數</label>
-		                                        	<input type="text" name="need" class="form-control" id="ｐｅｏｐｌｅ" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+		                                        	<input type="number" min="1" name="need" class="form-control" id="ｐｅｏｐｌｅ" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
 		                                    	</div>
 		                                    </div>
 		                                    <div class="col-sm-5">
 		                                    	<div class="form-group">
 		                                        	<label>給予時數（小時）</label>
-		                                        	<input type="text" name="hour" class="form-control" id="Ｔｉｍｅ" >
+		                                        	<input type="number" min="1" name="hour" class="form-control" id="Ｔｉｍｅ" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
 		                                    	</div>
 		                                    </div>
 		                                </div>
@@ -301,12 +300,11 @@ if($_SESSION['email'] == null)
 										  							
 											<input type="text" class="form-control" name="address" style="width:300px" maxlength="25" required="required"/></br></br>
 											
-		                                    <center><div class="col-sm-6 col-sm-offset-1">
-		                                        <div class="form-group">
-		                                            <label>跟益寶們說說您的活動內容吧！</label>
-		                                            <textarea class="form-control" name="description" rows="9"></textarea>
-		                                        </div>
-		                                    </div></center>
+		                                    <center>
+													<label>跟益寶們說說您的活動內容吧！</label>
+													<textarea id="editor1" name="content" style="width:700px;height:450px;" required></textarea>		                                            <textarea class="form-control" name="description" rows="9"></textarea>
+		                                        
+		                                    </center>
 		                                    
 		                                </div>
 		                            </div>
@@ -346,5 +344,10 @@ if($_SESSION['email'] == null)
 
 	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+
+	<!--  ckeditor   -->
+	<script src="cm/ckeditor/ckeditor.js"></script>
+    <script>CKEDITOR.replace( 'editor1' );</script>
+    <script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
 
 </html>

@@ -1,5 +1,7 @@
 ﻿<?php
+session_start();
 include("db-contact.php");
+include("timeout.php"); 
 error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -21,7 +23,12 @@ error_reporting(0);
 <link rel="stylesheet" href="Organization.css">
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="responsive.css">
+
+<!-- search -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="search.css" rel="stylesheet">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -39,6 +46,10 @@ error_reporting(0);
 		<div class="container">
 						<!--  Login Register Area -->
 						<div class="login_register">
+						<?php
+							if($_SESSION['login'] == "0"){
+						?>	
+
 							<div class="login">
 								<i class="fa fa-sign-in" aria-hidden="true"></i>
 								<a href="Login.php">登入</a>
@@ -47,6 +58,16 @@ error_reporting(0);
 								<i class="fa fa-user" aria-hidden="true"></i>
 								<a href="Toregister.php">註冊</a>
 							</div>
+						<?php
+							}else{
+						?>
+							<div class="login">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+								<a href="Logout.php">登出</a>
+							</div>
+						<?php
+							}
+						?>		
 						</div>
 
 						
@@ -76,24 +97,36 @@ error_reporting(0);
 									</ul>
 								</li>
 								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
-								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li class="current_page_item"><a href="Organization.php">公益組織<i class="fa fa-caret-down" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>
 								</li>
+								<?
+									if($_SESSION['login'] == "0"){
+								?>
 								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								</li>
+								<?
+									}else{
+								?>
+								<li><a href="UserFile.php">益寶小檔案<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Logout.php">登出 </a></li>
+									</ul>
+								</li>
+								<?
+									}
+								?>	
 								</li>
 										
 							</ul>
 							</nav>
 						</div>
 						<!-- mainmenu end -->
-						<!-- Search Button Area -->
-						<div class="search_button hidden-xs">
-							<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-						</div>
+			
 					</div>
 				</div>
 			</div>
@@ -101,19 +134,16 @@ error_reporting(0);
 	</div>
 	<!-- Main Header Area End -->
 
-	<!-- Search Box Area Start -->
-	<div id="search">
-		<div class="search_box_area">
-			<form action="" method="get">
-				<input type="text" name="key" id="search_box" placeholder="搜尋組織...">
-				<input type="submit" value="Submit" id="sub">
-				<div id="close_button">
-					<i class="fa fa-times-circle" aria-hidden="true"></i>
-				</div>
-			</form>
+	<!-- Search Button -->
+	<div class="box">
+		<form name="form1" method="get">
+		<div class="container-4">
+			<input type="search" name="key" id="search" placeholder="搜尋機構..." />
+			<a href="#" onClick="document.form1.submit();"><button class="icon"><i class="fas fa-search"></i></button></a>
 		</div>
+		</form>
 	</div>
-	<!-- Search Box Area End -->
+	<!-- Search Button End -->
 </header>
 <div class="space"></div>
 <!-- ===================== Why Chooses Area Start ===================== -->
@@ -136,8 +166,28 @@ error_reporting(0);
 		}
 		$sql="select * from company where (comname like '%$key%')";
 		$data=mysql_query($sql) or die(mysql_error());
+		?>
+		<?php 
+		$data_nums = mysql_num_rows($data); //統計總比數
+		$per = 6; //每頁顯示項目數量
+		$pages = ceil($data_nums/$per); //取得不小於值的下一個整數
+		if (!isset($_GET["page"])){ //假如$_GET["page"]未設置
+			$page=1; //則在此設定起始頁數
+		} else {
+			$page = intval($_GET["page"]); //確認頁數只能夠是數值資料
+		}
+		$start = ($page-1)*$per; //每一頁開始的資料序號
+		$data = mysql_query($sql.' LIMIT '.$start.', '.$per) or die("Error");
+		?>
+		<?php
+		if(mysql_num_rows($data)<1){
+		?>	
+		</br><center>查無相關組織資訊!</center>
+		<?php
+		}else{
 		for($i=1;$i<=mysql_num_rows($data);$i++){
 		$row=mysql_fetch_array($data);
+		
 		?>
 			<!-- 一個框框的開始 -->
 			<div class="col-md-3 col-sm-6 col-xs-12">
@@ -150,15 +200,35 @@ error_reporting(0);
 				</div>
 			</div>
 			<!-- 一個框框的結束 -->
+			 
 			<?php
-			}
-			?>	
+			}}
+			?>
 			
-
 		
      <!------------------------------------------------------------------->
 		</div>     
 		<!-- end. row -->
+		
+		
+		 <!-----------------頁碼--------->
+			   <center>
+			  <ul class="pagination pagination-sm">
+				<li><a href="?page=1" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+				<?php
+				for( $i=1 ; $i<=$pages ; $i++ ) {
+					if ( $page-3 < $i && $i < $page+3 ) {
+				?>
+				<li><a href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+				<?php
+					}
+				}
+				?>
+				<li><a href="?page=<?php echo $pages ?>" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+			  </ul>
+			  </center>
+			   <!-----------------頁碼結束--------->
+			   
 	</div>
 	<!-- end. container -->
 </section>

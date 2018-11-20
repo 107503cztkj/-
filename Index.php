@@ -1,5 +1,7 @@
 ﻿<?php
+session_start();
 include("db-contact.php");
+include("timeout.php"); 
 include("function.php");
 error_reporting(0);
 ?>
@@ -21,6 +23,7 @@ error_reporting(0);
 <!-- ===================== All CSS Files ===================== -->
 
 <!-- Style css -->
+
 <link rel="stylesheet" href="style.css">
 
 <!-- Responsive css -->
@@ -42,6 +45,11 @@ error_reporting(0);
 		<div class="container">
 						<!--  Login Register Area -->
 						<div class="login_register">
+						<?php
+							if($_SESSION['login'] == "0"){
+								
+						?>	
+
 							<div class="login">
 								<i class="fa fa-sign-in" aria-hidden="true"></i>
 								<a href="Login.php">登入</a>
@@ -50,6 +58,16 @@ error_reporting(0);
 								<i class="fa fa-user" aria-hidden="true"></i>
 								<a href="Toregister.php">註冊</a>
 							</div>
+						<?php
+							}else{
+						?>
+							<div class="login">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+								<a href="Logout.php">登出</a>
+							</div>
+						<?php
+							}
+						?>		
 						</div>
 
 						
@@ -71,7 +89,7 @@ error_reporting(0);
 						<div class="mainmenu">
 							<nav>
 							<ul id="nav">
-								<li><a href="index.php">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<li class="current_page_item"><a href="index.php">訊息專欄<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="downloadList.php">下載專區</a></li>
 										<li><a href="bsThing.php">桃園大小事</a></li>
@@ -81,13 +99,27 @@ error_reporting(0);
 								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>
 								</li>
+								<?
+									if($_SESSION['login'] == "0"){
+								?>
 								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 								</li>
+								<?
+									}else{
+								?>
+								<li><a href="UserFile.php">益寶小檔案<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Logout.php">登出 </a></li>
+									</ul>
+								</li>
+								<?
+									}
+								?>
 										
 							</ul>
 							</nav>
@@ -132,6 +164,7 @@ error_reporting(0);
 						</div>
                        
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -142,6 +175,7 @@ error_reporting(0);
 
 
 <!-- ===================== Price and Plans Area Start ===================== -->
+</br>
 <div class="price_plan_area section_padding_100">
 	<div class="container">
 		<div class="row">
@@ -172,7 +206,7 @@ error_reporting(0);
 					for($i=1;$i<=mysql_num_rows($data);$i++){
 					$row=mysql_fetch_array($data);
 					?>
-					<p><a href="NewNews2.php?e=<?php echo $row['ID']?> "><?php cut_content($row['title'],17);?></a></p>
+					<center><p><a href="NewNews.php?e=<?php echo $row['ID']?> "><?php cut_content($row['title'],17);?></a></p></center>
 					
 					<?php
 					}
@@ -197,7 +231,7 @@ error_reporting(0);
 					for($i=1;$i<=mysql_num_rows($data);$i++){
 					$row=mysql_fetch_array($data);
 					?>
-                    <p><a href="BSthing2.php?e=<?php echo $row['ID']?> "><?php cut_content($row['title'],17); ?></a></p>
+                    <center><p><a href="BSthing.php?e=<?php echo $row['ID']?> "><?php cut_content($row['title'],17); ?></a></p></center>
                 
 				    <?php
 					}
@@ -231,10 +265,14 @@ error_reporting(0);
 				</div>
 			</div>
 			<!-- Single Price Plan Area End -->
-
+			
+			
+			
+			</div>
 		</div>
+	
 	</div>
-</div>
+	
 <!-- ===================== Price and Plans Area End ===================== -->
 
 
@@ -258,6 +296,8 @@ error_reporting(0);
 <!-- ===================== Footer Area End ===================== -->
 
 <!-- ===================== All jQuery Plugins ===================== -->
+
+<!-- Indexgallery -->
 
 <!-- jQuery (necessary for all JavaScript plugins) -->
 <script src="js/jquery-1.12.3.min.js"></script>

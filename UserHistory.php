@@ -49,10 +49,10 @@ if($_SESSION['email'] == null)
                              <div class="ace-nav-container ace-container hidden-sm hidden-xs">
                                  <nav id="ace-main-nav">
                                     <ul class="clear-list">
-										<li><a href="index(a).php">訊息專欄</a></li>
-										<li><a href="EventNews(a).php">活動快訊</a>
+										<li><a href="index.php">訊息專欄</a></li>
+										<li><a href="EventNews.php">活動快訊</a>
 										<li><a href="Organization.php">公益組織</a></li>
-										<li><a href="History(a).php">愛心回顧</a></li>
+										<li><a href="History.php">愛心回顧</a></li>
 										<li><a href="About.php">關於益尋愛</a></li>
 										<li><a href="UserFile.php">益寶小檔案</a></li>
 									</ul>
@@ -95,8 +95,8 @@ if($_SESSION['email'] == null)
         </nav><!-- #ace-tab-nav-sm -->
 		<?php 
 				
-			$email=$_SESSION['email'];
-			$sql = "SELECT * FROM customer where email= '$email' ";
+			$cusID=$_SESSION['cusID'];
+			$sql = "SELECT * FROM customer where cusID= '$cusID' ";
 			$data = mysql_query($sql) or die(mysql_error());
 			$row = mysql_fetch_array($data);
 			
@@ -121,10 +121,13 @@ if($_SESSION['email'] == null)
                                 <nav id="ace-nav" class="ace-nav">
                                     <ul class="clear-list">
 										<li>
-											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
+											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" img src="img/3.jpg" alt=""></a>
 										</li>									
 										<li>
 											<a href="UserRecord.php" data-tooltip="活動經歷"><span class="ace-icon ace-icon-experience"></span></a>
+										</li>
+										<li>
+											<a href="USerJoin.php" data-tooltip="已報名活動"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
 										</li>
 										<li>
 											<a href="USerTime.php" data-tooltip="服務時數表"><i class="fa fa-file-text-o" style="font-size:30px;"></i></a>
@@ -150,7 +153,6 @@ if($_SESSION['email'] == null)
                         <div class="ace-paper-cont clear-mrg">
 						 <h2 class="title-lg text-upper">愛心回顧紀錄</h2>
 						 <?php
-							$cusID = $row['cusID'];
 							$sql = "SELECT * FROM experiences,customer WHERE experiences.cusID = customer.cusID && customer.cusID = $cusID";
 							$data = mysql_query($sql) or die(mysql_error());
 							$data_nums = mysql_num_rows($data); //統計總比數
@@ -175,14 +177,22 @@ if($_SESSION['email'] == null)
                          <!----------------框架開始------------->
 				<div class="padd-box-sm">
 					<header class="post-header text-center">
- <!---心得名稱-->	<h2 class="post-title entry-title text-upper"><a rel="bookmark" href="single-slider.php"><?php echo $row['title']; ?></a></h2>
-							<a class="button" href="uExperience.php?e=<?php echo $row['expID']?>">修改</a>
+						<!---心得名稱-->	
+						<h2 class="post-title entry-title text-upper"><a rel="bookmark" href="single-slider.php"><?php echo $row['title']; ?></a></h2>
+						
+						<div class="post-header-info">
+
+							<!---日期-->    
+							<span class="post-author vcard"><p>發布日期:<?php echo date('Y-m-d',strtotime($row['add_time']))?></p></span>
+							<!---發布者-->
+							&nbsp;<span class="post-author vcard">by <a class="url fn n" rel="author"><?php echo $row['cusNickname']?></a></span>
+						
+						</div>
+ 
+ 							<a class="button" href="uExperience.php?e=<?php echo $row['expID']?>">修改</a>
                             <a class="button1"  href="UpdateExperience.php?e=<?php echo $row['expID']?>">刪除</a>
 
-                          <div class="post-header-info">
-             <!---日期-->    <span class="post-author vcard"><p>發布日期:<?php echo date('Y-m-d',strtotime($row['add_time']))?></p></span>
-		<!---發布者-->&nbsp;<span class="post-author vcard">by <a class="url fn n" rel="author"><?php echo $row['cusNickname']?></a></span>
-									</div>
+                          
 								</header>
 
 								<div class="post-content entry-content editor clearfix clear-mrg">
@@ -193,7 +203,7 @@ if($_SESSION['email'] == null)
 									<div class="post-footer-top brd-btm clearfix">
 										
 										
-											<a class="btn btn-sm btn-primary" href="single-slider.php" rel="bookmark">完整內容...</a>
+											<a class="btn btn-sm btn-primary" href="Experience.php?e=<?php echo $row['expID']?>" rel="bookmark">完整內容...</a>
 										
 									</div>
 								</footer>
@@ -222,7 +232,7 @@ if($_SESSION['email'] == null)
 							?>
 							<a class="next page-numbers" href="?page=<?php echo $pages ?>">末頁<i class="ace-icon ace-icon-chevron-right"></i></a>
 						</div>
-                        <!-- .頁碼結束 -->
+                <!-- .頁碼結束 -->
             </main><!-- .ace-paper -->
         </div><!-- .ace-paper-stock -->
 
@@ -294,4 +304,3 @@ if($_SESSION['email'] == null)
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
->>>>>

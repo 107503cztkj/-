@@ -1,15 +1,15 @@
 <?php
 include("db-contact.php");
-error_reporting(0);
+//error_reporting(0);
 //解決網頁亂碼問題
 header("Content-Type:text/html; charset=utf-8");
 
 @session_start(); // 開始 session 
-session_register('login'); //註冊一個變數到 session 
 $_SESSION['login'] = 0; // 把剛剛註冊的變數歸零（也就是代表尚未登入） 
 
 $email=$_POST["email"];
 $pw=$_POST["pw"];
+
 
 $result=mysql_query("SELECT * FROM customer where email='$email'");
 
@@ -29,6 +29,8 @@ while($row = mysql_fetch_array($result)){
 
 					header('Location: Userfile.php');
 					$_SESSION['login'] = 1;
+					$_SESSION['cusID'] = $row["cusID"];
+					
 
 				 }else{
 				 
@@ -43,21 +45,22 @@ while($row = mysql_fetch_array($result)){
 				echo '<meta http-equiv=REFRESH CONTENT=2;url=Login.php>';
 				break;	
 			}
-		}else{
-			echo "此Email帳號尚未註冊唷!";
-			echo '<meta http-equiv=REFRESH CONTENT=2;url=Login.php>';
-			break;
-		}	
+		}
 
 			
 					
-}else{				
+	}else{				
 		echo "登入失敗!</br>";
 		echo "未輸入完整欄位.....";
 		echo '<meta http-equiv=REFRESH CONTENT=2;url=Login.php>';
 	 
 		break;	
 	}
-}
+}	
+
+if(mysql_num_rows($result)<1){
+	echo "此Email帳號尚未註冊唷! </br>請檢查是否輸入正確 或是快去註冊一個吧~";
+	echo '<meta http-equiv=REFRESH CONTENT=3;url=Login.php>';
 	
+}		
 ?>

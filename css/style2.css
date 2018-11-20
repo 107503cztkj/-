@@ -717,3 +717,14 @@ span.glyphicon.glyphicon-triangle-bottom {
 .contact-details input[type="submit"] {
   font-size: 0.8em;
 }
+
+/*********************************************************************************/
+/* back                                                                     */
+/*********************************************************************************/
+div.back{
+	position: absolute;
+	width: 75%;
+	z-index:999;
+	top: 90%;
+	left: 90%;
+}

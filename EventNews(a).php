@@ -24,7 +24,7 @@ error_reporting(0);
     <link rel="stylesheet" href="css/Eventsearch.css">
 
 <!-- Style css -->
-<link rel="stylesheet" href="EventNews.css">
+<link rel="stylesheet" href="css/EventNews.css">
 
 <!-- Responsive css -->
 <link rel="stylesheet" href="css/responsive.css">
@@ -81,15 +81,15 @@ error_reporting(0);
 										<li><a href="newNews.php">最新消息</a></li>
 									</ul>
 								</li>
-								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li class="current_page_item"><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>
 								</li>
-								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<li><a href="UserFile.php">益寶小檔案<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 								</li>
 										
 							</ul>

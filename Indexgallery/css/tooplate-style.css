@@ -1,0 +1,70 @@
+
+
+#most-visited {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.visited-item {
+	box-shadow: 0px 5px 15px #ddd;
+	margin-bottom: 30px;
+}
+
+.visited-item .text-content {
+	background-color: #f4f4f4;
+	padding: 15px;
+}
+
+.visited-item img {
+	width: 100%;
+	overflow: hidden;
+}
+
+.visited-item h4 {
+	margin-top: 0px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #121212;
+}
+
+.visited-item span {
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #3f6f90;
+}
+
+#owl-mostvisited .owl-pagination {
+  margin-top: 20px;
+  opacity: 1;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  z-index: 9999;
+  background-color: transparent;
+  height: 0px;
+  line-height: 0px;
+  padding: 0px;
+}
+
+#owl-mostvisited .owl-page span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0px 5px;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #ddd;
+}
+
+#owl-mostvisited .owl-controls .owl-page.active span,
+#owl-mostvisited .owl-controls.clickable .owl-page:hover span{
+  filter: Alpha(Opacity=100);/*IE7 fix*/
+  opacity: 1;
+  display: inline-block;
+  background: #ffe165;
+}
+

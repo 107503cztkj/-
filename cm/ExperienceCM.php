@@ -164,15 +164,6 @@ function check_all(obj,cName)
         <img src="images/totop.png" id="btn">
     </div>
 
-    <div class="back">
-		<label><img src="images/back.png" title="回到上一頁">
-			<input type="button" class="backbt" value="返回" onclick="javascript:history.go(-1)" />
-		</label>
-	</div>
-
-    <div class="addbt">
-        <a href="AddExperience.php"><img src="images/addbt.png"></a>
-    </div>
 	<!------------------------------------------------>
 	<!------------------------------------------------>
     

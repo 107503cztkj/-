@@ -34,7 +34,7 @@ if($_SESSION['email'] == null)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Styles -->
     <link href="js/plugins/highlight/solarized-light.css" rel="stylesheet">
-    <link href="UserFile.css" rel="stylesheet">
+    <link href="Userupdate.css" rel="stylesheet">
 
     <!-- Modernizer -->
     <script type="text/javascript" src="js/vendor/modernizr-3.3.1.min.js"></script>
@@ -49,50 +49,24 @@ if($_SESSION['email'] == null)
                              <div class="ace-nav-container ace-container hidden-sm hidden-xs">
                                  <nav id="ace-main-nav">
                                     <ul class="clear-list">
-										<li><a href="index(a).php">訊息專欄</a></li>
-										<li><a href="EventNews(a).php">活動快訊</a>
+										<li><a href="index.php">訊息專欄</a></li>
+										<li><a href="EventNews.php">活動快訊</a>
 										<li><a href="Organization.php">公益組織</a></li>
-										<li><a href="History(a).php">愛心回顧</a></li>
+										<li><a href="History.php">愛心回顧</a></li>
 										<li><a href="About.php">關於益尋愛</a></li>
 										<li><a href="UserFile.php">益寶小檔案</a></li>
 									</ul>
                                  </nav>
                              </div>
                          </div>
-                         <!-------------右邊的圓圈按鈕---->
-                         <div id="ace-head-col3" class="ace-head-col text-right">
-                             <button id="ace-sidebar-btn" class="btn btn-icon btn-light btn-shade">
-                                 <span class="ace-icon ace-icon-side-bar-icon"></span>
-                             </button>
-                         </div>
+                         
                      </div>
                  </div><!-- .ace-container -->
              </div><!-- .ace-head-inner -->
         </header><!-- #ace-header -->
 
         
-        <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
-            <ul class="clear-list">
-				<li>
-					<a href="index.php" data-tooltip="Home"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
-				</li>
-				<li>
-					<a href="experience.php" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>
-				</li>
-				<li>
-					<a href="portfolio.php" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
-				</li>
-				<li>
-					<a href="testimonials.php" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
-				</li>
-				<li>
-					<a href="contact.php" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
-				</li>
-				<li>
-					<a href="category.php" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
-				</li>
-			</ul>
-        </nav><!-- #ace-tab-nav-sm -->
+        
 		<?php
 					$email=$_SESSION['email'];
 					$sql = "SELECT * FROM customer where email= '$email' ";
@@ -131,8 +105,11 @@ if($_SESSION['email'] == null)
 		<form action="userUpdate_finish.php"  method="post" enctype="multipart/form-data">	
         <article id="ace-card" class="ace-card bg-primary">
 			<div class="ace-card-inner text-center">
-				<img class="avatar avatar-195" src="cus-comImg/<?php echo $row['profilePic'] ?>" width="195" height="195" alt="">
-                <a class="button1" href="#">變更頭像</a>
+				<input type="hidden" name="profilePic" value="<?php echo $row['profilePic'] ?>">
+				<img class="avatar avatar-195 preview " src="cus-comImg/<?php echo $row['profilePic'] ?>" width="195" height="195">
+				<label>
+					<a class="button1"><input type="file"  style="display:none;" class="upl" name="file" accept="image/*"/>變更頭像</a>
+				</label>
 
 				<h1>益寶名稱</h1>
 			<!-----名字的地方--->	<p class="text-muted"><?php echo $row[cusName];?></p>
@@ -150,10 +127,13 @@ if($_SESSION['email'] == null)
                                 <nav id="ace-nav" class="ace-nav">
                                     <ul class="clear-list">
 										<li>
-											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
+											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src="img/3.jpg" alt=""></a>
 										</li>									
 										<li>
 											<a href="UserRecord.php" data-tooltip="活動經歷"><span class="ace-icon ace-icon-experience"></span></a>
+										</li>
+										<li>
+											<a href="USerJoin.php" data-tooltip="已報名活動"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
 										</li>
 										<li>
 											<a href="USerTime.php" data-tooltip="服務時數表"><i class="fa fa-file-text-o" style="font-size:30px;"></i></a>
@@ -162,7 +142,7 @@ if($_SESSION['email'] == null)
 											<a href="UserHistory.php" data-tooltip="愛心回顧紀錄"><span class="ace-icon ace-icon-blog"></span></a>
 										</li>
 										<li>
-											<a href="#" data-tooltip="登出"><i class="fa fa-sign-out" style="font-size:24px"></i></a>
+											<a href="logout.php" data-tooltip="登出"><i class="fa fa-sign-out" style="font-size:24px"></i></a>
 										</li>
 									</ul>
                                 </nav>
@@ -180,14 +160,18 @@ if($_SESSION['email'] == null)
 						
 						<!-- START: PAGE CONTENT -->
     <div class="padd-box clear-mrg">
+	
         <section class="section brd-btm">
             <div class="row">
                 <div class="col-sm-12 clear-mrg text-box">
-                    <h2 class="title-lg text-upper">個人介紹</h2>
-				<textarea name="cusIntro" style="width:500px;height:200px; border-color:#CCC;"><?php echo $row['cusIntro'] ?></textarea>
-                </div>
+					<h2 class="title-lg text-upper">個人介紹</h2>
+
+					<textarea id="editor1" name="content" style="width:700px;height:450px;" required></textarea>
+
+				</div>
             </div>
         </section><!-- .section -->
+		
 
         <section class="section brd-btm">
             <div class="row">
@@ -199,10 +183,10 @@ if($_SESSION['email'] == null)
                         <dd><?php echo $row['cusName'] ?></dd>
 						
                         <dt class="text-upper">身分證字號</dt>
-                        <dd><?php echo $row['identify'] ?></dd>
+                        <dd><?php echo $row['identity'] ?></dd>
                         
                         <dt class="text-upper">性別</dt>
-                        <dd>
+                        <dd  style="width:100px;">
                         <?php 
 						echo "<select name=\"gender\">
 					　		<option value=\"男\" $selected[2]>男性</option>
@@ -211,7 +195,7 @@ if($_SESSION['email'] == null)
 						?>
 						</dd>
                         <dt class="text-upper">生日</dt>
-                        <dd><input type="text" name="birth"  value="<?php echo $row['birth'] ?>" size="2"></dd>
+                        <dd><input type="date" name="birth"  value="<?php echo $row['birth'] ?>" size="2"></dd>
 
                         <dt class="text-upper">E-Mail</dt>
                         <dd><?php echo $row['email'] ?></dd>
@@ -226,7 +210,7 @@ if($_SESSION['email'] == null)
 
                     <div class="progress-bullets ace-animate" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
                     
-                    <dl class="dl-horizontal clear-mrg">
+                    <dl class="dl-horizontal clear-mrg" style="padding-top:20px;">
                         <dt class="text-upper">職業</dt>
                         <dd><input type="text" name="job" value="<?php echo $row['job'] ?>" size="2"></dd>
 						
@@ -240,11 +224,13 @@ if($_SESSION['email'] == null)
                         
                         <form>
 						<dt class="text-upper">飲食習慣</dt>
-                        <dd>
-							<select name="foodHabit">
-								<option value="葷食" <?php echo $selected[0]?>>葷食</option>
-								<option value="素食" <?php echo $selected[1]?>>素食</option>
-							</select> 
+                        <dd  style="width:100px;">
+							<?php 
+							echo "<select name=\"foodHabit\">
+								<option value=\"葷食\" $selected[0]>葷食</option>
+								<option value=\"素食\" $selected[1]>素食</option>
+							</select>"
+							?>			
 						</dd>
                         </form>
 						<dt class="text-upper">修改密碼</dt>
@@ -259,13 +245,13 @@ if($_SESSION['email'] == null)
               
 
             </div><!-- .row -->
-              <center><a class="button" href="#">儲存更改</a></center>
         </section><!-- .section -->
 
 
         
     </div><!-- .padd-box -->
-	<input type="submit" class="submit" value="儲存">
+	<a class="button" href="UserFile.php">取消</a>
+	<input class="button"type="submit" class="submit" value="儲存更改">
 	</form>
 <!-- END: PAGE CONTENT -->
 						
@@ -339,5 +325,13 @@ if($_SESSION['email'] == null)
 
 <script type="text/javascript" src="js/options.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
+<script src="js/preview.js"></script>
+
+<!--  ckeditor   -->
+<script src="cm/ckeditor/ckeditor.js"></script>
+<script>CKEDITOR.replace( 'editor1' );</script>
+<script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
+	
 </body>
 </html>

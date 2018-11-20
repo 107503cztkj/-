@@ -31,9 +31,9 @@ if($allLanguage !==null && $other!==null ){
 
 
 //紅色字體為判斷密碼是否填寫正確
-if($_SESSION['email'] != null && $pw != null && $pw2 != null && $pw == $pw2)
+if($_SESSION['cusID'] != "0" && $pw != null && $pw2 != null && $pw == $pw2)
 {
-    $email = $_SESSION['email'];
+    $cusID = $_SESSION['cusID'];
 	if($type=="image/jpeg" || $type=="image/png" || $type=="image/gif"){
 		if($sizemb < 3){
 			$file=explode(".",$name);
@@ -42,11 +42,14 @@ if($_SESSION['email'] != null && $pw != null && $pw2 != null && $pw == $pw2)
 			
 		//更新資料庫資料語法
 				$sql = "update customer set password='$pw', gender='$gender', birth='$birth'  , phone='$phone', job='$job', language='$allLanguage' 
-					 , otherLanguage='$other', foodHabit='$foodHabit', cusIntro='$cusIntro', profilePic='$new_name' where email='$email'";
+					 , otherLanguage='$other', foodHabit='$foodHabit', cusIntro='$cusIntro', profilePic='$new_name' where cusID='$cusID'";
 				if(mysql_query($sql))
 				{
 						move_uploaded_file($tmp_name,"cus-comImg/".$new_name);
-						unlink($dir.$profilePic);
+						if($profilePic != "cusImg-w.png" && $profilePic != "cusImg-m.png")
+						{
+							unlink($dir.$profilePic);
+						}	
 						echo '資料修改成功!頁面跳轉中...';
 						echo '<meta http-equiv=REFRESH CONTENT=3;url=userfile.php>';
 				}
@@ -61,12 +64,12 @@ if($_SESSION['email'] != null && $pw != null && $pw2 != null && $pw == $pw2)
 		} 
 	}else if($type!=="image/jpeg" || $type!=="image/png" || $type!=="image/gif"){
 		$sql = "update customer set password='$pw', gender='$gender', birth='$birth'  , phone='$phone', job='$job', language='$allLanguage' 
-					 , otherLanguage='$other', foodHabit='$foodHabit', cusIntro='$cusIntro' where email='$email'";
+					 , otherLanguage='$other', foodHabit='$foodHabit', cusIntro='$cusIntro' where cusID='$cusID'";
 		
 		mysql_query($sql) or die("資料修改失敗,請重新提交...");
 		echo  mysql_error();
 
-		echo "no user photo資料修改成功!頁面跳轉中...";
+		echo "資料修改成功!頁面跳轉中...";
 		echo '<meta http-equiv=REFRESH CONTENT=3;url=userfile.php>';
 	}	
 }else{

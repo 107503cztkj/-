@@ -21,7 +21,7 @@
 
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="responsive.css">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>

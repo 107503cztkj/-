@@ -24,7 +24,7 @@ error_reporting(0);
 <link rel="stylesheet" href="style.css">
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="css/responsive.css">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -67,7 +67,7 @@ error_reporting(0);
 						<div class="mainmenu">
 							<nav>
 							<ul id="nav">
-								<li><a href="index.php">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<li class="current_page_item"><a href="index.php">訊息專欄<i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="downloadList.php">下載專區</a></li>
 										<li><a href="bsThing.php">桃園大小事</a></li>
@@ -77,7 +77,7 @@ error_reporting(0);
 								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>

@@ -1,5 +1,7 @@
 ﻿<?php
+session_start();
 include("db-contact.php");
+include("timeout.php"); 
 include("function.php");
 error_reporting(0);
 ?>
@@ -18,21 +20,25 @@ error_reporting(0);
 <!-- ===================== All CSS Files ===================== -->
 <!-- Font Icon -->
 
-    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="css/Eventsearch.css">
+<!-- Main css -->
+<link rel="stylesheet" href="Eventsearch.css">
 
 <!-- Style css -->
 <link rel="stylesheet" href="EventNews.css">
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="responsive.css">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script>
+let today = new Date().toISOString().substr(0, 10);
+document.querySelector("#today").value = today;
+</script>
 
 </head>
 
@@ -45,6 +51,10 @@ error_reporting(0);
 		<div class="container">
 						<!--  Login Register Area -->
 						<div class="login_register">
+						<?php
+							if($_SESSION['login'] == "0"){
+						?>	
+
 							<div class="login">
 								<i class="fa fa-sign-in" aria-hidden="true"></i>
 								<a href="Login.php">登入</a>
@@ -53,6 +63,16 @@ error_reporting(0);
 								<i class="fa fa-user" aria-hidden="true"></i>
 								<a href="Toregister.php">註冊</a>
 							</div>
+						<?php
+							}else{
+						?>
+							<div class="login">
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+								<a href="Logout.php">登出</a>
+							</div>
+						<?php
+							}
+						?>	
 						</div>
 
 						
@@ -81,16 +101,30 @@ error_reporting(0);
 										<li><a href="newNews.php">最新消息</a></li>
 									</ul>
 								</li>
-								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li class="current_page_item"><a href="EventNews.php">活動快訊<i class="fa fa-caret-down" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>
 								</li>
+								<?
+									if($_SESSION['login'] == "0"){
+								?>
 								<li><a href="Login.php">益寶登入<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 								</li>
+								<?
+									}else{
+								?>
+								<li><a href="UserFile.php">益寶小檔案<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+									<ul class="sub-menu">
+										<li><a href="Logout.php">登出 </a></li>
+									</ul>
+								</li>
+								<?
+									}
+								?>	
 										
 							</ul>
 							</nav>
@@ -120,47 +154,85 @@ error_reporting(0);
           </div>
      <!------------------------------------------------------>
       <div class="eventsearch">
-            <form id="booking-form" class="booking-form" method="POST">
+            <form name="form1" method="get">
                 <div class="form-group">
                     <div class="form-destination">
-                      <label>選擇活動類型</label>
-						<select class="form-control">
-							<option disabled="" selected="">選擇活動類型</option>
-							<option>社區服務</option>
-							<option>環境人文 </option>
-							<option>文化面向 </option>
-							<option>科技面相 </option>
-							<option>健康促進 </option>
-							<option>教育助學 </option>
+                      <label>活動類型</label>
+						<select name="eventType" class="form-control">
+							<option value="null">--活動類型--</option>
+							<option value="社區服務">社區服務</option>
+							<option value="環境人文">環境人文</option>
+							<option value="文化面相">文化面向</option>
+							<option value="科技面向">科技面向</option>
+							<option value="健康促進">健康促進</option>
+							<option value="教育助學">教育助學</option>
 						</select>
                     </div>
                     <div class="form-date-from form-icon">
                         <label for="date_from">活動開始日期</label>
-                        <input type="text" id="date_from" class="date_from" placeholder="點擊選擇日期" />
+                        <input name="startDate" type="date" id="date_from" class="date_from" placeholder="點擊選擇日期" />
                         <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
                     </div>
                     <div class="form-date-to form-icon">
                         <label for="date_to">活動結束日期</label>
-                        <input type="text" id="date_to" class="date_to" placeholder="點擊選擇日期" />
+                        <input name="endDate" type="date" id="today" class="date_to" placeholder="點擊選擇日期" />
                         <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
                     </div>
                     <div class="form-quantity">
-                        <label for="quantity">查詢活動名稱</label>
-                      
-                        <input type="number" name="quantity" id="quantity"  placeholder="ｅｘ：爺爺奶奶爬山趣" class="nput-text qty text">
+                        <label for="quantity">查詢活動關鍵字</label>
+                    
+                        <input type="text" name="key" id="quantity"  placeholder="ｅｘ：爺爺奶奶爬山趣" class="nput-text qty text">
                       
                     </div>
                     <div class="form-submit">
-                        <input type="submit" id="submit" class="submit" value="搜尋！" />
+						<input type="submit" id="submit" class="submit" value="搜尋！" />
+                        <!---<a href="#" onClick="document.form1.submit();"><button>搜尋</button><a>--->
                     </div>
+					</form>
                 </div>
             </form>
         </div>
+		</br>
         <div class="container">
 		<div class="row">
 			<?php
-			$sql="select * from event order by add_time desc";
+			if($_GET["eventType"]<>"" && $_GET["eventType"]<>"null"){
+			  $eventType=str_replace(" ","%",trim(addslashes($_GET["eventType"])));
+			}
+			
+			if($_GET["key"]<>""){
+			  
+			  $key=str_replace(" ","%",trim(addslashes($_GET["key"])));
+			  $keySql="and eventName like '%".$key."%'";
+			  
+			  if($_GET["key"]<>"" && $_GET["eventType"]!="null"){
+				$key=str_replace(" ","%",trim(addslashes($_GET["key"])));
+				$keySql="and eventName like '%".$key."%'";
+			  
+				}
+			}	
+			
+			if($_GET["startDate"]<>"" ){
+			  
+			  $startDate=str_replace(" ","%",trim(addslashes($_GET["startDate"])));
+			  $dateSql='and startDate >= "'.$startDate.'"';
+			}
+			if($_GET["endDate"]<>"" ){
+			  
+			  $endDate=str_replace(" ","%",trim(addslashes($_GET["endDate"])));
+			  $dateSql='and endDate <= "'.$endDate.'"';
+			}
+			if($_GET["startDate"]<>"" && $_GET["endDate"]<>"" ){
+			  
+			  $startDate=str_replace(" ","%",trim(addslashes($_GET["startDate"])));
+			  $endDate=str_replace(" ","%",trim(addslashes($_GET["endDate"])));
+			  $dateSql='and startDate >= "'.$startDate.'"'.'and endDate <="'.$endDate.'"';
+			}
+			?>
+			<?php
+			$sql="select * from event where(type like '%$eventType%' $keySql $dateSql) order by add_time desc";
 			$result=mysql_query($sql) or die(mysql_error());
+			
 			?>
 			<?php 
 				$data_nums = mysql_num_rows($result); //統計總比數
@@ -175,8 +247,17 @@ error_reporting(0);
 				$result = mysql_query($sql.' LIMIT '.$start.', '.$per) or die("Error");
 			?>
 			<?php
+			if(mysql_num_rows($result)<1){
+			?>	
+			</br><center>查無相關活動資訊!</center>
+			<?php
+			}else{
 			for($i=1;$i<=mysql_num_rows($result);$i++){
 			$row=mysql_fetch_array($result);
+			
+			?>
+			<?php
+				
 			$date = explode('-',$row['startDate']);
 			
 			$count=0;
@@ -188,13 +269,13 @@ error_reporting(0);
 			
 			if($count>=$row['need']){
 				$status="已額滿";
-				$statusPic="full";
+				$style="full";
 			}else if($row['DeadlineDate']< date("Y-m-d")){
 				$status="報名截止";
-				$statusPic="over";
+				$style="over";
 			}else if($row['DeadlineDate'] >= date("Y-m-d")){
 				$status="我要報名";
-				$statusPic="join";
+				$style="join";
 			}
 			
 			?>
@@ -213,7 +294,7 @@ error_reporting(0);
 					<div class="single_latest_news_text_area">
 						<!-- single latest news title -->
 						<div class="news_title">
-							<a href="Event.php?f=<?php echo $row['eventID']?>" target="blank"><h4><?php echo cut_content($row['eventName'],10)?></h4></a>
+							<a href="Event.php?f=<?php echo $row['eventID']?>" ><h4><?php echo cut_content($row['eventName'],10)?></h4></a>
 						</div>
 						<!-- single latest news excerp -->
 						<div class="news_content">
@@ -227,15 +308,38 @@ error_reporting(0);
                                 需求人數: <?php echo $row['need']?>人	已報名人數: <?php echo $count ?> 人
                            
 						</div>
-						</br><center><a href="Event.php?f=<?php echo $row['eventID']?>" class="<?php echo $statusPic ?>"><?php echo $status ?></a></center>
+						</br><center><a href="Event.php?f=<?php echo $row['eventID']?>&s=<?php echo $style ?>" class="<?php echo $style ?>"><?php echo $status ?></a></center>
 					</div>
 				</div>
 			</div>
 			<?php
-			}
+			}}
 			?>
 
 			<!------------end----------->
+			<center>
+			  <?php
+				if(mysql_num_rows($result)>0){
+			  ?>
+			   <!-----------------頁碼--------->
+			  <ul class="pagination pagination-sm">
+				<li><a href="?page=1" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+				<?php
+				for( $i=1 ; $i<=$pages ; $i++ ) {
+					if ( $page-3 < $i && $i < $page+3 ) {
+				?>
+				<li><a href="?page=<?php echo $i ?>"><?php echo $i ?></a></li>
+				<?php
+					}
+				}
+				?>
+				<li><a href="?page=<?php echo $pages ?>" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+			  </ul>
+			   <!-----------------頁碼結束--------->
+			   <?php
+				}	
+				?>
+			</center>
 			
 			
 
@@ -246,7 +350,7 @@ error_reporting(0);
 </section>
 <!-- ===================== Price and Plans Area End ===================== -->
 
-<
+
 	<!-- Bottom Footer Area Start -->
 	<div class="footer_bottom_area">
 		<div class="container">

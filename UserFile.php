@@ -5,7 +5,7 @@ include("timeout.php");
 error_reporting(0);
 ?>
 <?php 
-if($_SESSION['email'] == null)
+if($_SESSION['login'] == "0")
 {
 	echo "<script>alert('您無權限觀看此頁面!請先登入!'); location.href = 'login.php';</script>";
 }
@@ -49,12 +49,16 @@ if($_SESSION['email'] == null)
                              <div class="ace-nav-container ace-container hidden-sm hidden-xs">
                                  <nav id="ace-main-nav">
                                     <ul class="clear-list">
-										<li><a href="index(a).php">訊息專欄</a></li>
-										<li><a href="EventNews(a).php">活動快訊</a>
+										<li><a href="index.php">訊息專欄</a></li>
+										<li><a href="EventNews.php">活動快訊</a>
 										<li><a href="Organization.php">公益組織</a></li>
-										<li><a href="History(a).php">愛心回顧</a></li>
+										<li><a href="History.php">愛心回顧</a></li>
 										<li><a href="About.php">關於益尋愛</a></li>
-										<li><a href="UserFile.php">益寶小檔案</a></li>
+										<li><a href="UserFile.php">益寶小檔案</a>
+											<ul class="sub-menu">
+											<li><a href="Logout.php">登出 </a></li>
+											</ul>
+										</li>
 									</ul>
                                  </nav>
                              </div>
@@ -74,28 +78,29 @@ if($_SESSION['email'] == null)
         <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
             <ul class="clear-list">
 				<li>
-					<a href="OFile.php" data-tooltip="Home"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
-				</li>
-				<li>
-					<a href="experience.php" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>
-				</li>
-				<li>
-					<a href="portfolio.php" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
-				</li>
-				<li>
-					<a href="testimonials.php" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
-				</li>
-				<li>
-					<a href="contact.php" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
-				</li>
-				<li>
-					<a href="category.php" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
-				</li>
+						<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src="img/3.jpg" alt=""></a>
+					</li>									
+					<li>
+						<a href="UserRecord.php" data-tooltip="活動經歷"><span class="ace-icon ace-icon-experience"></span></a>
+					</li>
+					<li>
+						<a href="USerJoin.php" data-tooltip="已報名活動"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
+					</li>
+					<li>
+						<a href="USerTime.php" data-tooltip="服務時數表"><i class="fa fa-file-text-o" style="font-size:30px;"></i></a>
+					</li>
+					<li>
+						<a href="UserHistory.php" data-tooltip="愛心回顧紀錄"><span class="ace-icon ace-icon-blog"></span></a>
+					</li>
+					<li>
+						<a href="logout.php" data-tooltip="登出"><i class="fa fa-sign-out" style="font-size:24px"></i></a>
+										</li>
 			</ul>
         </nav><!-- #ace-tab-nav-sm -->
 		<?php
-			$email=$_SESSION['email'];
-			$sql = "SELECT * FROM customer where email= '$email' ";
+		
+			$cusID=$_SESSION['cusID'];
+			$sql = "SELECT * FROM customer where cusID= '$cusID' ";
 			$data = mysql_query($sql) or die(mysql_error());
 			$row = mysql_fetch_array($data);
 		?>
@@ -118,10 +123,13 @@ if($_SESSION['email'] == null)
                                 <nav id="ace-nav" class="ace-nav">
                                     <ul class="clear-list">
 										<li>
-											<a href="OFile.php" data-tooltip="切換機構"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
+											<a href="Ofile.php" data-tooltip="切換機構"><img class="avatar avatar-42" img src="img/3.jpg" alt=""></a>
 										</li>									
 										<li>
 											<a href="UserRecord.php" data-tooltip="活動經歷"><span class="ace-icon ace-icon-experience"></span></a>
+										</li>
+										<li>
+											<a href="USerJoin.php" data-tooltip="已報名活動"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
 										</li>
 										<li>
 											<a href="USerTime.php" data-tooltip="服務時數表"><i class="fa fa-file-text-o" style="font-size:30px;"></i></a>
@@ -186,7 +194,7 @@ if($_SESSION['email'] == null)
                 <div class="col-sm-6 clear-mrg">
                     <h2 class="title-thin text-muted"></h2>
 
-                    <div class="progress-bullets ace-animate" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
+                    <div class="progress-bullets ace-animate" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10" style="padding-top:1px;">
                     
                         <dl class="dl-horizontal clear-mrg">
 						<dt class="text-upper">E-Mail</dt>

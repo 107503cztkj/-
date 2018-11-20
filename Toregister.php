@@ -22,7 +22,7 @@
 
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="responsive.css">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -61,10 +61,10 @@
 									<li><a href="index.php">訊息專欄<i class="fa fa-caret-right" aria-hidden="true"></i>
 </a>
 										<ul class="sub-menu">
-											<li><a href="#">下載專區</a></li>
-											<li><a href="#">桃園大小事</a></li>
-                                            <li><a href="#">最新消息</a></li>
-										</ul>
+											<li><a href="downloadList.php">下載專區</a></li>
+											<li><a href="bsThing.php">桃園大小事</a></li>
+											<li><a href="newNews.php">最新消息</a></li>
+									</ul>
 									</li>
 									<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
                                     <li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>

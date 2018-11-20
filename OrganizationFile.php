@@ -1,5 +1,7 @@
 ﻿<?php
+session_start();
 include("db-contact.php");
+include("timeout.php"); 
 include("function.php");
 error_reporting(0);
 ?>
@@ -23,7 +25,7 @@ error_reporting(0);
 <link rel="stylesheet" href="OrganizationFile.css">
 
 <!-- Responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="responsive.css">
 
 <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -78,9 +80,9 @@ error_reporting(0);
 									</ul>
 								</li>
 								<li><a href="EventNews.php">活動快訊<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
-								<li><a href="Organization.php">公益組織<i class="fa fa-caret-right" aria-hidden="true"></i></a>											   									</li>
+								<li class="current_page_item"><a href="Organization.php">公益組織<i class="fa fa-caret-down" aria-hidden="true"></i></a>											   									</li>
 								<li><a href="History.php">愛心回顧<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-								<li class="current_page_item"><a href="About.php">關於益尋愛<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<li><a href="About.php">關於益尋愛<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 									<ul class="sub-menu">
 										<li><a href="Q&A.php">益尋愛Q&A </a></li>
 									</ul>

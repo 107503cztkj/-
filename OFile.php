@@ -49,10 +49,10 @@ if($_SESSION['email'] == null)
                              <div class="ace-nav-container ace-container hidden-sm hidden-xs">
                                  <nav id="ace-main-nav">
                                     <ul class="clear-list">
-										<li><a href="index(a).php">訊息專欄</a></li>
-										<li><a href="EventNews(a).php">活動快訊</a>
+										<li><a href="index.php">訊息專欄</a></li>
+										<li><a href="EventNews.php">活動快訊</a>
 										<li><a href="Organization.php">公益組織</a></li>
-										<li><a href="History(a).php">愛心回顧</a></li>
+										<li><a href="History.php">愛心回顧</a></li>
 										<li><a href="About.php">關於益尋愛</a></li>
 										<li><a href="UserFile.php">益寶小檔案</a></li>
 									</ul>
@@ -74,23 +74,17 @@ if($_SESSION['email'] == null)
         <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
             <ul class="clear-list">
 				<li>
-					<a href="index.html" data-tooltip="Home"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
-				</li>
-				<li>
-					<a href="experience.html" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>
-				</li>
-				<li>
-					<a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
-				</li>
-				<li>
-					<a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
-				</li>
-				<li>
-					<a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
-				</li>
-				<li>
-					<a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
-				</li>
+											<a href="UserFile.php" data-tooltip="切換益寶"><img class="avatar avatar-42" src="img/3.jpg" alt=""></a>
+										</li>	
+										<li>
+											<a href="OJoin.html" data-tooltip="報名狀況"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
+										</li>									
+										<li>
+											<a href="ORecord.php?f=<?php echo $row2['comID']?>" data-tooltip="舉辦紀錄"><span class="ace-icon ace-icon-experience"></span></a>
+										</li>
+							   			<li>
+											<a href="Logout.php" data-tooltip="登出"><i class="fa fa-sign-out" style="font-size:24px"></i></a>
+										</li>
 			</ul>
         </nav><!-- #ace-tab-nav-sm -->
 		<?php 
@@ -128,7 +122,10 @@ if($_SESSION['email'] == null)
                                 <nav id="ace-nav" class="ace-nav">
                                     <ul class="clear-list">
 										<li>
-											<a href="UserFile.php" data-tooltip="切換益寶"><img class="avatar avatar-42" src="img/uploads/avatar/avatar-42x42.png" alt=""></a>
+											<a href="UserFile.php" data-tooltip="切換益寶"><img class="avatar avatar-42" src="img/3.jpg" alt=""></a>
+										</li>	
+										<li>
+											<a href="OJoin.html" data-tooltip="報名狀況"><i class="fa fa-bell-o" style="font-size:30px;"></i></a>
 										</li>									
 										<li>
 											<a href="ORecord.php?f=<?php echo $row2['comID']?>" data-tooltip="舉辦紀錄"><span class="ace-icon ace-icon-experience"></span></a>

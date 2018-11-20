@@ -1,4 +1,5 @@
-<?php session_start(); 
+<?php 
+session_start(); 
 include("db-contact.php");
 error_reporting(0);
 ?>
